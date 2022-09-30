@@ -35,13 +35,25 @@ namespace Cloudforce_Revamped
         {
             if (Main.Dark == true)
             {
-                this.BackColor = Color.DimGray;
+                this.BackColor = Color.FromArgb(64, 64, 64);
+                changecolorBTN(123, 0, 238, 170, 0, 255);
             }
             if (Main.Light == true)
             {
                 this.BackColor = Color.WhiteSmoke;
+                changecolorBTN(255, 128, 128, 255, 128, 255);
             }
         }
+
+        private void changecolorBTN(int one, int two, int three, int one1, int two1, int three1)
+        {
+            foreach (var button in Controls.OfType<Guna.UI2.WinForms.Guna2GradientButton>())
+            {
+                button.FillColor = Color.FromArgb(one, two, three);
+                button.FillColor2 = Color.FromArgb(one1, two1, three1);
+            }
+        }
+
         #endregion
         private void back_Click(object sender, EventArgs e)
         {
@@ -50,12 +62,13 @@ namespace Cloudforce_Revamped
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (guna2ComboBox1.SelectedItem.ToString() == "Light Theme")
+            if (guna2ComboBox1.SelectedItem.ToString() == "Light Theme") //TODO CHECK If theme is applied
             {
                 pictureBox1.Image = null;
                 this.BackColor = Color.WhiteSmoke;
                 Main.Dark = false;
                 Main.Light = true;
+                changecolorBTN(123, 0, 238, 170, 0, 255);
                 if (Main.Light.Equals(true))
                 {
                     MessageBox.Show("Changed to Light mode !");
@@ -63,9 +76,10 @@ namespace Cloudforce_Revamped
             }
             if (guna2ComboBox1.SelectedItem.ToString() == "Dark Theme")
             {
-                this.BackColor = Color.DimGray;
+                this.BackColor = Color.FromArgb(64, 64, 64);
                 Main.Dark = true;
                 Main.Light = false;
+                changecolorBTN(123, 0, 238, 170, 0, 255);
                 if (Main.Dark.Equals(true))
                 {
                     MessageBox.Show("Changed to Dark mode !");

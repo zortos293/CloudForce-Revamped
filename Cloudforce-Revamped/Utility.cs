@@ -22,24 +22,37 @@ namespace Cloudforce_Revamped
         public Utility()
         {
             InitializeComponent();
-            
+            kick_timer.Start();
         }
+        #region Waiting GFN 
+        Timer kick_timer = new Timer();
+        
+        #endregion
 
         #region Theme
         void checktheme()
         {
-            Debug.WriteLine("Checking theme...");
-            Debug.WriteLine("Dark: " + Main.Dark);
-            Debug.WriteLine("Light: " + Main.Light);
             if (Main.Dark == true)
             {
-                this.BackColor = Color.DimGray;
+                this.BackColor = Color.FromArgb(64, 64, 64);
+                changecolorBTN(123, 0, 238, 170, 0, 255);
             }
             if (Main.Light == true)
             {
                 this.BackColor = Color.WhiteSmoke;
+                changecolorBTN(255, 128, 128, 255, 128, 255);
             }
         }
+
+        private void changecolorBTN(int one, int two, int three, int one1, int two1, int three1)
+        {
+            foreach (var button in Controls.OfType<Guna.UI2.WinForms.Guna2GradientButton>())
+            {
+                button.FillColor = Color.FromArgb(one, two, three);
+                button.FillColor2 = Color.FromArgb(one1, two1, three1);
+            }
+        }
+
         #endregion
 
         #region Download Stuff
@@ -47,6 +60,7 @@ namespace Cloudforce_Revamped
         public void File_Downloader(string URL, string path,Guna.UI2.WinForms.Guna2GradientButton button)
         {
             // download file with progress bar
+            DownloadFinished = false;
             WebClient client = new WebClient();
             back.Enabled = false;
             button.Enabled = false;
@@ -102,7 +116,7 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/ProcessHacker.zip", mainpath + "\\ProcessHacker.zip", guna2GradientButton12);
 
                 ZipFile.ExtractToDirectory(mainpath + "\\ProcessHacker.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe"); // TODO
+                Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe"); 
                 guna2GradientButton12.Enabled = true;
 
             }
@@ -115,7 +129,7 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton11_Click(object sender, EventArgs e)
         {
-            if (File.Exists(mainpath + "\\Discord.zip"))
+            if (Directory.Exists(mainpath + "\\Discord\\"))
             {
                 Process.Start(mainpath + "\\Discord.zip");
             }
@@ -124,7 +138,7 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/Discord.zip", mainpath + "\\Discord.zip", guna2GradientButton11);
                     
                 ZipFile.ExtractToDirectory(mainpath + "\\Discord.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\Discord"); // TODO
+                Process.Start(mainpath + "\\discord2\\discord-portable.exe"); // TODO
                 guna2GradientButton1.Enabled = false;
 
             }
@@ -137,16 +151,16 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton14_Click(object sender, EventArgs e) // Firefox
         {
-            if (File.Exists(mainpath + "\\Firefox.zip"))
+            if (Directory.Exists(mainpath + "\\Firefox\\"))
             {
-                Process.Start(mainpath + "\\Firefox.zip");
+                Process.Start(mainpath + "\\Firefox\\runthis.exe");
             }
             else
             {
                 File_Downloader("https://picteon.dev/files/Firefox.zip", mainpath + "\\Firefox.zip", guna2GradientButton11);
 
                 ZipFile.ExtractToDirectory(mainpath + "\\Firefox.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\Discord"); // TODO
+                Process.Start(mainpath + "\\Firefox\\runthis.exe"); 
                 guna2GradientButton1.Enabled = false;
 
             }
@@ -164,6 +178,43 @@ namespace Cloudforce_Revamped
 
 
                 Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe"); // TODO
+                guna2GradientButton4.Enabled = true;
+
+            }
+        }
+
+        private void Utility_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton15_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(mainpath + "\\librewolf-105.0.1\\"))
+            {
+                Process.Start(mainpath + "\\librewolf-105.0.1\\LibreWolf-Portable.exe");
+            }
+            else
+            {
+                File_Downloader("https://gitlab.com/librewolf-community/browser/windows/uploads/a9d86b83d8e66b9c3c75a0c2221aecdd/librewolf-105.0.1-1.en-US.win64-portable.zip", mainpath + "\\librewolf.zip", guna2GradientButton11);
+
+                ZipFile.ExtractToDirectory(mainpath + "\\librewolf.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\librewolf-105.0.1\\LibreWolf-Portable.exe");
+                guna2GradientButton1.Enabled = false;
+
+            }
+        }
+
+        private void guna2GradientButton10_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(mainpath + "\\ZortosDesktop.exe"))
+            {
+                Process.Start(mainpath + "\\ZortosDesktop.exe", "");
+            }
+            else
+            {
+                File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/DesktopOverlay.exe", mainpath + "\\ZortosDesktop.exe", guna2GradientButton4);
+                Process.Start(mainpath + "\\ZortosDesktop.exe", "-Desktop"); // TODO
                 guna2GradientButton4.Enabled = true;
 
             }
