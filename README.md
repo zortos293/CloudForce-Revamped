@@ -1,8 +1,8 @@
 # CloudForce-Revamped
-# ⚠️Source is Not fully functional!!
+# ⚠️Source is Not yet fully functional!!
 ## todo
 
-- [ ] Recode Cloudforce
+- [x] Recode Cloudforce
 - [ ] Fix broken links
 - [ ] Add GFN Patches (game patches)
 - [ ] Make everything undetected
