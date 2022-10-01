@@ -1,4 +1,12 @@
-﻿using Guna.UI2.WinForms;
+﻿/**************************************************************
+ * Cloud-Force by Zortos293 and Kief
+ * 
+ * (c) 2022. All rights reserved.
+ * You may not distrobute app in anyway if the credits are removed, nor sell it.
+ * 
+ * 9/30/22 11:45AM PDT
+ */
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,11 +77,15 @@ namespace Cloudforce_Revamped
             {
                 this.BackColor = Color.FromArgb(64, 64, 64);
                 changecolorBTN(123, 0, 238, 170, 0, 255);
+                guna2GradientPanel1.FillColor = Color.FromArgb(97, 67, 133);
+                guna2GradientPanel1.FillColor2 = Color.FromArgb(81, 99, 149);
             }
             if (Main.Light == true)
             {
                 this.BackColor = Color.WhiteSmoke;
                 changecolorBTN(255, 128, 128, 255, 128, 255);
+                guna2GradientPanel1.FillColor = Color.FromArgb(255, 192, 255);
+                guna2GradientPanel1.FillColor2 = Color.FromArgb(255, 192, 192);
             }
         }
 

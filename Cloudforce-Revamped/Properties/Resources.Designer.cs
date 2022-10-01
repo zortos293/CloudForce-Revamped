@@ -83,6 +83,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap crafting_table_480px {
+            get {
+                object obj = ResourceManager.GetObject("crafting_table_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap desktop_480px {
             get {
                 object obj = ResourceManager.GetObject("desktop_480px", resourceCulture);
@@ -123,9 +133,49 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_Project__3___1_ {
+            get {
+                object obj = ResourceManager.GetObject("New Project (3) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OBIcon {
+            get {
+                object obj = ResourceManager.GetObject("OBIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap opened_folder_480px {
             get {
                 object obj = ResourceManager.GetObject("opened_folder_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roblox_240px {
+            get {
+                object obj = ResourceManager.GetObject("roblox_240px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spotify_480px {
+            get {
+                object obj = ResourceManager.GetObject("spotify_480px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
