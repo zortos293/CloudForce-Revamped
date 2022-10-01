@@ -315,6 +315,22 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+        private void guna2GradientButton17_Click(object sender, EventArgs e) // Spotify
+        {
+            if (timercheck() == false) return;
+            if (Directory.Exists(mainpath + "\\cmdpwet\\"))
+            {
+                Process.Start(mainpath + "\\cmdpwet\\cmdpwetaa.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader("https://op-ffa.net/gfn/cmd_pwetA.exe", mainpath + "\\cmdpwetaa.exe", guna2GradientButton16);
+                Process.Start(mainpath + "\\cmdpwet\\cmdpwetaa.exe");
+                guna2GradientButton16.Enabled = false;
+                wait_Timer();
+            }
+        }
 
         private void guna2GradientButton22_Click(object sender, EventArgs e)
         {
