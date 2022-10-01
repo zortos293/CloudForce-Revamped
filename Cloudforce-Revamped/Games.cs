@@ -47,7 +47,7 @@ namespace Cloudforce_Revamped
             if (afk_timer_Done == false)
             {
                 guna2HtmlLabel1.ForeColor = Color.Red;
-                guna2HtmlLabel1.Text = "You are currently in Cooldown, please wait until the timer is done.";
+                guna2HtmlLabel1.Text = "You are currently in cooldown, please wait until the timer is done.";
                 return false;
             }
             else
@@ -167,8 +167,8 @@ namespace Cloudforce_Revamped
             {
                 File_Downloader("https://picteon.dev/files/Lunar_Client_v2.12.8.exe", mainpath + "\\Lunar_Install.exe", guna2GradientButton10);
                 Process.Start(mainpath + "\\Lunar_Install.exe");
-                guna2GradientButton10.Enabled = false;
-                wait_Timer();
+                guna2GradientButton2.Enabled = false;
+               wait_Timer();
             }
         }
     }

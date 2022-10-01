@@ -83,6 +83,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cmdprompt {
+            get {
+                object obj = ResourceManager.GetObject("cmdprompt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap crafting_table_480px {
             get {
                 object obj = ResourceManager.GetObject("crafting_table_480px", resourceCulture);
@@ -173,9 +183,9 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap spotify_480px {
+        internal static System.Drawing.Bitmap SC2 {
             get {
-                object obj = ResourceManager.GetObject("spotify_480px", resourceCulture);
+                object obj = ResourceManager.GetObject("SC2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +193,9 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap starcraft_ii_480px {
+        internal static System.Drawing.Bitmap spotify_480px {
             get {
-                object obj = ResourceManager.GetObject("starcraft_ii_480px", resourceCulture);
+                object obj = ResourceManager.GetObject("spotify_480px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
