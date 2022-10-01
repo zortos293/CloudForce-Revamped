@@ -3,6 +3,6 @@
 ## todo
 
 - [x] Recode Cloudforce
-- [ ] Fix broken links
+- [x] Fix broken links
 - [ ] Add GFN Patches (game patches)
 - [ ] Make everything undetected
