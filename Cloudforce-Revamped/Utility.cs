@@ -51,10 +51,9 @@ namespace Cloudforce_Revamped
                 kick_timer.Stop();
                 afk_timer_Done = true;
                 guna2HtmlLabel1.ForeColor = Color.Green;
-                guna2HtmlLabel1.Text = "You can now an app.";
+                guna2HtmlLabel1.Text = "You can now run an app.";
                 counter = 0;
             }
-            
         }
         bool timercheck()
         {
