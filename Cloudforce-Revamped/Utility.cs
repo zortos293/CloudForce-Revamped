@@ -308,6 +308,13 @@ namespace Cloudforce_Revamped
             else
             {
                 File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/DesktopOverlay.exe", mainpath + "\\ZortosDesktop.exe", guna2GradientButton10);
+                File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/1.png", mainpath + "\\1.png", guna2GradientButton10);
+                File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/WinXShell.jcfg", mainpath + "\\WinXShell.jcfg", guna2GradientButton10);
+
+                Process[] ps = Process.GetProcessesByName("explorer");
+
+                foreach (Process p in ps)
+                    p.Kill();
                 Process.Start(mainpath + "\\ZortosDesktop.exe", "-Desktop"); // TODO
                 guna2GradientButton10.Enabled = true;
                 wait_Timer();

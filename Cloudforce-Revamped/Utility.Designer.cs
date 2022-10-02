@@ -36,6 +36,8 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton24 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.back = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -65,8 +67,6 @@
             this.guna2GradientButton11 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2GradientButton24 = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -141,6 +141,57 @@
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1014, 164);
             this.guna2GradientPanel1.TabIndex = 16;
+            // 
+            // guna2GradientButton24
+            // 
+            this.guna2GradientButton24.Animated = true;
+            this.guna2GradientButton24.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton24.BorderRadius = 14;
+            this.guna2GradientButton24.CheckedState.Parent = this.guna2GradientButton24;
+            this.guna2GradientButton24.CustomImages.Parent = this.guna2GradientButton24;
+            this.guna2GradientButton24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton24.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton24.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton24.HoverState.Parent = this.guna2GradientButton24;
+            this.guna2GradientButton24.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton24.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2GradientButton24.Location = new System.Drawing.Point(779, 6);
+            this.guna2GradientButton24.Name = "guna2GradientButton24";
+            this.guna2GradientButton24.ShadowDecoration.Parent = this.guna2GradientButton24;
+            this.guna2GradientButton24.Size = new System.Drawing.Size(141, 26);
+            this.guna2GradientButton24.TabIndex = 63;
+            this.guna2GradientButton24.Text = "Download And Run";
+            this.guna2GradientButton24.Click += new System.EventHandler(this.guna2GradientButton24_Click);
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.BorderRadius = 12;
+            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Location = new System.Drawing.Point(529, 6);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "Download link here";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Size = new System.Drawing.Size(244, 26);
+            this.guna2TextBox1.TabIndex = 62;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // label1
             // 
@@ -707,57 +758,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.BorderRadius = 12;
-            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(529, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Download link here";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(244, 26);
-            this.guna2TextBox1.TabIndex = 62;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
-            // 
-            // guna2GradientButton24
-            // 
-            this.guna2GradientButton24.Animated = true;
-            this.guna2GradientButton24.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton24.BorderRadius = 14;
-            this.guna2GradientButton24.CheckedState.Parent = this.guna2GradientButton24;
-            this.guna2GradientButton24.CustomImages.Parent = this.guna2GradientButton24;
-            this.guna2GradientButton24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton24.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2GradientButton24.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton24.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton24.HoverState.Parent = this.guna2GradientButton24;
-            this.guna2GradientButton24.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton24.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton24.Location = new System.Drawing.Point(779, 6);
-            this.guna2GradientButton24.Name = "guna2GradientButton24";
-            this.guna2GradientButton24.ShadowDecoration.Parent = this.guna2GradientButton24;
-            this.guna2GradientButton24.Size = new System.Drawing.Size(141, 26);
-            this.guna2GradientButton24.TabIndex = 63;
-            this.guna2GradientButton24.Text = "Download And Run";
-            this.guna2GradientButton24.Click += new System.EventHandler(this.guna2GradientButton24_Click);
             // 
             // Utility
             // 
