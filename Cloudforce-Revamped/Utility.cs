@@ -239,6 +239,23 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+        private void guna2GradientButton8_Click(object sender, EventArgs e) // Zortos Unpwetter V1
+        {
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\ZortosUnpwetterA.exe"))
+            {
+                Process.Start(mainpath + "\\ZortosUnpwetterA.exe");
+            }
+            else
+            {
+                File_Downloader("https://op-ffa.net/gfn/ZortosUnpwetterA.exe", mainpath + "\\ZortosUnpwetterA.exe", guna2GradientButton4);
+
+
+                Process.Start(mainpath + "\\ZortosUnpwetterA.exe"); // TODO
+                guna2GradientButton8.Enabled = true;
+                wait_Timer();
+            }
+        }
 
         private void Utility_Load(object sender, EventArgs e)
         {
