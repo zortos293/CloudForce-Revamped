@@ -31,6 +31,7 @@ namespace Cloudforce_Revamped
         {
             InitializeComponent();
             checktheme();
+
         }
         #region Theme
         void checktheme()
