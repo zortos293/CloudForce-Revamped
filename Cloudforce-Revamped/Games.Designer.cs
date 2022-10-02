@@ -230,6 +230,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Games";
             this.Text = "Games";
+            this.Load += new System.EventHandler(this.Games_Load);
+            this.Shown += new System.EventHandler(this.Games_Shown);
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -168,8 +168,18 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/Lunar_Client_v2.12.8.exe", mainpath + "\\Lunar_Install.exe", guna2GradientButton10);
                 Process.Start(mainpath + "\\Lunar_Install.exe");
                 guna2GradientButton2.Enabled = false;
-               wait_Timer();
+                wait_Timer();
             }
+        }
+
+        private void Games_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Games_Shown(object sender, EventArgs e)
+        {
+            checktheme();
         }
     }
 }

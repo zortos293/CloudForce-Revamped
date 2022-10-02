@@ -208,6 +208,7 @@
             this.guna2GradientButton10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton10.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton10.HoverState.Parent = this.guna2GradientButton10;
+            this.guna2GradientButton10.Image = global::Cloudforce_Revamped.Properties.Resources.SC2;
             this.guna2GradientButton10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2GradientButton10.Location = new System.Drawing.Point(71, 184);

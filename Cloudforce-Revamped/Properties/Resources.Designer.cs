@@ -93,6 +93,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap command_line_480px {
+            get {
+                object obj = ResourceManager.GetObject("command_line_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap crafting_table_480px {
             get {
                 object obj = ResourceManager.GetObject("crafting_table_480px", resourceCulture);
