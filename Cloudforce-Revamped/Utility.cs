@@ -31,10 +31,8 @@ namespace Cloudforce_Revamped
         public Utility()
         {
             InitializeComponent();
-            kick_timer.Interval = 1000;
 
-            kick_timer.Tick += new System.EventHandler(timer1_Tick);
-            kick_timer.Start();
+            //DownloadPath = Environment.SpecialFolder.ApplicationData + "\\Cloudforce\\";
 
 
         }
@@ -52,6 +50,8 @@ namespace Cloudforce_Revamped
             {
                 kick_timer.Stop();
                 afk_timer_Done = true;
+                guna2HtmlLabel1.ForeColor = Color.Green;
+                guna2HtmlLabel1.Text = "You can now an app.";
                 counter = 0;
             }
             
@@ -201,6 +201,10 @@ namespace Cloudforce_Revamped
         private void Utility_Shown(object sender, EventArgs e)
         {
             checktheme();
+            kick_timer.Interval = 1000;
+
+            kick_timer.Tick += new System.EventHandler(timer1_Tick);
+            kick_timer.Start();
         }
 
         private void guna2GradientButton14_Click(object sender, EventArgs e) // Firefox

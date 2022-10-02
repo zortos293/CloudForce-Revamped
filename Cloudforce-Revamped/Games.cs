@@ -38,8 +38,11 @@ namespace Cloudforce_Revamped
             {
                 kick_timer.Stop();
                 afk_timer_Done = true;
+                guna2HtmlLabel1.ForeColor = Color.Green;
+                guna2HtmlLabel1.Text = "You can now an Game.";
                 counter = 0;
             }
+            
 
         }
         bool timercheck()
@@ -180,6 +183,39 @@ namespace Cloudforce_Revamped
         private void Games_Shown(object sender, EventArgs e)
         {
             checktheme();
+            kick_timer.Interval = 1000;
+
+            kick_timer.Tick += new System.EventHandler(timer1_Tick);
+            kick_timer.Start();
+        }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\rbxfpsunlocker.exe"))
+            {
+                Process.Start(mainpath + "\\rbxfpsunlocker.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader("https://github.com/axstin/rbxfpsunlocker/releases/download/v4.4.2/rbxfpsunlocker-x64.zip", mainpath + "\\rbxfpsunlocker-x64.zip", guna2GradientButton3);
+                ZipFile.ExtractToDirectory(mainpath + "\\rbxfpsunlocker-x64.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\rbxfpsunlocker.exe");
+                guna2GradientButton3.Enabled = false;
+                wait_Timer();
+            }
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void guna2GradientButton23_Click(object sender, EventArgs e)
+        {
+            counter = 119;
         }
     }
 }

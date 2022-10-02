@@ -33,7 +33,6 @@
             this.back = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -41,8 +40,11 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton23 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +72,7 @@
             this.back.Size = new System.Drawing.Size(147, 37);
             this.back.TabIndex = 63;
             this.back.Text = "Back";
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // guna2ProgressBar1
             // 
@@ -98,19 +101,6 @@
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1014, 164);
             this.guna2GradientPanel1.TabIndex = 60;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 21;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // guna2ControlBox2
             // 
@@ -184,6 +174,19 @@
             this.guna2GradientButton2.Text = "Lunar Client";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
             // guna2GradientButton10
             // 
             this.guna2GradientButton10.Animated = true;
@@ -214,11 +217,58 @@
             this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
             // 
+            // guna2GradientButton3
+            // 
+            this.guna2GradientButton3.Animated = true;
+            this.guna2GradientButton3.BorderRadius = 14;
+            this.guna2GradientButton3.CheckedState.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.CustomImages.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.HoverState.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton3.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2GradientButton3.Location = new System.Drawing.Point(71, 238);
+            this.guna2GradientButton3.Name = "guna2GradientButton3";
+            this.guna2GradientButton3.ShadowDecoration.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.Size = new System.Drawing.Size(161, 25);
+            this.guna2GradientButton3.TabIndex = 68;
+            this.guna2GradientButton3.Text = "Roblox Unlocker";
+            this.guna2GradientButton3.Click += new System.EventHandler(this.guna2GradientButton3_Click);
+            // 
+            // guna2GradientButton23
+            // 
+            this.guna2GradientButton23.Animated = true;
+            this.guna2GradientButton23.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton23.BorderRadius = 5;
+            this.guna2GradientButton23.CheckedState.Parent = this.guna2GradientButton23;
+            this.guna2GradientButton23.CustomImages.Parent = this.guna2GradientButton23;
+            this.guna2GradientButton23.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton23.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton23.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton23.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton23.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.guna2GradientButton23.HoverState.Parent = this.guna2GradientButton23;
+            this.guna2GradientButton23.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton23.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2GradientButton23.Location = new System.Drawing.Point(855, 505);
+            this.guna2GradientButton23.Name = "guna2GradientButton23";
+            this.guna2GradientButton23.ShadowDecoration.BorderRadius = 4;
+            this.guna2GradientButton23.ShadowDecoration.Parent = this.guna2GradientButton23;
+            this.guna2GradientButton23.Size = new System.Drawing.Size(147, 28);
+            this.guna2GradientButton23.TabIndex = 69;
+            this.guna2GradientButton23.Text = "Skip Timer";
+            this.guna2GradientButton23.Click += new System.EventHandler(this.guna2GradientButton23_Click);
+            // 
             // Games
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 582);
+            this.Controls.Add(this.guna2GradientButton23);
+            this.Controls.Add(this.guna2GradientButton3);
             this.Controls.Add(this.guna2GradientButton2);
             this.Controls.Add(this.back);
             this.Controls.Add(this.guna2ProgressBar1);
@@ -256,5 +306,7 @@
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton23;
     }
 }
