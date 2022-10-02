@@ -126,6 +126,8 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientButton24);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox1);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox2);
@@ -708,9 +710,9 @@
             // 
             // guna2TextBox1
             // 
-            this.guna2TextBox1.AutoRoundedCorners = true;
+            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.BorderRadius = 18;
+            this.guna2TextBox1.BorderRadius = 12;
             this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2TextBox1.DefaultText = "";
@@ -725,19 +727,20 @@
             this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(71, 340);
+            this.guna2TextBox1.Location = new System.Drawing.Point(529, 6);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "Download link here";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(161, 45);
+            this.guna2TextBox1.Size = new System.Drawing.Size(244, 26);
             this.guna2TextBox1.TabIndex = 62;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // guna2GradientButton24
             // 
             this.guna2GradientButton24.Animated = true;
+            this.guna2GradientButton24.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientButton24.BorderRadius = 14;
             this.guna2GradientButton24.CheckedState.Parent = this.guna2GradientButton24;
             this.guna2GradientButton24.CustomImages.Parent = this.guna2GradientButton24;
@@ -748,10 +751,10 @@
             this.guna2GradientButton24.HoverState.Parent = this.guna2GradientButton24;
             this.guna2GradientButton24.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton24.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton24.Location = new System.Drawing.Point(238, 340);
+            this.guna2GradientButton24.Location = new System.Drawing.Point(779, 6);
             this.guna2GradientButton24.Name = "guna2GradientButton24";
             this.guna2GradientButton24.ShadowDecoration.Parent = this.guna2GradientButton24;
-            this.guna2GradientButton24.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton24.Size = new System.Drawing.Size(141, 26);
             this.guna2GradientButton24.TabIndex = 63;
             this.guna2GradientButton24.Text = "Download And Run";
             this.guna2GradientButton24.Click += new System.EventHandler(this.guna2GradientButton24_Click);
@@ -761,8 +764,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 582);
-            this.Controls.Add(this.guna2GradientButton24);
-            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.guna2GradientButton23);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2GradientButton22);

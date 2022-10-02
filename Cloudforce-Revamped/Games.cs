@@ -32,8 +32,11 @@ namespace Cloudforce_Revamped
         void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
-            guna2HtmlLabel1.ForeColor = Color.Black;
-            guna2HtmlLabel1.Text = $"{120 - counter} seconds left until you can launch exes.";
+            if (!this.Visible == false)
+            {
+                guna2HtmlLabel1.ForeColor = Color.Black;
+                guna2HtmlLabel1.Text = $"{120 - counter} seconds left until you can launch exes.";
+            }
             if (counter == 120)  //or whatever your limit is
             {
                 kick_timer.Stop();
@@ -183,10 +186,12 @@ namespace Cloudforce_Revamped
         private void Games_Shown(object sender, EventArgs e)
         {
             checktheme();
+
+
             kick_timer.Interval = 1000;
 
             kick_timer.Tick += new System.EventHandler(timer1_Tick);
-            kick_timer.Start();
+            wait_Timer();
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)

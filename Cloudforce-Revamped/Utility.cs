@@ -39,16 +39,19 @@ namespace Cloudforce_Revamped
         
         #region Waiting GFN 
         public bool afk_timer_Done; 
-        Timer kick_timer = new Timer();
+        Timer kick_timer1 = new Timer();
         int counter = 0;
         void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
-            guna2HtmlLabel1.ForeColor = Color.Black;
-            guna2HtmlLabel1.Text = $"{120 - counter} seconds left until you can launch exes.";
+            if (!this.Visible == false)
+            {
+                guna2HtmlLabel1.ForeColor = Color.Black;
+                guna2HtmlLabel1.Text = $"{120 - counter} seconds left until you can launch exes.";
+            }
             if (counter == 120)  //or whatever your limit is
             {
-                kick_timer.Stop();
+                kick_timer1.Stop();
                 afk_timer_Done = true;
                 guna2HtmlLabel1.ForeColor = Color.Green;
                 guna2HtmlLabel1.Text = "You can now run an app.";
@@ -71,7 +74,7 @@ namespace Cloudforce_Revamped
         void wait_Timer()
         {
             afk_timer_Done = false;
-            kick_timer.Start();
+            kick_timer1.Start();
         }
         #endregion
 
@@ -175,7 +178,7 @@ namespace Cloudforce_Revamped
 
         private void back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void guna2GradientButton11_Click(object sender, EventArgs e) // Discord
@@ -200,10 +203,20 @@ namespace Cloudforce_Revamped
         private void Utility_Shown(object sender, EventArgs e)
         {
             checktheme();
-            kick_timer.Interval = 1000;
+            Debug.WriteLine("Utility Shown");
+            Debug.WriteLine("TIMER IS RUNNING ? : " + kick_timer1.Enabled);
+            //if kick_timer1 is still running
+            if (!kick_timer1.Enabled)
+            {
 
-            kick_timer.Tick += new System.EventHandler(timer1_Tick);
-            kick_timer.Start();
+                kick_timer1.Interval = 1000;
+
+                kick_timer1.Tick += new System.EventHandler(timer1_Tick);
+                wait_Timer();
+
+            }
+            Debug.WriteLine("TIMER IS RUNNING After check ? : " + kick_timer1.Enabled);
+
         }
 
         private void guna2GradientButton14_Click(object sender, EventArgs e) // Firefox

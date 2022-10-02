@@ -19,7 +19,7 @@ namespace Cloudforce_Revamped
             // Creating Cloudforce Directory's before startup
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\");
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\Patches\\");
-            AutoUpdater.ShowRemindLaterButton = false;
+            AutoUpdater.ShowRemindLaterButton = true;
             AutoUpdater.RunUpdateAsAdmin = false;
             AutoUpdater.DownloadPath = Environment.SpecialFolder.ApplicationData + "\\Cloudforce\\";
             AutoUpdater.Start("https://raw.githubusercontent.com/zortos293/CloudForce-Revamped/master/cfupdate.xml");
