@@ -22,7 +22,7 @@ namespace Cloudforce_Revamped
         public Games()
         {
             InitializeComponent();
-            
+            guna2HtmlLabel1.Text = "Loading";
         }
 
         #region Waiting GFN 
@@ -191,6 +191,7 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
         {
+
             if (timercheck() == false) return;
             if (File.Exists(mainpath + "\\rbxfpsunlocker.exe"))
             {

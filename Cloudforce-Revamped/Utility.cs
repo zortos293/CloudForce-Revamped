@@ -252,7 +252,7 @@ namespace Cloudforce_Revamped
             }
             else
             {
-                File_Downloader("https://op-ffa.net/gfn/ZortosUnpwetterA.exe", mainpath + "\\ZortosUnpwetterA.exe", guna2GradientButton4);
+                File_Downloader("https://op-ffa.net/gfn/ZortosUnpwetterA.exe", mainpath + "\\ZortosUnpwetterA.exe", guna2GradientButton8);
 
 
                 Process.Start(mainpath + "\\ZortosUnpwetterA.exe"); // TODO
@@ -352,6 +352,59 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+        private void guna2GradientButton24_Click(object sender, EventArgs e) // Downoadler
+        {
+            var download_link = guna2TextBox1.Text;
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxysz";
+            var stringChars = new char[8];
+            var random = new Random();
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var exe_name = new String(stringChars);
+            Uri uriResult;
+            bool result = Uri.TryCreate(download_link, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            if (download_link == "" || download_link == " " || result == false)
+            {
+                guna2HtmlLabel1.Text = "Please put a valid download link in the input field.";
+                guna2HtmlLabel1.ForeColor = Color.Red;
+                guna2TextBox1.ForeColor = Color.Red;
+                guna2TextBox1.PlaceholderText = "Invalid link.";
+                guna2TextBox1.Text = "";
+            }
+            else
+            {
+                if (timercheck() == false) return;
+                try
+                {
+                    File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2GradientButton24);
+                } catch
+                {
+                    guna2HtmlLabel1.Text = "An error occured while trying to download.";
+                    guna2TextBox1.Text = "";
+                    guna2HtmlLabel1.ForeColor = Color.Red;
+                    guna2TextBox1.ForeColor = Color.Red;
+                    guna2TextBox1.PlaceholderText = "Invalid link.";
+                    guna2TextBox1.Text = "";
+                }
+                try { 
+                    Process.Start(mainpath + $"\\{exe_name}.exe"); 
+                } catch
+                {
+                    guna2HtmlLabel1.Text = "An error occured while trying to start.";
+                    guna2TextBox1.Text = "";
+                    guna2HtmlLabel1.ForeColor = Color.Red;
+                    guna2TextBox1.ForeColor = Color.Red;
+                    guna2TextBox1.Text = "";
+                }
+                guna2TextBox1.PlaceholderText = "Place link here";
+                guna2TextBox1.Text = "";
+                wait_Timer();
+            }
+        }
 
         private void guna2GradientButton22_Click(object sender, EventArgs e)
         {
@@ -393,6 +446,11 @@ namespace Cloudforce_Revamped
         private void guna2GradientButton23_Click(object sender, EventArgs e)
         {
             counter = 119;
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
