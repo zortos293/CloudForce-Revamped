@@ -4,5 +4,5 @@
 
 - [x] Recode Cloudforce
 - [x] Fix broken links
-- [ ] Add GFN Patches (game patches)
+- [x] Add GFN Patches (game patches)
 - [ ] Make everything undetected
