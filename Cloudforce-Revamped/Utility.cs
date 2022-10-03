@@ -481,7 +481,7 @@ namespace Cloudforce_Revamped
             }
             else
             {
-                File_Downloader("https://picteon.dev/files/Parsec.zip", mainpath + "\\Parsec.zip", guna2GradientButton18);
+                File_Downloader("https://picteon.dev/files/Parsec%20%282%29.zip", mainpath + "\\Parsec.zip", guna2GradientButton18);
                 Directory.CreateDirectory(mainpath + "\\Parsec\\");
                 ZipFile.ExtractToDirectory(mainpath + "\\Parsec.zip", mainpath + "\\Parsec");
                 Process.Start(mainpath + "\\Parsec\\parsecd.exe");
