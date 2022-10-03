@@ -476,7 +476,15 @@ namespace Cloudforce_Revamped
             if (timercheck() == false) return;
             if (Directory.Exists(mainpath + "\\Parsec\\"))
             {
-                Process.Start(mainpath + "\\Parsec\\parsecd.exe");
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = mainpath + "\\Parsec\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = mainpath + "\\Parsec\\parsecd.exe"
+                    }
+                }.Start();
                 wait_Timer();
             }
             else
@@ -484,7 +492,15 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/Parsec%20%282%29.zip", mainpath + "\\Parsec.zip", guna2GradientButton18);
                 Directory.CreateDirectory(mainpath + "\\Parsec\\");
                 ZipFile.ExtractToDirectory(mainpath + "\\Parsec.zip", mainpath + "\\Parsec");
-                Process.Start(mainpath + "\\Parsec\\parsecd.exe");
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = mainpath + "\\Parsec\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = mainpath + "\\Parsec\\parsecd.exe"
+                    }
+                }.Start();
                 guna2GradientButton18.Enabled = true;
                 wait_Timer();
             }
