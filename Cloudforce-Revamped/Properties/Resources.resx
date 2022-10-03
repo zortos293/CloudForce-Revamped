@@ -127,6 +127,9 @@
   <data name="desktop_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\desktop_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="New Project (3) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New Project (3) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,14 +151,17 @@
   <data name="fox_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fox_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="civ6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\civ6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="spotify_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spotify_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="crafting_table_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crafting_table_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SC2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +172,7 @@
   <data name="roblox_240px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roblox_240px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="civilization6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\civilization6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

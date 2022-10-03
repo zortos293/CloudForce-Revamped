@@ -159,55 +159,55 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/0f0000000d.idx", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\0f0000000d.idx");
                 guna2HtmlLabel1.Text = "[-] Downloading: 0f0000000d";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.000", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.000");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.000";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.000 (1/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.001", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.001");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.001";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.001 (2/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.002", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.002");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.002";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.002 (3/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.003", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.003");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.003";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.003 (4/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.004", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.004");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.004";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.004 (5/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.005", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.005");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.005";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.005 (6/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.006", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.006");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.006";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.006 (7/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.007", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.007");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.007";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.007 (8/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.008", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.008");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.008";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.008 (9/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.009", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.009");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.009";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.009 (10/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.010", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.010");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.010";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.010 (11/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.011", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.011");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.011";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.011 (12/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.012", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.012");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.012";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.012 (13/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.013", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.013");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.013";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.013 (14/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.014", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.014");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.014";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.014 (15/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.015", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.015");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.015";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.015 (16/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.016", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.016");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.016";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.016 (17/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.017", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.017");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.017";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.017 (18/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.018", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.018");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.018";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.018 (19/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.019", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.019");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.019";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.019 (20/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.020", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.020");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.020";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.020 (21/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.021", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.021");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.021";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.021 (22/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.022", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.022");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.022";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.022 (23/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.023", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.023");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.023";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.023 (24/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/data.024", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\data.024");
-                guna2HtmlLabel1.Text = "[-] Downloading: data.024";
+                guna2HtmlLabel1.Text = "[-] Downloading: data.024 (24/25)";
                 File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/shmem", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\shmem");
                 guna2HtmlLabel1.Text = "[-] Downloading: shmem";
                 File_Downloader("https://cdn.discordapp.com/attachments/1023015575213056050/1023044543148458064/Launcher.db", $"C:\\users\\{username}\\downloads\\SC2\\Launcher.db");
@@ -253,9 +253,57 @@ namespace Cloudforce_Revamped
                     }
                 }.Start();
                 guna2HtmlLabel1.Text = "[-] Started: Started SC2";
-                guna2HtmlLabel1.Text = "";
             }
         }// SC2 Patcher <<
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            guna2GradientButton2.Enabled = false;
+            var username = Environment.UserName;
+            //SC2 Kief#2583
+            if (File.Exists($"B:\\Sid Meiers Civilization VI Gathering Storm\\Base\\Binaries\\Win64Steam"))
+            {
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"B:\\Sid Meiers Civilization VI Gathering Storm\\Base\\Binaries\\Win64Steam",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"B:\\Sid Meiers Civilization VI Gathering Storm\\Base\\Binaries\\Win64Steam\\CivilizationVI.exe"
+                    }
+                }.Start();
+            }
+            else
+            {
+                guna2HtmlLabel1.Text = "[-] Starting Download.";
+                Thread.Sleep(5000);
+                guna2HtmlLabel1.Text = "[-] Downloading zip, please wait.";
+                File_Downloader("https://www.googleapis.com/drive/v3/files/1Mw3ue2iv90kNYnfY10gi9VA5U8pVVZwM?alt=media&key=AIzaSyCzj1cm3C02W-zRlA5yWSVeDKwY8K7-PDw", $"C:\\users\\{username}\\downloads\\civ6.zip");
+                if (Directory.Exists("B:\\"))
+                {
+                    guna2HtmlLabel1.Text = "[-] Extracting zip, please wait. (The progress bar will not show anything for this game.)";
+                    Thread.Sleep(5000);
+                    System.IO.Compression.ZipFile.ExtractToDirectory($@"C:\users\{username}\downloads\civ6.zip", $@"B:\");
+
+                    guna2HtmlLabel1.Text = "[-] Launching Game.";
+                    Thread.Sleep(5000);
+                    new Process()
+                    {
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            WorkingDirectory = $"B:\\Sid Meiers Civilization VI Gathering Storm\\Base\\Binaries\\Win64Steam",
+                            WindowStyle = ProcessWindowStyle.Normal,
+                            FileName = $"B:\\Sid Meiers Civilization VI Gathering Storm\\Base\\Binaries\\Win64Steam\\CivilizationVI.exe"
+                        }
+                    }.Start();
+                }
+                else
+                {
+                }
+            }
+            ResetButtons(true);
+            back.Enabled = true;
+        }
 
         private void Patches_Shown(object sender, EventArgs e)
         {
