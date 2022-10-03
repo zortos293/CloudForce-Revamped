@@ -145,9 +145,9 @@ namespace Cloudforce_Revamped
         private void guna2GradientButton10_Click(object sender, EventArgs e) // Roblox
         {
             if (timercheck() == false) return;
-            if (Directory.Exists(mainpath + "\\Roblox\\"))
+            if (Directory.Exists($"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox"))
             {
-                Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
+                Process.Start($@"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox\\Roblox Player.lnk");
                 wait_Timer();
             }
             else
@@ -156,7 +156,7 @@ namespace Cloudforce_Revamped
                 ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
                 guna2GradientButton10.Enabled = false;
-                MessageBox.Show("Great! Now install a broswer to launch a game.");
+                MessageBox.Show("Relaunch roblox after install ;)");
                 wait_Timer();
             }
         }

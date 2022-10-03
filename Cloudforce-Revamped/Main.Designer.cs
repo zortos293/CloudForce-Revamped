@@ -231,7 +231,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(150, 21);
             this.guna2HtmlLabel1.TabIndex = 60;
-            this.guna2HtmlLabel1.Text = "Dev Build V0.1";
+            this.guna2HtmlLabel1.Text = "Alpha Build V0.9";
             // 
             // Main
             // 

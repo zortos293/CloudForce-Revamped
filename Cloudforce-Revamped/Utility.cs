@@ -195,7 +195,7 @@ namespace Cloudforce_Revamped
                     
                 ZipFile.ExtractToDirectory(mainpath + "\\Discord.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\discord2\\discord-portable.exe"); 
-                guna2GradientButton11.Enabled = false;
+                guna2GradientButton11.Enabled = true;
                 wait_Timer();
             }
         }
@@ -204,7 +204,6 @@ namespace Cloudforce_Revamped
         {
             checktheme();
             Debug.WriteLine("Utility Shown");
-            Debug.WriteLine("TIMER IS RUNNING ? : " + kick_timer1.Enabled);
             //if kick_timer1 is still running
             if (!kick_timer1.Enabled)
             {
@@ -215,7 +214,7 @@ namespace Cloudforce_Revamped
                 wait_Timer();
 
             }
-            Debug.WriteLine("TIMER IS RUNNING After check ? : " + kick_timer1.Enabled);
+            
 
         }
 
@@ -233,7 +232,7 @@ namespace Cloudforce_Revamped
 
                 ZipFile.ExtractToDirectory(mainpath + "\\Firefox.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Firefox\\runthis.exe"); 
-                guna2GradientButton14.Enabled = false;
+                guna2GradientButton14.Enabled = true;
                 wait_Timer();
             }
         }
@@ -292,7 +291,7 @@ namespace Cloudforce_Revamped
 
                 ZipFile.ExtractToDirectory(mainpath + "\\librewolf.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\librewolf-105.0.1\\LibreWolf-Portable.exe");
-                guna2GradientButton15.Enabled = false;
+                guna2GradientButton15.Enabled = true;
                 wait_Timer();
             }
         }
@@ -351,7 +350,7 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/Spotify.zip", mainpath + "\\Spotify.zip", guna2GradientButton16);
                 ZipFile.ExtractToDirectory(mainpath + "\\Spotify.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Spotify\\Spotify.exe");
-                guna2GradientButton16.Enabled = false;
+                guna2GradientButton16.Enabled = true;
                 wait_Timer();
             }
         }
@@ -367,7 +366,7 @@ namespace Cloudforce_Revamped
             {
                 File_Downloader("https://picteon.dev/files/NotCMDNvidia.exe", mainpath + "\\cmdpwetaa.exe", guna2GradientButton17);
                 Process.Start(mainpath + "\\cmdpwetaa.exe");
-                guna2GradientButton17.Enabled = false;
+                guna2GradientButton17.Enabled = true;
                 wait_Timer();
             }
         }
@@ -457,7 +456,7 @@ namespace Cloudforce_Revamped
                         FileName = mainpath + "\\SilverBullet.v1.1.2\\SilverBullet.exe"
                     }
                 }.Start();
-                guna2GradientButton22.Enabled = false;
+                guna2GradientButton22.Enabled = true;
                 wait_Timer();
             }
         }
@@ -470,6 +469,25 @@ namespace Cloudforce_Revamped
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientButton18_Click(object sender, EventArgs e) // Parsec
+        {
+            if (timercheck() == false) return;
+            if (Directory.Exists(mainpath + "\\Parsec\\"))
+            {
+                Process.Start(mainpath + "\\Parsec\\parsecd.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Parsec.zip", mainpath + "\\Parsec.zip", guna2GradientButton18);
+                Directory.CreateDirectory(mainpath + "\\Parsec\\");
+                ZipFile.ExtractToDirectory(mainpath + "\\Parsec.zip", mainpath + "\\Parsec");
+                Process.Start(mainpath + "\\Parsec\\parsecd.exe");
+                guna2GradientButton18.Enabled = true;
+                wait_Timer();
+            }
         }
     }
 }
