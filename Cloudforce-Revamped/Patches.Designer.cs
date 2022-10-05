@@ -34,7 +34,6 @@
             this.back = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -112,8 +111,6 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox2);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox1);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -125,17 +122,6 @@
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1014, 164);
             this.guna2GradientPanel1.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 125);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Info: Press the button Twice to run the Program\r\n\r\n\r\n\r\r\n";
             // 
             // guna2ControlBox2
             // 
@@ -339,6 +325,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 582);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2TextBox2);
             this.Controls.Add(this.guna2GradientButton3);
             this.Controls.Add(this.guna2TextBox1);
@@ -356,7 +343,6 @@
             this.Text = "Patches";
             this.Shown += new System.EventHandler(this.Patches_Shown);
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -371,7 +357,6 @@
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.PictureBox pictureBox1;

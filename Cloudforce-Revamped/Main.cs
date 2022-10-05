@@ -22,6 +22,7 @@ namespace Cloudforce_Revamped
         private Utility utility = new Utility();
         private Patches patches = new Patches();
         private Games games = new Games();
+        private Extra extra = new Extra();
 
         public Main()
         {
@@ -94,6 +95,14 @@ namespace Cloudforce_Revamped
         {
             this.Hide();
             games.ShowDialog();
+            this.Show();
+            checktheme();
+        }
+
+        private void guna2GradientButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            extra.ShowDialog();
             this.Show();
             checktheme();
         }

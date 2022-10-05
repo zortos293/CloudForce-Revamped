@@ -32,13 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Utility));
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientButton24 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.back = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -66,9 +64,10 @@
             this.guna2GradientButton12 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton11 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,20 +79,6 @@
             // 
             this.guna2DragControl1.ContainerControl = this;
             this.guna2DragControl1.TargetControl = this.guna2PictureBox1;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 6);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 21;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // guna2ControlBox2
             // 
@@ -128,8 +113,6 @@
             // 
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientButton24);
             this.guna2GradientPanel1.Controls.Add(this.guna2TextBox1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox2);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox1);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -192,17 +175,6 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(244, 26);
             this.guna2TextBox1.TabIndex = 62;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 125);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Info: Press the button Twice to run the Program\r\n\r\n\r\n\r\r\n";
             // 
             // guna2ProgressBar1
             // 
@@ -753,6 +725,20 @@
             this.guna2GradientButton10.Text = "Desktop";
             this.guna2GradientButton10.Click += new System.EventHandler(this.guna2GradientButton10_Click);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 6);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 35);
@@ -768,6 +754,7 @@
             this.ClientSize = new System.Drawing.Size(1014, 582);
             this.Controls.Add(this.guna2GradientButton23);
             this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2GradientButton22);
             this.Controls.Add(this.guna2GradientButton21);
             this.Controls.Add(this.guna2GradientButton20);
@@ -801,9 +788,8 @@
             this.Text = "Utility";
             this.Load += new System.EventHandler(this.Utility_Load);
             this.Shown += new System.EventHandler(this.Utility_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -836,7 +822,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton12;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton11;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton10;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton22;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton21;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton20;

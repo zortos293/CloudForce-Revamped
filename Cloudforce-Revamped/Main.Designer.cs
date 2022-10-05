@@ -150,7 +150,8 @@
             this.guna2GradientButton6.ShadowDecoration.Parent = this.guna2GradientButton6;
             this.guna2GradientButton6.Size = new System.Drawing.Size(217, 72);
             this.guna2GradientButton6.TabIndex = 14;
-            this.guna2GradientButton6.Text = "Emulator";
+            this.guna2GradientButton6.Text = "Extra";
+            this.guna2GradientButton6.Click += new System.EventHandler(this.guna2GradientButton6_Click);
             // 
             // guna2GradientButton5
             // 
