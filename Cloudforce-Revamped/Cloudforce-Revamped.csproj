@@ -361,6 +361,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudForce.ico" />
+    <None Include="Resources\among-us.png" />
     <None Include="Resources\civilization6.png" />
     <None Include="Resources\civ6.jpg" />
     <None Include="Resources\Parsec_512px.png" />

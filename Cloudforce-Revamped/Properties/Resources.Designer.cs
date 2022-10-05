@@ -63,6 +63,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap among_us {
+            get {
+                object obj = ResourceManager.GetObject("among-us", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anydesk_240px {
             get {
                 object obj = ResourceManager.GetObject("anydesk_240px", resourceCulture);
