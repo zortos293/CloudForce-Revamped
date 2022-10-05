@@ -1,28 +1,22 @@
 ﻿/**************************************************************
  * Cloud-Force by Zortos293 and Kief
- * 
+ *
  * (c) 2022. All rights reserved.
  * You may not distrobute app in anyway if the credits are removed, nor sell it.
- * 
+ *
  * 9/30/22 11:45AM PDT
  */
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Management;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
 {
     public partial class Settings : Form
     {
-
         public Settings()
         {
             InitializeComponent();
@@ -38,8 +32,10 @@ namespace Cloudforce_Revamped
                 guna2HtmlLabel13.Text = ("Threads: " + item2["NumberOfLogicalProcessors"]?.ToString() + ", Cores: " + item2["NumberOfCores"]);
             }
         }
+
         #region Theme
-        void checktheme()
+
+        private void checktheme()
         {
             if (Main.Dark == true)
             {
@@ -66,7 +62,8 @@ namespace Cloudforce_Revamped
             }
         }
 
-        #endregion
+        #endregion Theme
+
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -1,9 +1,6 @@
 ﻿using AutoUpdaterDotNET;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
@@ -14,7 +11,7 @@ namespace Cloudforce_Revamped
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             // Creating Cloudforce Directory's before startup
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\");
