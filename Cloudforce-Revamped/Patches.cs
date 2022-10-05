@@ -275,10 +275,17 @@ namespace Cloudforce_Revamped
             }
             else
             {
+                var apikey = guna2TextBox1.Text;
                 guna2HtmlLabel1.Text = "[-] Starting Download.";
                 Thread.Sleep(5000);
                 guna2HtmlLabel1.Text = "[-] Downloading zip, please wait.";
-                File_Downloader("https://www.googleapis.com/drive/v3/files/1Mw3ue2iv90kNYnfY10gi9VA5U8pVVZwM?alt=media&key=AIzaSyCzj1cm3C02W-zRlA5yWSVeDKwY8K7-PDw", $"C:\\users\\{username}\\downloads\\civ6.zip");
+                try
+                {
+                    File_Downloader($"https://www.googleapis.com/drive/v3/files/1Mw3ue2iv90kNYnfY10gi9VA5U8pVVZwM?alt=media&key={apikey}", $"C:\\users\\{username}\\downloads\\civ6.zip");
+                } catch
+                {
+                    guna2HtmlLabel1.Text = "Incorrect API Key. Download Failed.";
+                }
                 if (Directory.Exists("B:\\"))
                 {
                     guna2HtmlLabel1.Text = "[-] Extracting zip, please wait. (The progress bar will not show anything for this game.)";
