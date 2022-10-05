@@ -1,25 +1,21 @@
 ﻿/**************************************************************
  * Cloud-Force by Zortos293 and Kief
- * 
+ *
  * (c) 2022. All rights reserved.
  * You may not distrobute app in anyway if the credits are removed, nor sell it.
- * 
+ *
  * 9/30/22 11:45AM PDT
  */
-using Guna.UI2.WinForms;
+
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Threading;
-using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
 {
@@ -29,8 +25,11 @@ namespace Cloudforce_Revamped
         {
             InitializeComponent();
         }
+
         #region Download Stuff
-        bool DownloadFinished;
+
+        private bool DownloadFinished;
+
         public void File_Downloader(string URL, string path)
         {
             // download file with progress bar
@@ -44,17 +43,18 @@ namespace Cloudforce_Revamped
             while (DownloadFinished == false)
                 Application.DoEvents();
         }
+
         private void ResetButtons(bool Switch)
         {
             // Loop through each control in this container
             foreach (var button in Controls.OfType<Guna.UI2.WinForms.Guna2GradientButton>())
                 button.Enabled = Switch;
         }
+
         private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
         {
             if (e.Error == null)
             {
-
                 DownloadFinished = true;
                 guna2ProgressBar1.Value = 0;
                 ((WebClient)sender).Dispose();
@@ -64,14 +64,17 @@ namespace Cloudforce_Revamped
                 MessageBox.Show(e.Error.Message);
             }
         }
+
         private void DownloadChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             guna2ProgressBar1.Value = e.ProgressPercentage;
         }
-        #endregion
+
+        #endregion Download Stuff
 
         #region Theme
-        void checktheme()
+
+        private void checktheme()
         {
             if (Main.Dark == true)
             {
@@ -98,7 +101,8 @@ namespace Cloudforce_Revamped
             }
         }
 
-        #endregion
+        #endregion Theme
+
         private void guna2GradientButton10_Click(object sender, EventArgs e)
         {
             guna2HtmlLabel1.ForeColor = Color.White;
@@ -320,9 +324,8 @@ namespace Cloudforce_Revamped
                     }
                 }
             }
-                ResetButtons(true);
-                back.Enabled = true;
-            
+            ResetButtons(true);
+            back.Enabled = true;
         }
 
         private void Patches_Shown(object sender, EventArgs e)
@@ -396,7 +399,7 @@ namespace Cloudforce_Revamped
             }
             guna2TextBox2.Enabled = true;
             ResetButtons(true);
-                back.Enabled = true;
+            back.Enabled = true;
         }
     }
 }

@@ -1,23 +1,27 @@
-﻿using Guna.UI2.WinForms;
+﻿/**************************************************************
+ * Cloud-Force by Zortos293 and Kief
+ *
+ * (c) 2022. All rights reserved.
+ * You may not distrobute app in anyway if the credits are removed, nor sell it.
+ *
+ * 9/30/22 11:45AM PDT
+ */
+
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO.Compression;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
 {
     public partial class Games : Form
     {
-        string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
+        private string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
 
         public Games()
         {
@@ -25,11 +29,13 @@ namespace Cloudforce_Revamped
             guna2HtmlLabel1.Text = "Loading";
         }
 
-        #region Waiting GFN 
+        #region Waiting GFN
+
         public bool afk_timer_Done;
-        Timer kick_timer = new Timer();
-        int counter = 0;
-        void timer1_Tick(object sender, EventArgs e)
+        private Timer kick_timer = new Timer();
+        private int counter = 0;
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
             if (!this.Visible == false)
@@ -45,10 +51,9 @@ namespace Cloudforce_Revamped
                 guna2HtmlLabel1.Text = "You can now an Game.";
                 counter = 0;
             }
-            
-
         }
-        bool timercheck()
+
+        private bool timercheck()
         {
             if (afk_timer_Done == false)
             {
@@ -61,15 +66,18 @@ namespace Cloudforce_Revamped
                 return true;
             }
         }
-        void wait_Timer()
+
+        private void wait_Timer()
         {
             afk_timer_Done = false;
             kick_timer.Start();
         }
-        #endregion
+
+        #endregion Waiting GFN
 
         #region Theme
-        void checktheme()
+
+        private void checktheme()
         {
             if (Main.Dark == true)
             {
@@ -96,10 +104,12 @@ namespace Cloudforce_Revamped
             }
         }
 
-        #endregion
+        #endregion Theme
 
         #region Download Stuff
-        bool DownloadFinished;
+
+        private bool DownloadFinished;
+
         public void File_Downloader(string URL, string path, Guna.UI2.WinForms.Guna2GradientButton button)
         {
             // download file with progress bar
@@ -114,12 +124,14 @@ namespace Cloudforce_Revamped
             while (DownloadFinished == false)
                 Application.DoEvents();
         }
+
         private void ResetButtons(bool Switch)
         {
             // Loop through each control in this container
             foreach (var button in Controls.OfType<Guna.UI2.WinForms.Guna2GradientButton>())
                 button.Enabled = Switch;
         }
+
         private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
         {
             if (e.Error == null)
@@ -135,12 +147,13 @@ namespace Cloudforce_Revamped
                 MessageBox.Show(e.Error.Message);
             }
         }
+
         private void DownloadChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             guna2ProgressBar1.Value = e.ProgressPercentage;
         }
-        #endregion
 
+        #endregion Download Stuff
 
         private void guna2GradientButton10_Click(object sender, EventArgs e) // Roblox
         {
@@ -156,8 +169,7 @@ namespace Cloudforce_Revamped
                 ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
                 guna2GradientButton10.Enabled = false;
-                MessageBox.Show("Relaunch roblox after install ;)");
-                wait_Timer();
+                MessageBox.Show("Relaunch roblox after install ;)");                wait_Timer();
             }
         }
 
@@ -180,13 +192,11 @@ namespace Cloudforce_Revamped
 
         private void Games_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Games_Shown(object sender, EventArgs e)
         {
             checktheme();
-
 
             kick_timer.Interval = 1000;
 
@@ -196,7 +206,6 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
         {
-
             if (timercheck() == false) return;
             if (File.Exists(mainpath + "\\rbxfpsunlocker.exe"))
             {
@@ -216,7 +225,6 @@ namespace Cloudforce_Revamped
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void guna2GradientButton23_Click(object sender, EventArgs e)

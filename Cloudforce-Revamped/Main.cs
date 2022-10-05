@@ -1,20 +1,15 @@
 ﻿/**************************************************************
  * Cloud-Force by Zortos293 and Kief
- * 
+ *
  * (c) 2022. All rights reserved.
  * You may not distrobute app in anyway if the credits are removed, nor sell it.
- * 
+ *
  * 9/30/22 11:45AM PDT
  */
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
@@ -23,20 +18,22 @@ namespace Cloudforce_Revamped
     {
         public static bool Dark = true;
         public static bool Light;
-        Settings settings = new Settings();
-        Utility utility = new Utility();
-        Patches patches = new Patches();
-        Games games = new Games();
+        private Settings settings = new Settings();
+        private Utility utility = new Utility();
+        private Patches patches = new Patches();
+        private Games games = new Games();
+
         public Main()
         {
             InitializeComponent();
             checktheme();
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-
         }
+
         #region Theme
-        void checktheme()
+
+        private void checktheme()
         {
             if (Main.Dark == true)
             {
@@ -63,14 +60,14 @@ namespace Cloudforce_Revamped
             }
         }
 
-        #endregion
+        #endregion Theme
+
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
             settings.ShowDialog();
             this.Show();
             checktheme();
-
         }
 
         private void guna2GradientButton5_Click(object sender, EventArgs e)
@@ -91,7 +88,6 @@ namespace Cloudforce_Revamped
 
         private void Main_Shown(object sender, EventArgs e)
         {
-            
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)

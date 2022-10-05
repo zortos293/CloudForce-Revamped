@@ -1,47 +1,42 @@
 ﻿/**************************************************************
  * Cloud-Force by Zortos293 and Kief
- * 
+ *
  * (c) 2022. All rights reserved.
  * You may not distrobute app in anyway if the credits are removed, nor sell it.
- * 
+ *
  * 9/30/22 11:45AM PDT
  */
-using Guna.UI2.WinForms;
+
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Cloudforce_Revamped
 {
     public partial class Utility : Form
     {
-        string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
+        private string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
+
         public Utility()
         {
             InitializeComponent();
 
             //DownloadPath = Environment.SpecialFolder.ApplicationData + "\\Cloudforce\\";
-
-
         }
-        
-        #region Waiting GFN 
-        public bool afk_timer_Done; 
-        Timer kick_timer1 = new Timer();
-        int counter = 0;
-        void timer1_Tick(object sender, EventArgs e)
+
+        #region Waiting GFN
+
+        public bool afk_timer_Done;
+        private Timer kick_timer1 = new Timer();
+        private int counter = 0;
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             counter++;
             if (!this.Visible == false)
@@ -58,7 +53,8 @@ namespace Cloudforce_Revamped
                 counter = 0;
             }
         }
-        bool timercheck()
+
+        private bool timercheck()
         {
             if (afk_timer_Done == false)
             {
@@ -71,15 +67,18 @@ namespace Cloudforce_Revamped
                 return true;
             }
         }
-        void wait_Timer()
+
+        private void wait_Timer()
         {
             afk_timer_Done = false;
             kick_timer1.Start();
         }
-        #endregion
+
+        #endregion Waiting GFN
 
         #region Theme
-        void checktheme()
+
+        private void checktheme()
         {
             if (Main.Dark == true)
             {
@@ -106,11 +105,13 @@ namespace Cloudforce_Revamped
             }
         }
 
-        #endregion
+        #endregion Theme
 
         #region Download Stuff
-        bool DownloadFinished;
-        public void File_Downloader(string URL, string path,Guna.UI2.WinForms.Guna2GradientButton button)
+
+        private bool DownloadFinished;
+
+        public void File_Downloader(string URL, string path, Guna.UI2.WinForms.Guna2GradientButton button)
         {
             // download file with progress bar
             DownloadFinished = false;
@@ -124,12 +125,14 @@ namespace Cloudforce_Revamped
             while (DownloadFinished == false)
                 Application.DoEvents();
         }
+
         private void ResetButtons(bool Switch)
         {
             // Loop through each control in this container
             foreach (var button in Controls.OfType<Guna.UI2.WinForms.Guna2GradientButton>())
                 button.Enabled = Switch;
         }
+
         private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
         {
             if (e.Error == null)
@@ -145,17 +148,16 @@ namespace Cloudforce_Revamped
                 MessageBox.Show(e.Error.Message);
             }
         }
+
         private void DownloadChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             guna2ProgressBar1.Value = e.ProgressPercentage;
         }
-        #endregion
 
+        #endregion Download Stuff
 
-        
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void guna2GradientButton12_Click(object sender, EventArgs e) // Process Hacker
@@ -170,7 +172,7 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/ProcessHacker.zip", mainpath + "\\ProcessHacker.zip", guna2GradientButton12);
 
                 ZipFile.ExtractToDirectory(mainpath + "\\ProcessHacker.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe"); 
+                Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe");
                 guna2GradientButton12.Enabled = true;
                 wait_Timer();
             }
@@ -192,9 +194,9 @@ namespace Cloudforce_Revamped
             else
             {
                 File_Downloader("https://picteon.dev/files/Discord.zip", mainpath + "\\Discord.zip", guna2GradientButton11);
-                    
+
                 ZipFile.ExtractToDirectory(mainpath + "\\Discord.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\discord2\\discord-portable.exe"); 
+                Process.Start(mainpath + "\\discord2\\discord-portable.exe");
                 guna2GradientButton11.Enabled = true;
                 wait_Timer();
             }
@@ -207,15 +209,11 @@ namespace Cloudforce_Revamped
             //if kick_timer1 is still running
             if (!kick_timer1.Enabled)
             {
-
                 kick_timer1.Interval = 1000;
 
                 kick_timer1.Tick += new System.EventHandler(timer1_Tick);
                 wait_Timer();
-
             }
-            
-
         }
 
         private void guna2GradientButton14_Click(object sender, EventArgs e) // Firefox
@@ -231,13 +229,13 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/Firefox.zip", mainpath + "\\Firefox.zip", guna2GradientButton14);
 
                 ZipFile.ExtractToDirectory(mainpath + "\\Firefox.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\Firefox\\runthis.exe"); 
+                Process.Start(mainpath + "\\Firefox\\runthis.exe");
                 guna2GradientButton14.Enabled = true;
                 wait_Timer();
             }
         }
 
-        private void guna2GradientButton4_Click(object sender, EventArgs e) // Explorer ++ 
+        private void guna2GradientButton4_Click(object sender, EventArgs e) // Explorer ++
         {
             if (timercheck() == false) return;
             if (File.Exists(mainpath + "\\DoraTheExplorer.exe"))
@@ -248,12 +246,12 @@ namespace Cloudforce_Revamped
             {
                 File_Downloader("https://picteon.dev/files/Explorer++.exe", mainpath + "\\DoraTheExplorer.exe", guna2GradientButton4);
 
-
                 Process.Start(mainpath + "\\DoraTheExplorer.exe"); // TODO
                 guna2GradientButton4.Enabled = true;
                 wait_Timer();
             }
         }
+
         private void guna2GradientButton8_Click(object sender, EventArgs e) // Zortos Unpwetter V1
         {
             if (timercheck() == false) return;
@@ -265,7 +263,6 @@ namespace Cloudforce_Revamped
             {
                 File_Downloader("https://op-ffa.net/gfn/ZortosUnpwetterA.exe", mainpath + "\\ZortosUnpwetterA.exe", guna2GradientButton8);
 
-
                 Process.Start(mainpath + "\\ZortosUnpwetterA.exe"); // TODO
                 guna2GradientButton8.Enabled = true;
                 wait_Timer();
@@ -274,7 +271,6 @@ namespace Cloudforce_Revamped
 
         private void Utility_Load(object sender, EventArgs e)
         {
-
         }
 
         private void guna2GradientButton15_Click(object sender, EventArgs e) // LibreWolf
@@ -331,7 +327,7 @@ namespace Cloudforce_Revamped
             else
             {
                 File_Downloader("https://picteon.dev/files/AnyDesk.exe", mainpath + "\\AnyPwet.exe", guna2GradientButton13);
-                Process.Start(mainpath + "\\AnyPwet.exe"); 
+                Process.Start(mainpath + "\\AnyPwet.exe");
                 guna2GradientButton13.Enabled = true;
                 wait_Timer();
             }
@@ -354,6 +350,7 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+
         private void guna2GradientButton17_Click(object sender, EventArgs e) // Command Prompt
         {
             if (timercheck() == false) return;
@@ -370,6 +367,7 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+
         private void guna2GradientButton24_Click(object sender, EventArgs e) // Downoadler
         {
             var download_link = guna2TextBox1.Text;
@@ -399,7 +397,8 @@ namespace Cloudforce_Revamped
                 try
                 {
                     File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2GradientButton24);
-                } catch
+                }
+                catch
                 {
                     guna2HtmlLabel1.Text = "An error occured while trying to download.";
                     guna2TextBox1.Text = "";
@@ -408,9 +407,11 @@ namespace Cloudforce_Revamped
                     guna2TextBox1.PlaceholderText = "Invalid link.";
                     guna2TextBox1.Text = "";
                 }
-                try { 
-                    Process.Start(mainpath + $"\\{exe_name}.exe"); 
-                } catch
+                try
+                {
+                    Process.Start(mainpath + $"\\{exe_name}.exe");
+                }
+                catch
                 {
                     guna2HtmlLabel1.Text = "An error occured while trying to start.";
                     guna2TextBox1.Text = "";
@@ -440,7 +441,7 @@ namespace Cloudforce_Revamped
                         FileName = mainpath + "\\SilverBullet.v1.1.2\\SilverBullet.exe"
                     }
                 }.Start();
-                
+
                 wait_Timer();
             }
             else
@@ -468,7 +469,6 @@ namespace Cloudforce_Revamped
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void guna2GradientButton18_Click(object sender, EventArgs e) // Parsec
