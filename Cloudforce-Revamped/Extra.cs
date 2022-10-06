@@ -17,6 +17,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Cloudforce_Revamped
 {
@@ -29,7 +30,6 @@ namespace Cloudforce_Revamped
         public Extra()
         {
             InitializeComponent();
-            guna2HtmlLabel1.Text = "Loading";
         }
 
         //Download stuff
@@ -158,9 +158,9 @@ namespace Cloudforce_Revamped
                     try
                     {
                         File_Downloader(download_link, mainpath + $"\\{exe_name}.zip", guna2GradientButton10);
-                        guna2HtmlLabel2.Text = $"Downloaded: C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
+                        guna2HtmlLabel1.Text = $"Downloaded: C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
                         guna2TextBox1.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
-                        guna2HtmlLabel1.Text = "Download Ready.";
+                        guna2HtmlLabel2.Text = "Status: Ready.";
                     }
                     catch
                     {
@@ -177,9 +177,9 @@ namespace Cloudforce_Revamped
                     try
                     {
                         File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2GradientButton10);
-                        guna2HtmlLabel2.Text = $"Downloaded: {mainpath}\\{exe_name}.exe";
+                        guna2HtmlLabel1.Text = $"Downloaded: {mainpath}\\{exe_name}.exe";
                         guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.exe";
-                        guna2HtmlLabel1.Text = "Download Ready.";
+                        guna2HtmlLabel2.Text = "Status: Ready.";
                     }
                     catch
                     {
@@ -199,12 +199,54 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-
+            var extract_path = guna2TextBox1.Text;
+            if (extract_path == "" || extract_path == " " || File.Exists(extract_path) == false || extract_path.Contains(".zip") == false)
+            {
+                guna2HtmlLabel1.Text = "Please put a valid path in the input field.";
+                guna2HtmlLabel1.ForeColor = Color.Red;
+                guna2TextBox3.ForeColor = Color.Red;
+                guna2TextBox3.PlaceholderText = "Invalid path.";
+                guna2TextBox3.Text = "";
+                guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+            }
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
         {
-
+            var run_path = guna2TextBox2.Text;
+            if (run_path == "" || run_path == " " || File.Exists(run_path) == false || run_path.Contains(".exe") == false)
+            {
+                guna2HtmlLabel1.Text = "Please put a valid path in the input field.";
+                guna2HtmlLabel1.ForeColor = Color.Red;
+                guna2TextBox3.ForeColor = Color.Red;
+                guna2TextBox3.PlaceholderText = "Invalid path.";
+                guna2TextBox3.Text = "";
+                guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+            } else
+            {
+                try
+                {
+                    new Process()
+                    {
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            WorkingDirectory = $"{mainpath}\\",
+                            WindowStyle = ProcessWindowStyle.Normal,
+                            FileName = run_path,
+                        }
+                    }.Start();
+                    guna2HtmlLabel1.Text = $"[-] Started {run_path}";
+                    guna2HtmlLabel2.Text = "Status: Ready.";
+                } catch
+                {
+                    guna2HtmlLabel1.Text = "Failed to start exe.";
+                    guna2HtmlLabel1.ForeColor = Color.Red;
+                    guna2TextBox3.ForeColor = Color.Red;
+                    guna2TextBox3.PlaceholderText = "Failed to start";
+                    guna2TextBox3.Text = "";
+                    guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+                }
+            }
         }
 
     }
