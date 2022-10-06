@@ -199,15 +199,35 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
+            var username = Environment.UserName;
             var extract_path = guna2TextBox1.Text;
             if (extract_path == "" || extract_path == " " || File.Exists(extract_path) == false || extract_path.Contains(".zip") == false)
             {
                 guna2HtmlLabel1.Text = "Please put a valid path in the input field.";
                 guna2HtmlLabel1.ForeColor = Color.Red;
-                guna2TextBox3.ForeColor = Color.Red;
-                guna2TextBox3.PlaceholderText = "Invalid path.";
-                guna2TextBox3.Text = "";
+                guna2TextBox1.ForeColor = Color.Red;
+                guna2TextBox1.PlaceholderText = "Invalid path.";
+                guna2TextBox1.Text = "";
                 guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+            } else
+            {
+                try
+                {
+                    ZipFile.ExtractToDirectory($@"{extract_path}", $@"C:\users\{username}\AppData\Roaming\Cloudforce");
+                    guna2HtmlLabel1.Text = $"[-] Extracted: {extract_path}";
+                    guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\";
+                    guna2HtmlLabel2.Text = "Status: Ready.";
+                    guna2TextBox1.Text = "";
+                } catch
+                {
+                    guna2HtmlLabel1.Text = "Failed to extract zip.";
+                    guna2HtmlLabel1.ForeColor = Color.Red;
+                    guna2TextBox1.ForeColor = Color.Red;
+                    guna2TextBox1.PlaceholderText = "Failed to extract";
+                    guna2TextBox1.Text = "";
+                    guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+                }
+
             }
         }
 
@@ -218,9 +238,9 @@ namespace Cloudforce_Revamped
             {
                 guna2HtmlLabel1.Text = "Please put a valid path in the input field.";
                 guna2HtmlLabel1.ForeColor = Color.Red;
-                guna2TextBox3.ForeColor = Color.Red;
-                guna2TextBox3.PlaceholderText = "Invalid path.";
-                guna2TextBox3.Text = "";
+                guna2TextBox2.ForeColor = Color.Red;
+                guna2TextBox2.PlaceholderText = "Invalid path.";
+                guna2TextBox2.Text = "";
                 guna2HtmlLabel2.Text = "Error | Ready for next operation.";
             } else
             {
@@ -241,9 +261,9 @@ namespace Cloudforce_Revamped
                 {
                     guna2HtmlLabel1.Text = "Failed to start exe.";
                     guna2HtmlLabel1.ForeColor = Color.Red;
-                    guna2TextBox3.ForeColor = Color.Red;
-                    guna2TextBox3.PlaceholderText = "Failed to start";
-                    guna2TextBox3.Text = "";
+                    guna2TextBox2.ForeColor = Color.Red;
+                    guna2TextBox2.PlaceholderText = "Failed to start";
+                    guna2TextBox2.Text = "";
                     guna2HtmlLabel2.Text = "Error | Ready for next operation.";
                 }
             }
