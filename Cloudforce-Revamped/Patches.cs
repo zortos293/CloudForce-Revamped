@@ -408,7 +408,7 @@ namespace Cloudforce_Revamped
             guna2HtmlLabel1.ForeColor = Color.White;
             var username = Environment.UserName;
             string hosturl = "http://178.62.250.139/Files/Overwatch/";
-            //SC2 Kief#2583
+            //Overwatch 2 Kief#2583 and NotZortos26#6291
             if (File.Exists($"C:\\users\\{username}\\downloads\\OverWatch\\_retail_\\Overwatch.exe"))
             {
                 new Process()
@@ -433,7 +433,7 @@ namespace Cloudforce_Revamped
                 Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\config");
                 Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\indices");
 
-                guna2GradientButton10.Enabled = false;
+                guna2GradientButton4.Enabled = false;
                 guna2HtmlLabel1.Text = "[-] Starting Downloads.";
                 Thread.Sleep(5000);
                 guna2HtmlLabel1.Text = "[-] Downloading: Data Files";
