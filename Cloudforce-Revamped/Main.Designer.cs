@@ -232,7 +232,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(150, 21);
             this.guna2HtmlLabel1.TabIndex = 60;
-            this.guna2HtmlLabel1.Text = "Alpha Build V0.9";
+            this.guna2HtmlLabel1.Text = "Alpha Build V0.93";
             // 
             // Main
             // 

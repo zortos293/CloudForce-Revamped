@@ -401,5 +401,41 @@ namespace Cloudforce_Revamped
             ResetButtons(true);
             back.Enabled = true;
         }
+
+        private void guna2GradientButton4_Click(object sender, EventArgs e)
+        {
+            guna2HtmlLabel1.ForeColor = Color.White;
+            var username = Environment.UserName;
+            //SC2 Kief#2583
+            if (File.Exists($"C:\\users\\{username}\\downloads\\SC2\\Support64\\SC2Switcher_x64.exe"))
+            {
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"C:\\users\\{username}\\downloads\\SC2\\Support64\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"C:\\users\\{username}\\downloads\\SC2\\Support64\\SC2Switcher_x64.exe"
+                    }
+                }.Start();
+            }
+            else
+            {
+                guna2ProgressBar1.Style = ProgressBarStyle.Blocks;
+                guna2HtmlLabel1.Text = "[-] Creating Directorys.";
+                Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch");
+                Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\OverWatch");
+                Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\data");
+                Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc");
+                Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\data\\data");
+                Directory.CreateDirectory($"C:\\users\\{username}\\downloads\\OverWatch\\data\\config");
+
+                guna2GradientButton10.Enabled = false;
+                guna2HtmlLabel1.Text = "[-] Starting Downloads.";
+                Thread.Sleep(5000);
+                File_Downloader("https://picteon.dev/files/StarCraft%20II/SC2Data/data/000000000d.idx", $"C:\\users\\{username}\\downloads\\SC2\\SC2Data\\data\\000000000d.idx");
+                guna2HtmlLabel1.Text = "[-] Downloading: 010000000d";
+            }
+        }
     }
 }
