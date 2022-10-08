@@ -370,6 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudForce.ico" />
+    <None Include="Resources\overwatch_480px.png" />
     <None Include="Resources\among-us.png" />
     <None Include="Resources\civilization6.png" />
     <None Include="Resources\civ6.jpg" />

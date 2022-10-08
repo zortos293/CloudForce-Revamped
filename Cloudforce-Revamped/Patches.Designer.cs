@@ -331,6 +331,7 @@
             this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton4.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton4.HoverState.Parent = this.guna2GradientButton4;
+            this.guna2GradientButton4.Image = global::Cloudforce_Revamped.Properties.Resources.overwatch_480px;
             this.guna2GradientButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton4.ImageSize = new System.Drawing.Size(35, 35);
             this.guna2GradientButton4.Location = new System.Drawing.Point(238, 184);
@@ -338,7 +339,7 @@
             this.guna2GradientButton4.ShadowDecoration.Parent = this.guna2GradientButton4;
             this.guna2GradientButton4.Size = new System.Drawing.Size(161, 45);
             this.guna2GradientButton4.TabIndex = 66;
-            this.guna2GradientButton4.Text = "OverWatch 2";
+            this.guna2GradientButton4.Text = "Overwatch 2";
             this.guna2GradientButton4.Click += new System.EventHandler(this.guna2GradientButton4_Click);
             // 
             // Patches

@@ -136,9 +136,6 @@
   <data name="discord_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\discord_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fox_480px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fox_480px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +144,12 @@
   </data>
   <data name="OBIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OBIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="among-us" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\among-us.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="system_task_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\system_task_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +166,8 @@
   <data name="crafting_table_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crafting_table_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SC2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,7 +178,7 @@
   <data name="roblox_240px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roblox_240px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="among-us" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\among-us.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="overwatch_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\overwatch_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

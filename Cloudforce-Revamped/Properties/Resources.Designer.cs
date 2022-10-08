@@ -213,6 +213,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap overwatch_480px {
+            get {
+                object obj = ResourceManager.GetObject("overwatch_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Parsec_512px {
             get {
                 object obj = ResourceManager.GetObject("Parsec_512px", resourceCulture);
