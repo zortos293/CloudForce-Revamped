@@ -106,5 +106,10 @@ namespace Cloudforce_Revamped
             this.Show();
             checktheme();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
