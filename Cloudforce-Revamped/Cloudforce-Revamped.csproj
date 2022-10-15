@@ -251,6 +251,25 @@
     <Compile Include="Extra.Designer.cs">
       <DependentUpon>Extra.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeyAuth.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steamgames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steamgames.Designer.cs">
+      <DependentUpon>Steamgames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Games.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +309,15 @@
     </Compile>
     <EmbeddedResource Include="Extra.resx">
       <DependentUpon>Extra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steamgames.resx">
+      <DependentUpon>Steamgames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Games.resx">
       <DependentUpon>Games.cs</DependentUpon>
@@ -370,6 +398,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudForce.ico" />
+    <None Include="Resources\Resident Evil Village.png" />
+    <None Include="Resources\notepad_240px.png" />
     <None Include="Resources\petergriffin.png" />
     <None Include="Resources\overwatch_480px.png" />
     <None Include="Resources\among-us.png" />

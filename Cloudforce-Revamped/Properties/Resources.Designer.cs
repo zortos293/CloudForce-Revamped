@@ -193,6 +193,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notepad_240px {
+            get {
+                object obj = ResourceManager.GetObject("notepad_240px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OBIcon {
             get {
                 object obj = ResourceManager.GetObject("OBIcon", resourceCulture);
@@ -236,6 +246,16 @@ namespace Cloudforce_Revamped.Properties {
         internal static System.Drawing.Bitmap petergriffin {
             get {
                 object obj = ResourceManager.GetObject("petergriffin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Resident_Evil_Village {
+            get {
+                object obj = ResourceManager.GetObject("Resident Evil Village", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

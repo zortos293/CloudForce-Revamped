@@ -7,6 +7,7 @@
  * 9/30/22 11:45AM PDT
  */
 
+using KeyAuth;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -23,14 +24,27 @@ namespace Cloudforce_Revamped
         private Patches patches = new Patches();
         private Games games = new Games();
         private Extra extra = new Extra();
+        private steamgames steam = new steamgames();
+        private login Login = new login();
 
         public Main()
         {
             InitializeComponent();
             checktheme();
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+            KeyAuthApp.init();
+            if (!KeyAuthApp.response.success)
+            {
+                MessageBox.Show(KeyAuthApp.response.message);
+            }
+            guna2HtmlLabel3.Text = $"Number of users Online : {KeyAuthApp.app_data.numOnlineUsers}";
         }
+
+        public static api KeyAuthApp = new api(
+            name: "CF Early",
+            ownerid: "0t0Sr0pLaB",
+            secret: "c52ed8ebcefc829ffed9a73e9c85b73fd5a8e244abec5531ef1cf87628d181e0",
+            version: "1.0"
+        );
 
         #region Theme
 
@@ -109,7 +123,30 @@ namespace Cloudforce_Revamped
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
+        }
 
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            if (login.SubExist("premium"))
+            {
+                this.Hide();
+                steam.ShowDialog();
+                this.Show();
+                checktheme();
+            }
+            else
+            {
+                MessageBox.Show("You need to have Cloudforce Early Access to use this feature");
+            }
+        }
+
+        private void guna2GradientButton7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login.ShowDialog();
+            this.Show();
+            checktheme();
+            guna2HtmlLabel3.Text = $"Number of users Online : {KeyAuthApp.app_data.numOnlineUsers}";
         }
     }
 }
