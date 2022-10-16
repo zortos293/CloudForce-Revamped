@@ -26,6 +26,8 @@ namespace Cloudforce_Revamped
 
         public static bool SubExist(string name)
         {
+            if (Main.KeyAuthApp.user_data.subscriptions == null)
+                return false;
             if (Main.KeyAuthApp.user_data.subscriptions.Exists(x => x.subscription == name))
                 return true;
             return false;

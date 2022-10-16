@@ -272,11 +272,25 @@ namespace Cloudforce_Revamped
             this.Close();
         }
 
+        public string hosturl;
+
         private void guna2GradientButton4_Click(object sender, EventArgs e)
         {
+            string SERVER1 = "http://188.166.135.171/Files/Overwatch/";
+            string SERVER2 = "http://20.19.208.131/Files/Overwatch/";
+
             guna2HtmlLabel1.ForeColor = Color.White;
+            switch (MessageBox.Show("Server 1 (DigitalOcean) : Yes\nServer 2 (Azure) : No", "Server Select", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                case DialogResult.Yes:
+                    hosturl = SERVER1;
+                    break;
+
+                case DialogResult.No:
+                    hosturl = SERVER2;
+                    break;
+            }
             var username = Environment.UserName;
-            string hosturl = "http://178.62.250.139/Files/Overwatch/";
             //Overwatch 2 Kief#2583 and NotZortos26#6291
             if (File.Exists($"C:\\users\\{username}\\downloads\\OverWatch\\_retail_\\Overwatch.exe"))
             {
@@ -308,36 +322,71 @@ namespace Cloudforce_Revamped
                 guna2HtmlLabel1.Text = "[-] Downloading: Data Files";
                 File_Downloader(hosturl + "data/casc/data/0000000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0000000011.idx");
                 File_Downloader(hosturl + "data/casc/data/0000000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0000000012.idx");
-                File_Downloader(hosturl + "data/casc/data/0100000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0100000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0100000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0100000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0200000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0200000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0200000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0200000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0300000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0300000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0300000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0300000012.idx");
-                File_Downloader(hosturl + "data/casc/data/040000000f.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\040000000f.idx");
-                File_Downloader(hosturl + "data/casc/data/0400000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0400000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0500000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0500000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0500000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0500000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0600000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0600000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0600000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0600000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0700000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0700000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0700000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0700000012.idx");
-                File_Downloader(hosturl + "data/casc/data/0800000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0800000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0800000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0800000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0900000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0900000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0900000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0900000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0a0000000f.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0a0000000f.idx");
-                File_Downloader(hosturl + "data/casc/data/0a00000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0a00000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0b00000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0b00000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0b00000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0b00000012.idx");
-                File_Downloader(hosturl + "data/casc/data/0c00000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0c00000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0c00000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0c00000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0d00000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0d00000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0d00000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0d00000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0e00000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0e00000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0e00000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0e00000011.idx");
-                File_Downloader(hosturl + "data/casc/data/0f00000010.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0f00000010.idx");
-                File_Downloader(hosturl + "data/casc/data/0f00000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0f00000011.idx");
+                File_Downloader(hosturl + "data/casc/data/0000000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0000000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0000000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0000000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0000000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0000000016.idx");
+                File_Downloader(hosturl + "data/casc/data/0000000017.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0000000017.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0100000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0100000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0100000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0100000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0100000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0100000015.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0200000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0200000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0200000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0200000016.idx");
+                File_Downloader(hosturl + "data/casc/data/0200000017.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0200000017.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0300000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0300000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0300000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0300000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0300000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0300000016.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0400000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0400000011.idx");
+                File_Downloader(hosturl + "data/casc/data/0400000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0400000012.idx");
+                File_Downloader(hosturl + "data/casc/data/0400000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0400000013.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0500000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0500000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0500000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0500000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0500000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0500000015.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0600000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0600000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0600000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0600000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0600000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0600000016.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0700000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0700000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0700000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0700000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0700000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0700000016.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0800000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0800000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0800000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0800000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0800000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0800000015.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0900000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0900000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0900000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0900000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0900000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0900000015.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0a00000011.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0a00000011.idx");
+                File_Downloader(hosturl + "data/casc/data/0a00000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0a00000012.idx");
+                File_Downloader(hosturl + "data/casc/data/0a00000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0a00000013.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0b00000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0b00000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0b00000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0b00000016.idx");
+                File_Downloader(hosturl + "data/casc/data/0b00000017.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0b00000017.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0c00000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0c00000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0c00000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0c00000015.idx");
+                File_Downloader(hosturl + "data/casc/data/0c00000016.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0c00000016.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0d00000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0d00000012.idx");
+                File_Downloader(hosturl + "data/casc/data/0d00000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0d00000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0d00000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0d00000014.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0e00000012.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0e00000012.idx");
+                File_Downloader(hosturl + "data/casc/data/0e00000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0e00000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0e00000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0e00000014.idx");
+
+                File_Downloader(hosturl + "data/casc/data/0f00000013.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0f00000013.idx");
+                File_Downloader(hosturl + "data/casc/data/0f00000014.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0f00000014.idx");
+                File_Downloader(hosturl + "data/casc/data/0f00000015.idx", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\0f00000015.idx");
+
                 guna2HtmlLabel1.Text = "[-] Downloading: data.000";
                 File_Downloader(hosturl + "data/casc/data/data.000", $"C:\\users\\{username}\\downloads\\OverWatch\\data\\casc\\data\\data.000");
                 guna2HtmlLabel1.Text = "[-] Downloading: data.001";
@@ -410,7 +459,7 @@ namespace Cloudforce_Revamped
                         FileName = $"C:\\users\\{username}\\downloads\\OverWatch\\_retail_\\Overwatch.exe"
                     }
                 }.Start();
-                guna2HtmlLabel1.Text = "[-] Started: Started Overwatch 2";
+                guna2HtmlLabel1.Text = "[-] Started: Started Overwatch 2 (Takes 1min to launch)";
             }
         }
 

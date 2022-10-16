@@ -34,8 +34,8 @@ namespace Cloudforce_Revamped
         }
 
         private string downloadfolder = $"C:\\users\\{Environment.UserName}\\downloads\\";
-        private string SERVER1 = "http://188.166.135.171/Files/";
-        private string SERVER2 = "http://20.19.208.131/Files/";
+        private string SERVER1 = "http://188.166.135.171/Files/Games/";
+        private string SERVER2 = "http://20.19.208.131/Files/Games/";
 
         #region Waiting GFN
 
@@ -127,9 +127,18 @@ namespace Cloudforce_Revamped
             guna2ProgressBar1.Value = 0;
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadChanged);
-            client.DownloadFileAsync(new Uri(URL), path);
-            while (DownloadFinished == false)
-                Application.DoEvents();
+            try
+            {
+                client.DownloadFileAsync(new Uri(URL), path);
+                while (DownloadFinished == false)
+                    Application.DoEvents();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                ResetButtons(true);
+                back.Enabled = true;
+            }
         }
 
         public void File_Downloader(string URL, string path, Guna.UI2.WinForms.Guna2GradientButton button)
@@ -142,9 +151,18 @@ namespace Cloudforce_Revamped
             guna2ProgressBar1.Value = 0;
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadChanged);
-            client.DownloadFileAsync(new Uri(URL), path);
-            while (DownloadFinished == false)
-                Application.DoEvents();
+            try
+            {
+                client.DownloadFileAsync(new Uri(URL), path);
+                while (DownloadFinished == false)
+                    Application.DoEvents();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                ResetButtons(true);
+                back.Enabled = true;
+            }
         }
 
         private void ResetButtons(bool Switch)
@@ -167,6 +185,8 @@ namespace Cloudforce_Revamped
             else
             {
                 MessageBox.Show(e.Error.Message);
+                ResetButtons(true);
+                back.Enabled = true;
             }
         }
 
@@ -184,11 +204,6 @@ namespace Cloudforce_Revamped
         private void Games_Shown(object sender, EventArgs e)
         {
             checktheme();
-
-            kick_timer1.Interval = 1000;
-
-            kick_timer1.Tick += new System.EventHandler(timer1_Tick);
-            wait_Timer();
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -245,7 +260,7 @@ namespace Cloudforce_Revamped
                 guna2HtmlLabel1.Text = "[-] Extracting: exes.zip";
                 await Task.Run(() =>
                 {
-                    ZipFile.ExtractToDirectory(serverurl + "Resident%20Evil%20Village/exes.zip", $"{downloadfolder}Resident_Evil_Village\\");
+                    ZipFile.ExtractToDirectory($"{downloadfolder}Resident_Evil_Village\\exes.zip", $"{downloadfolder}Resident_Evil_Village\\");
                 });
                 guna2HtmlLabel1.Text = "[-] Downloading: re8.exe";
                 Game_Downloader(serverurl + "Resident%20Evil%20Village/re8.exe", $"{downloadfolder}Resident_Evil_Village\\re8.exe");

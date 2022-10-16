@@ -146,6 +146,8 @@ namespace Cloudforce_Revamped
             else
             {
                 MessageBox.Show(e.Error.Message);
+                ResetButtons(true);
+                back.Enabled = true;
             }
         }
 

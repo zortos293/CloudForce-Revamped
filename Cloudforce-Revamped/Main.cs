@@ -8,9 +8,11 @@
  */
 
 using KeyAuth;
+using Newtonsoft.Json;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
@@ -36,7 +38,10 @@ namespace Cloudforce_Revamped
             {
                 MessageBox.Show(KeyAuthApp.response.message);
             }
-            guna2HtmlLabel3.Text = $"Number of users Online : {KeyAuthApp.app_data.numOnlineUsers}";
+            WebClient a = new WebClient();
+            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
+            dynamic array = JsonConvert.DeserializeObject(json);
+            guna2HtmlLabel3.Text = $"Number of users Online : {array.sessions.Count}";
         }
 
         public static api KeyAuthApp = new api(
@@ -127,17 +132,21 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-            if (login.SubExist("premium"))
-            {
-                this.Hide();
-                steam.ShowDialog();
-                this.Show();
-                checktheme();
-            }
-            else
-            {
-                MessageBox.Show("You need to have Cloudforce Early Access to use this feature");
-            }
+            this.Hide();
+            steam.ShowDialog();
+            this.Show();
+            checktheme();
+            //if (login.SubExist("premium"))
+            //{
+            //    this.Hide();
+            //    steam.ShowDialog();
+            //    this.Show();
+            //    checktheme();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("You need to have Cloudforce Early Access to use this feature");
+            //}
         }
 
         private void guna2GradientButton7_Click(object sender, EventArgs e)
@@ -147,6 +156,10 @@ namespace Cloudforce_Revamped
             this.Show();
             checktheme();
             guna2HtmlLabel3.Text = $"Number of users Online : {KeyAuthApp.app_data.numOnlineUsers}";
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
         }
     }
 }
