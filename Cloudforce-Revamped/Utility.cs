@@ -146,6 +146,8 @@ namespace Cloudforce_Revamped
             else
             {
                 MessageBox.Show(e.Error.Message);
+                ResetButtons(true);
+                back.Enabled = true;
             }
         }
 
@@ -310,7 +312,7 @@ namespace Cloudforce_Revamped
 
                 foreach (Process p in ps)
                     p.Kill();
-                Process.Start(mainpath + "\\ZortosDesktop.exe", "-Desktop"); // TODO
+                Process.Start(mainpath + "\\ZortosDesktop.exe", "-Desktop");
                 guna2GradientButton10.Enabled = true;
                 wait_Timer();
             }
@@ -364,63 +366,6 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://picteon.dev/files/NotCMDNvidia.exe", mainpath + "\\cmdpwetaa.exe", guna2GradientButton17);
                 Process.Start(mainpath + "\\cmdpwetaa.exe");
                 guna2GradientButton17.Enabled = true;
-                wait_Timer();
-            }
-        }
-
-        private void guna2GradientButton24_Click(object sender, EventArgs e) // Downoadler
-        {
-            var download_link = guna2TextBox1.Text;
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxysz";
-            var stringChars = new char[8];
-            var random = new Random();
-            for (int i = 0; i < stringChars.Length; i++)
-            {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-            var exe_name = new String(stringChars);
-            Uri uriResult;
-            bool result = Uri.TryCreate(download_link, UriKind.Absolute, out uriResult)
-                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
-
-            if (download_link == "" || download_link == " " || result == false)
-            {
-                guna2HtmlLabel1.Text = "Please put a valid download link in the input field.";
-                guna2HtmlLabel1.ForeColor = Color.Red;
-                guna2TextBox1.ForeColor = Color.Red;
-                guna2TextBox1.PlaceholderText = "Invalid link.";
-                guna2TextBox1.Text = "";
-            }
-            else
-            {
-                if (timercheck() == false) return;
-                try
-                {
-                    File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2GradientButton24);
-                }
-                catch
-                {
-                    guna2HtmlLabel1.Text = "An error occured while trying to download.";
-                    guna2TextBox1.Text = "";
-                    guna2HtmlLabel1.ForeColor = Color.Red;
-                    guna2TextBox1.ForeColor = Color.Red;
-                    guna2TextBox1.PlaceholderText = "Invalid link.";
-                    guna2TextBox1.Text = "";
-                }
-                try
-                {
-                    Process.Start(mainpath + $"\\{exe_name}.exe");
-                }
-                catch
-                {
-                    guna2HtmlLabel1.Text = "An error occured while trying to start.";
-                    guna2TextBox1.Text = "";
-                    guna2HtmlLabel1.ForeColor = Color.Red;
-                    guna2TextBox1.ForeColor = Color.Red;
-                    guna2TextBox1.Text = "";
-                }
-                guna2TextBox1.PlaceholderText = "Place link here";
-                guna2TextBox1.Text = "";
                 wait_Timer();
             }
         }
@@ -502,6 +447,23 @@ namespace Cloudforce_Revamped
                     }
                 }.Start();
                 guna2GradientButton18.Enabled = true;
+                wait_Timer();
+            }
+        }
+
+        private void guna2GradientButton20_Click(object sender, EventArgs e)
+        {
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\Notepad2x64.exe"))
+            {
+                Process.Start(mainpath + "\\Notepad2x64.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Notepad2x64.exe", mainpath + "\\Notepad2x64.exe", guna2GradientButton20);
+                Process.Start(mainpath + "\\Notepad2x64.exe");
+                guna2GradientButton20.Enabled = true;
                 wait_Timer();
             }
         }

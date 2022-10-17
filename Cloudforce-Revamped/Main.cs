@@ -7,9 +7,12 @@
  * 9/30/22 11:45AM PDT
  */
 
+using KeyAuth;
+using Newtonsoft.Json;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Cloudforce_Revamped
@@ -23,14 +26,30 @@ namespace Cloudforce_Revamped
         private Patches patches = new Patches();
         private Games games = new Games();
         private Extra extra = new Extra();
+        private steamgames steam = new steamgames();
+        private login Login = new login();
 
         public Main()
         {
             InitializeComponent();
             checktheme();
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+            KeyAuthApp.init();
+            if (!KeyAuthApp.response.success)
+            {
+                MessageBox.Show(KeyAuthApp.response.message);
+            }
+            WebClient a = new WebClient();
+            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
+            dynamic array = JsonConvert.DeserializeObject(json);
+            guna2HtmlLabel3.Text = $"Number of users Online : {array.sessions.Count}";
         }
+
+        public static api KeyAuthApp = new api(
+            name: "CF Early",
+            ownerid: "0t0Sr0pLaB",
+            secret: "c52ed8ebcefc829ffed9a73e9c85b73fd5a8e244abec5531ef1cf87628d181e0",
+            version: "1.0"
+        );
 
         #region Theme
 
@@ -109,7 +128,38 @@ namespace Cloudforce_Revamped
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
+        }
 
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            steam.ShowDialog();
+            this.Show();
+            checktheme();
+            //if (login.SubExist("premium"))
+            //{
+            //    this.Hide();
+            //    steam.ShowDialog();
+            //    this.Show();
+            //    checktheme();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("You need to have Cloudforce Early Access to use this feature");
+            //}
+        }
+
+        private void guna2GradientButton7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login.ShowDialog();
+            this.Show();
+            checktheme();
+            guna2HtmlLabel3.Text = $"Number of users Online : {KeyAuthApp.app_data.numOnlineUsers}";
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
         }
     }
 }

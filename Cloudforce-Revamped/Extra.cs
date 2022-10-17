@@ -36,6 +36,7 @@ namespace Cloudforce_Revamped
         //Download stuff
 
         private bool DownloadFinished;
+
         public void File_Downloader(string URL, string path, Guna.UI2.WinForms.Guna2GradientButton button)
         {
             // download file with progress bar
@@ -82,6 +83,7 @@ namespace Cloudforce_Revamped
         //AFK Timer
 
         public bool afk_timer_Done;
+
         //private Timer kick_timer = new Timer();
         private int counter = 0;
 
@@ -123,6 +125,36 @@ namespace Cloudforce_Revamped
             //kick_timer.Start();
         }
 
+        #region Theme
+
+        private void checktheme()
+        {
+            if (Main.Dark == true)
+            {
+                this.BackColor = Color.FromArgb(64, 64, 64);
+                changecolorBTN(123, 0, 238, 170, 0, 255);
+                guna2GradientPanel1.FillColor = Color.FromArgb(97, 67, 133);
+                guna2GradientPanel1.FillColor2 = Color.FromArgb(81, 99, 149);
+            }
+            if (Main.Light == true)
+            {
+                this.BackColor = Color.WhiteSmoke;
+                changecolorBTN(255, 128, 128, 255, 128, 255);
+                guna2GradientPanel1.FillColor = Color.FromArgb(255, 192, 255);
+                guna2GradientPanel1.FillColor2 = Color.FromArgb(255, 192, 192);
+            }
+        }
+
+        private void changecolorBTN(int one, int two, int three, int one1, int two1, int three1)
+        {
+            foreach (var button in Controls.OfType<Guna.UI2.WinForms.Guna2GradientButton>())
+            {
+                button.FillColor = Color.FromArgb(one, two, three);
+                button.FillColor2 = Color.FromArgb(one1, two1, three1);
+            }
+        }
+
+        #endregion Theme
 
         //Buttons
         private void guna2GradientButton10_Click(object sender, EventArgs e)
@@ -152,7 +184,6 @@ namespace Cloudforce_Revamped
             }
             else
             {
-
                 Boolean dresult = download_link.Contains(".zip");
                 if (dresult == true)
                 {
@@ -173,7 +204,8 @@ namespace Cloudforce_Revamped
                         guna2TextBox3.Text = "";
                         guna2HtmlLabel2.Text = "Error | Ready for next operation.";
                     }
-                } else
+                }
+                else
                 {
                     try
                     {
@@ -210,7 +242,8 @@ namespace Cloudforce_Revamped
                 guna2TextBox1.PlaceholderText = "Invalid path.";
                 guna2TextBox1.Text = "";
                 guna2HtmlLabel2.Text = "Error | Ready for next operation.";
-            } else
+            }
+            else
             {
                 try
                 {
@@ -219,7 +252,8 @@ namespace Cloudforce_Revamped
                     guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\";
                     guna2HtmlLabel2.Text = "Status: Ready.";
                     guna2TextBox1.Text = "";
-                } catch
+                }
+                catch
                 {
                     guna2HtmlLabel1.Text = "Failed to extract zip.";
                     guna2HtmlLabel1.ForeColor = Color.Red;
@@ -228,7 +262,6 @@ namespace Cloudforce_Revamped
                     guna2TextBox1.Text = "";
                     guna2HtmlLabel2.Text = "Error | Ready for next operation.";
                 }
-
             }
         }
 
@@ -243,7 +276,8 @@ namespace Cloudforce_Revamped
                 guna2TextBox2.PlaceholderText = "Invalid path.";
                 guna2TextBox2.Text = "";
                 guna2HtmlLabel2.Text = "Error | Ready for next operation.";
-            } else
+            }
+            else
             {
                 try
                 {
@@ -258,7 +292,8 @@ namespace Cloudforce_Revamped
                     }.Start();
                     guna2HtmlLabel1.Text = $"[-] Started {run_path}";
                     guna2HtmlLabel2.Text = "Status: Ready.";
-                } catch
+                }
+                catch
                 {
                     guna2HtmlLabel1.Text = "Failed to start exe.";
                     guna2HtmlLabel1.ForeColor = Color.Red;
@@ -298,6 +333,20 @@ namespace Cloudforce_Revamped
                     Arguments = "cmd /c net user"
                 }
             }.Start();
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Extra_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void Extra_Shown(object sender, EventArgs e)
+        {
+            checktheme();
         }
     }
 }

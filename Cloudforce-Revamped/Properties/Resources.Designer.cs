@@ -163,6 +163,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap epic_games_240px {
+            get {
+                object obj = ResourceManager.GetObject("epic_games_240px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fox_480px {
             get {
                 object obj = ResourceManager.GetObject("fox_480px", resourceCulture);
@@ -186,6 +196,16 @@ namespace Cloudforce_Revamped.Properties {
         internal static System.Drawing.Bitmap New_Project__3___1_ {
             get {
                 object obj = ResourceManager.GetObject("New Project (3) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notepad_240px {
+            get {
+                object obj = ResourceManager.GetObject("notepad_240px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +256,16 @@ namespace Cloudforce_Revamped.Properties {
         internal static System.Drawing.Bitmap petergriffin {
             get {
                 object obj = ResourceManager.GetObject("petergriffin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Resident_Evil_Village {
+            get {
+                object obj = ResourceManager.GetObject("Resident Evil Village", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

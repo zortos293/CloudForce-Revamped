@@ -120,9 +120,18 @@ namespace Cloudforce_Revamped
             guna2ProgressBar1.Value = 0;
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadChanged);
-            client.DownloadFileAsync(new Uri(URL), path);
-            while (DownloadFinished == false)
-                Application.DoEvents();
+            try
+            {
+                client.DownloadFileAsync(new Uri(URL), path);
+                while (DownloadFinished == false)
+                    Application.DoEvents();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                ResetButtons(true);
+                back.Enabled = true;
+            }
         }
 
         private void ResetButtons(bool Switch)
@@ -169,7 +178,8 @@ namespace Cloudforce_Revamped
                 ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
                 guna2GradientButton10.Enabled = false;
-                MessageBox.Show("Relaunch roblox after install ;)");                wait_Timer();
+                MessageBox.Show("Relaunch roblox after install ;)");
+                wait_Timer();
             }
         }
 
@@ -230,6 +240,40 @@ namespace Cloudforce_Revamped
         private void guna2GradientButton23_Click(object sender, EventArgs e)
         {
             counter = 119;
+        }
+
+        private void guna2GradientButton4_Click(object sender, EventArgs e)
+        {
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\Minecraft.exe"))
+            {
+                Process.Start(mainpath + "\\Minecraft.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader("https://cdn.discordapp.com/attachments/1029959860428742706/1030223464646312036/Minecraft.exe", mainpath + "\\Minecraft.exe", guna2GradientButton4);
+                Process.Start(mainpath + "\\Minecraft.exe");
+                guna2GradientButton4.Enabled = false;
+            }
+        }
+
+        private void guna2GradientButton5_Click(object sender, EventArgs e)
+        {
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
+            {
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader(" https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2GradientButton5);
+                ZipFile.ExtractToDirectory(mainpath + "\\Epic%20Games.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                guna2GradientButton5.Enabled = false;
+                wait_Timer();
+            }
         }
     }
 }
