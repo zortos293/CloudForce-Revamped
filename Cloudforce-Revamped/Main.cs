@@ -39,9 +39,9 @@ namespace Cloudforce_Revamped
                 MessageBox.Show(KeyAuthApp.response.message);
             }
             WebClient a = new WebClient();
-            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
-            dynamic array = JsonConvert.DeserializeObject(json);
-            guna2HtmlLabel3.Text = $"Number of users Online : {array.sessions.Count}";
+            int count = KeyAuthApp.fetchOnline().Count();
+
+            guna2HtmlLabel3.Text = $"Number of users Online : {count}";
         }
 
         public static api KeyAuthApp = new api(

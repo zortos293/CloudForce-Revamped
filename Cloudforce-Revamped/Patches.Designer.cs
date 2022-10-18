@@ -37,13 +37,15 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,6 +156,19 @@
             this.guna2DragControl1.ContainerControl = this;
             this.guna2DragControl1.TargetControl = this.guna2PictureBox1;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.AutoSize = false;
@@ -193,19 +208,6 @@
             this.guna2GradientButton4.Text = "Overwatch 2";
             this.guna2GradientButton4.Click += new System.EventHandler(this.guna2GradientButton4_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 21;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
             // guna2GradientButton10
             // 
             this.guna2GradientButton10.Animated = true;
@@ -236,12 +238,58 @@
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.Animated = true;
+            this.guna2GradientButton2.BorderRadius = 14;
+            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Image = global::Cloudforce_Revamped.Properties.Resources.overwatch_480px;
+            this.guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(405, 184);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton2.TabIndex = 67;
+            this.guna2GradientButton2.Text = "Straw";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            // 
+            // guna2GradientButton3
+            // 
+            this.guna2GradientButton3.Animated = true;
+            this.guna2GradientButton3.BorderRadius = 14;
+            this.guna2GradientButton3.CheckedState.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.CustomImages.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.HoverState.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.Image = global::Cloudforce_Revamped.Properties.Resources.teardown;
+            this.guna2GradientButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton3.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2GradientButton3.Location = new System.Drawing.Point(572, 184);
+            this.guna2GradientButton3.Name = "guna2GradientButton3";
+            this.guna2GradientButton3.ShadowDecoration.Parent = this.guna2GradientButton3;
+            this.guna2GradientButton3.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton3.TabIndex = 68;
+            this.guna2GradientButton3.Text = "Teardown";
+            this.guna2GradientButton3.Click += new System.EventHandler(this.guna2GradientButton3_Click);
+            // 
             // Patches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 582);
+            this.Controls.Add(this.guna2GradientButton3);
+            this.Controls.Add(this.guna2GradientButton2);
             this.Controls.Add(this.guna2GradientButton4);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -280,5 +328,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton4;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
     }
 }

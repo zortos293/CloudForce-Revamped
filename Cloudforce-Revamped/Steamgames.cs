@@ -258,10 +258,9 @@ namespace Cloudforce_Revamped
                 guna2HtmlLabel1.Text = "[-] Downloading: exes.zip";
                 Game_Downloader(serverurl + "Resident%20Evil%20Village/exes.zip", $"{downloadfolder}Resident_Evil_Village\\exes.zip");
                 guna2HtmlLabel1.Text = "[-] Extracting: exes.zip";
-                await Task.Run(() =>
-                {
-                    ZipFile.ExtractToDirectory($"{downloadfolder}Resident_Evil_Village\\exes.zip", $"{downloadfolder}Resident_Evil_Village\\");
-                });
+
+                ZipFile.ExtractToDirectory($"{downloadfolder}Resident_Evil_Village\\exes.zip", $"{downloadfolder}Resident_Evil_Village\\");
+
                 guna2HtmlLabel1.Text = "[-] Downloading: re8.exe";
                 Game_Downloader(serverurl + "Resident%20Evil%20Village/re8.exe", $"{downloadfolder}Resident_Evil_Village\\re8.exe");
                 guna2HtmlLabel1.Text = "[-] Downloading: re_chunk_000.pak (24GB File)";
