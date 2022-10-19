@@ -467,5 +467,22 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+
+        private void guna2GradientButton19_Click(object sender, EventArgs e)
+        {
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\soretoesunpwetterv2.exe"))
+            {
+                Process.Start(mainpath + "\\soretoesunpwetterv2.exe");
+                wait_Timer();
+            }
+            else
+            {
+                File_Downloader("https://github.com/zortos293/ZortosCDN/raw/master/ZortosUnzipperV2.exe", mainpath + "\\soretoesunpwetterv2.exe", guna2GradientButton20);
+                Process.Start(mainpath + "\\soretoesunpwetterv2.exe");
+                guna2GradientButton20.Enabled = true;
+                wait_Timer();
+            }
+        }
     }
 }

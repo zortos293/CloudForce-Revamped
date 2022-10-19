@@ -287,7 +287,7 @@ namespace Cloudforce_Revamped
             }
         }
 
-        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        private void guna2GradientButton2_Click(object sender, EventArgs e) //idk why sourtoes wants to kill stem but ok
         {
             Process[] ps = Process.GetProcessesByName("steam");
 

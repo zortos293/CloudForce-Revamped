@@ -442,6 +442,7 @@
             this.guna2GradientButton19.TabIndex = 31;
             this.guna2GradientButton19.Text = "ZortosUnzipper V2";
             this.guna2GradientButton19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2GradientButton19.Click += new System.EventHandler(this.guna2GradientButton19_Click);
             // 
             // guna2GradientButton18
             // 
