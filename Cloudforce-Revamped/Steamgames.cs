@@ -222,7 +222,7 @@ namespace Cloudforce_Revamped
         {
             guna2HtmlLabel1.ForeColor = Color.White;
 
-            switch (MessageBox.Show("Server 1 (DigitalOcean) : Yes\nServer 2 (Azure) : No", "Server Select", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            switch (MessageBox.Show("Server 1 (DigitalOcean): Yes\nServer 2 (Azure): No", "Server Select", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 case DialogResult.Yes:
                     serverurl = SERVER1;
