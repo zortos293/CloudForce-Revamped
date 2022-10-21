@@ -41,7 +41,7 @@ namespace Cloudforce_Revamped
             WebClient a = new WebClient();
             string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
             dynamic array = JsonConvert.DeserializeObject(json);
-            guna2HtmlLabel3.Text = $"Discord Users Online: {array.sessions.Count}";
+            guna2HtmlLabel3.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
 
         public static api KeyAuthApp = new api(
@@ -155,7 +155,7 @@ namespace Cloudforce_Revamped
             Login.ShowDialog();
             this.Show();
             checktheme();
-            guna2HtmlLabel3.Text = $"Number of users Online : {KeyAuthApp.app_data.numOnlineUsers}";
+            guna2HtmlLabel3.Text = $"CloudForce Users Online: {KeyAuthApp.app_data.numOnlineUsers}";
         }
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)

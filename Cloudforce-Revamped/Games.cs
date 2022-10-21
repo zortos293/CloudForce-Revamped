@@ -15,7 +15,9 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Cloudforce_Revamped
 {
@@ -48,7 +50,7 @@ namespace Cloudforce_Revamped
                 kick_timer.Stop();
                 afk_timer_Done = true;
                 guna2HtmlLabel1.ForeColor = Color.Green;
-                guna2HtmlLabel1.Text = "You can now an Game.";
+                guna2HtmlLabel1.Text = "You can now run/download a game.";
                 counter = 0;
             }
         }
@@ -273,6 +275,59 @@ namespace Cloudforce_Revamped
                 Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
                 guna2GradientButton5.Enabled = false;
                 wait_Timer();
+            }
+        }
+        private string downloadfolder = $"C:\\users\\{Environment.UserName}\\downloads\\";
+        private void guna2GradientButton6_Click(object sender, EventArgs e)
+        {
+            if (timercheck() == false) return;
+            if (File.Exists($"{downloadfolder}FallGuys\\FallGuys_client.exe"))
+            {
+                guna2HtmlLabel1.Text = "[-] Starting: Fall Guys";
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{downloadfolder}FallGuys\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"{downloadfolder}FallGuys\\FallGuys_client_game.exe",
+                        Arguments = ""
+                    }
+                }.Start();
+                guna2HtmlLabel1.Text = "[-] Started: Fall Guys";
+                Thread.Sleep(10000);
+                wait_Timer();
+            }
+            else
+            {
+                guna2ProgressBar1.Style = ProgressBarStyle.Blocks;
+                guna2HtmlLabel1.Text = "[-] Creating Directorys.";
+                Directory.CreateDirectory($"{downloadfolder}FallGuys");
+                // -----------------------------------------------------------------------
+                guna2GradientButton6.Enabled = false;
+                guna2HtmlLabel1.Text = "[-] Starting Downloads.";
+                guna2HtmlLabel1.Text = "[-] Downloading: FallGuys.zip";
+                File_Downloader("http://188.166.135.171/Files/Fall%20Guys.zip", $"{downloadfolder}FallGuys.zip", guna2GradientButton6);
+                guna2HtmlLabel1.Text = "[-] Extracting: FallGuys.zip FREEZE OCCURING.";
+                Thread.Sleep(5000);
+                ZipFile.ExtractToDirectory($"{downloadfolder}FallGuys.zip", $"{downloadfolder}FallGuys\\");
+
+                // -----------------------------------------------------------------------
+                ResetButtons(true);
+                back.Enabled = true;
+                guna2HtmlLabel1.Text = "[-] Starting: Fall Guys";
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{downloadfolder}FallGuys\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"{downloadfolder}FallGuys\\FallGuys_client.exe"
+                    }
+                }.Start();
+                guna2HtmlLabel1.Text = "[-] Started: Fall Guys";
+                Thread.Sleep(10000);
+               wait_Timer();
             }
         }
     }
