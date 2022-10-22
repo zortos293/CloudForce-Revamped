@@ -484,5 +484,10 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+
+        private void guna2GradientButton24_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not done yet. (Korean cancled request)");
+        }
     }
 }

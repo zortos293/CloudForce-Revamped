@@ -401,6 +401,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudForce.ico" />
+    <None Include="Resources\brave-logo.png" />
     <None Include="Resources\fall guys.png" />
     <None Include="Resources\teardown.png" />
     <None Include="Resources\epic_games_240px.png" />
