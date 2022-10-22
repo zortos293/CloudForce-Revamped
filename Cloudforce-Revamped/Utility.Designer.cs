@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Utility));
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -63,10 +64,10 @@
             this.guna2GradientButton12 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton11 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2GradientPanel1.SuspendLayout();
+            this.guna2GradientButton25 = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,21 @@
             this.guna2DragControl1.ContainerControl = this;
             this.guna2DragControl1.TargetControl = this.guna2PictureBox1;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(24, 6);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1806, 304);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
             // guna2ControlBox2
             // 
             this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -87,10 +103,11 @@
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(926, 3);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1852, 6);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.Size = new System.Drawing.Size(90, 56);
             this.guna2ControlBox2.TabIndex = 23;
             this.guna2ControlBox2.UseTransparentBackground = true;
             // 
@@ -101,10 +118,11 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(969, 3);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1938, 6);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(90, 56);
             this.guna2ControlBox1.TabIndex = 22;
             this.guna2ControlBox1.UseTransparentBackground = true;
             // 
@@ -118,21 +136,23 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1014, 164);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(2028, 315);
             this.guna2GradientPanel1.TabIndex = 16;
             // 
             // guna2ProgressBar1
             // 
             this.guna2ProgressBar1.BorderRadius = 5;
             this.guna2ProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(12, 540);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(24, 1038);
+            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2ProgressBar1.ShadowDecoration.Parent = this.guna2ProgressBar1;
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(829, 30);
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(1658, 58);
             this.guna2ProgressBar1.TabIndex = 18;
             this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
@@ -151,11 +171,12 @@
             this.back.HoverState.Parent = this.back;
             this.back.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.back.ImageSize = new System.Drawing.Size(40, 40);
-            this.back.Location = new System.Drawing.Point(855, 535);
+            this.back.Location = new System.Drawing.Point(1710, 1029);
+            this.back.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.back.Name = "back";
             this.back.ShadowDecoration.BorderRadius = 4;
             this.back.ShadowDecoration.Parent = this.back;
-            this.back.Size = new System.Drawing.Size(147, 37);
+            this.back.Size = new System.Drawing.Size(294, 71);
             this.back.TabIndex = 19;
             this.back.Text = "Back";
             this.back.Click += new System.EventHandler(this.back_Click);
@@ -173,10 +194,11 @@
             this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(71, 179);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(142, 344);
+            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton1.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton1.TabIndex = 20;
             this.guna2GradientButton1.Text = "Desktop";
             // 
@@ -193,10 +215,11 @@
             this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
             this.guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton2.Location = new System.Drawing.Point(238, 179);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(476, 344);
+            this.guna2GradientButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton2.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton2.TabIndex = 21;
             this.guna2GradientButton2.Text = "Desktop";
             // 
@@ -213,10 +236,11 @@
             this.guna2GradientButton3.HoverState.Parent = this.guna2GradientButton3;
             this.guna2GradientButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton3.Location = new System.Drawing.Point(405, 179);
+            this.guna2GradientButton3.Location = new System.Drawing.Point(810, 344);
+            this.guna2GradientButton3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton3.Name = "guna2GradientButton3";
             this.guna2GradientButton3.ShadowDecoration.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton3.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton3.TabIndex = 22;
             this.guna2GradientButton3.Text = "Desktop";
             // 
@@ -233,10 +257,11 @@
             this.guna2GradientButton5.HoverState.Parent = this.guna2GradientButton5;
             this.guna2GradientButton5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton5.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton5.Location = new System.Drawing.Point(71, 230);
+            this.guna2GradientButton5.Location = new System.Drawing.Point(142, 442);
+            this.guna2GradientButton5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton5.Name = "guna2GradientButton5";
             this.guna2GradientButton5.ShadowDecoration.Parent = this.guna2GradientButton5;
-            this.guna2GradientButton5.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton5.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton5.TabIndex = 24;
             this.guna2GradientButton5.Text = "Desktop";
             // 
@@ -253,10 +278,11 @@
             this.guna2GradientButton6.HoverState.Parent = this.guna2GradientButton6;
             this.guna2GradientButton6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton6.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton6.Location = new System.Drawing.Point(238, 230);
+            this.guna2GradientButton6.Location = new System.Drawing.Point(476, 442);
+            this.guna2GradientButton6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton6.Name = "guna2GradientButton6";
             this.guna2GradientButton6.ShadowDecoration.Parent = this.guna2GradientButton6;
-            this.guna2GradientButton6.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton6.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton6.TabIndex = 25;
             this.guna2GradientButton6.Text = "Desktop";
             // 
@@ -273,10 +299,11 @@
             this.guna2GradientButton7.HoverState.Parent = this.guna2GradientButton7;
             this.guna2GradientButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton7.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton7.Location = new System.Drawing.Point(405, 230);
+            this.guna2GradientButton7.Location = new System.Drawing.Point(810, 442);
+            this.guna2GradientButton7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton7.Name = "guna2GradientButton7";
             this.guna2GradientButton7.ShadowDecoration.Parent = this.guna2GradientButton7;
-            this.guna2GradientButton7.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton7.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton7.TabIndex = 26;
             this.guna2GradientButton7.Text = "Desktop";
             // 
@@ -293,10 +320,11 @@
             this.guna2GradientButton9.HoverState.Parent = this.guna2GradientButton9;
             this.guna2GradientButton9.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton9.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton9.Location = new System.Drawing.Point(71, 281);
+            this.guna2GradientButton9.Location = new System.Drawing.Point(142, 540);
+            this.guna2GradientButton9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton9.Name = "guna2GradientButton9";
             this.guna2GradientButton9.ShadowDecoration.Parent = this.guna2GradientButton9;
-            this.guna2GradientButton9.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton9.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton9.TabIndex = 28;
             this.guna2GradientButton9.Text = "Desktop";
             // 
@@ -312,9 +340,10 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 501);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(24, 963);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(828, 33);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(1656, 63);
             this.guna2HtmlLabel1.TabIndex = 60;
             this.guna2HtmlLabel1.Text = null;
             // 
@@ -333,11 +362,12 @@
             this.guna2GradientButton23.HoverState.Parent = this.guna2GradientButton23;
             this.guna2GradientButton23.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton23.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2GradientButton23.Location = new System.Drawing.Point(855, 501);
+            this.guna2GradientButton23.Location = new System.Drawing.Point(1710, 963);
+            this.guna2GradientButton23.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton23.Name = "guna2GradientButton23";
             this.guna2GradientButton23.ShadowDecoration.BorderRadius = 4;
             this.guna2GradientButton23.ShadowDecoration.Parent = this.guna2GradientButton23;
-            this.guna2GradientButton23.Size = new System.Drawing.Size(147, 28);
+            this.guna2GradientButton23.Size = new System.Drawing.Size(294, 54);
             this.guna2GradientButton23.TabIndex = 61;
             this.guna2GradientButton23.Text = "Skip Timer";
             this.guna2GradientButton23.Click += new System.EventHandler(this.guna2GradientButton23_Click);
@@ -356,10 +386,11 @@
             this.guna2GradientButton24.Image = global::Cloudforce_Revamped.Properties.Resources.brave_logo;
             this.guna2GradientButton24.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton24.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton24.Location = new System.Drawing.Point(71, 332);
+            this.guna2GradientButton24.Location = new System.Drawing.Point(142, 638);
+            this.guna2GradientButton24.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton24.Name = "guna2GradientButton24";
             this.guna2GradientButton24.ShadowDecoration.Parent = this.guna2GradientButton24;
-            this.guna2GradientButton24.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton24.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton24.TabIndex = 62;
             this.guna2GradientButton24.Text = "Brave";
             this.guna2GradientButton24.Click += new System.EventHandler(this.guna2GradientButton24_Click);
@@ -378,10 +409,11 @@
             this.guna2GradientButton22.Image = global::Cloudforce_Revamped.Properties.Resources.OBIcon;
             this.guna2GradientButton22.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton22.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton22.Location = new System.Drawing.Point(739, 281);
+            this.guna2GradientButton22.Location = new System.Drawing.Point(1478, 540);
+            this.guna2GradientButton22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton22.Name = "guna2GradientButton22";
             this.guna2GradientButton22.ShadowDecoration.Parent = this.guna2GradientButton22;
-            this.guna2GradientButton22.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton22.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton22.TabIndex = 33;
             this.guna2GradientButton22.Text = "SilverBullet";
             this.guna2GradientButton22.Click += new System.EventHandler(this.guna2GradientButton22_Click);
@@ -400,10 +432,11 @@
             this.guna2GradientButton21.Image = global::Cloudforce_Revamped.Properties.Resources.opened_folder_480px;
             this.guna2GradientButton21.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton21.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton21.Location = new System.Drawing.Point(739, 179);
+            this.guna2GradientButton21.Location = new System.Drawing.Point(1478, 344);
+            this.guna2GradientButton21.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton21.Name = "guna2GradientButton21";
             this.guna2GradientButton21.ShadowDecoration.Parent = this.guna2GradientButton21;
-            this.guna2GradientButton21.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton21.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton21.TabIndex = 32;
             this.guna2GradientButton21.Text = "ZortosExplorer V1";
             this.guna2GradientButton21.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -422,10 +455,11 @@
             this.guna2GradientButton20.Image = global::Cloudforce_Revamped.Properties.Resources.notepad_240px;
             this.guna2GradientButton20.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton20.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton20.Location = new System.Drawing.Point(572, 281);
+            this.guna2GradientButton20.Location = new System.Drawing.Point(1144, 540);
+            this.guna2GradientButton20.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton20.Name = "guna2GradientButton20";
             this.guna2GradientButton20.ShadowDecoration.Parent = this.guna2GradientButton20;
-            this.guna2GradientButton20.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton20.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton20.TabIndex = 31;
             this.guna2GradientButton20.Text = "Notepad";
             this.guna2GradientButton20.Click += new System.EventHandler(this.guna2GradientButton20_Click);
@@ -444,10 +478,11 @@
             this.guna2GradientButton19.Image = global::Cloudforce_Revamped.Properties.Resources.New_Project__3___1_;
             this.guna2GradientButton19.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton19.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton19.Location = new System.Drawing.Point(739, 230);
+            this.guna2GradientButton19.Location = new System.Drawing.Point(1478, 442);
+            this.guna2GradientButton19.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton19.Name = "guna2GradientButton19";
             this.guna2GradientButton19.ShadowDecoration.Parent = this.guna2GradientButton19;
-            this.guna2GradientButton19.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton19.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton19.TabIndex = 31;
             this.guna2GradientButton19.Text = "ZortosUnzipper V2";
             this.guna2GradientButton19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -467,10 +502,11 @@
             this.guna2GradientButton18.Image = global::Cloudforce_Revamped.Properties.Resources.Parsec_512px;
             this.guna2GradientButton18.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton18.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton18.Location = new System.Drawing.Point(405, 281);
+            this.guna2GradientButton18.Location = new System.Drawing.Point(810, 540);
+            this.guna2GradientButton18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton18.Name = "guna2GradientButton18";
             this.guna2GradientButton18.ShadowDecoration.Parent = this.guna2GradientButton18;
-            this.guna2GradientButton18.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton18.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton18.TabIndex = 30;
             this.guna2GradientButton18.Text = "Parsec";
             this.guna2GradientButton18.Click += new System.EventHandler(this.guna2GradientButton18_Click);
@@ -488,10 +524,11 @@
             this.guna2GradientButton17.HoverState.Parent = this.guna2GradientButton17;
             this.guna2GradientButton17.Image = global::Cloudforce_Revamped.Properties.Resources.command_line_480px;
             this.guna2GradientButton17.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2GradientButton17.Location = new System.Drawing.Point(238, 281);
+            this.guna2GradientButton17.Location = new System.Drawing.Point(476, 540);
+            this.guna2GradientButton17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton17.Name = "guna2GradientButton17";
             this.guna2GradientButton17.ShadowDecoration.Parent = this.guna2GradientButton17;
-            this.guna2GradientButton17.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton17.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton17.TabIndex = 29;
             this.guna2GradientButton17.Text = "Command Prompt";
             this.guna2GradientButton17.Click += new System.EventHandler(this.guna2GradientButton17_Click);
@@ -511,10 +548,11 @@
             this.guna2GradientButton16.Image = global::Cloudforce_Revamped.Properties.Resources.spotify_480px;
             this.guna2GradientButton16.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton16.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton16.Location = new System.Drawing.Point(71, 281);
+            this.guna2GradientButton16.Location = new System.Drawing.Point(142, 540);
+            this.guna2GradientButton16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton16.Name = "guna2GradientButton16";
             this.guna2GradientButton16.ShadowDecoration.Parent = this.guna2GradientButton16;
-            this.guna2GradientButton16.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton16.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton16.TabIndex = 28;
             this.guna2GradientButton16.Text = "Spotify";
             this.guna2GradientButton16.Click += new System.EventHandler(this.guna2GradientButton16_Click);
@@ -533,10 +571,11 @@
             this.guna2GradientButton8.Image = global::Cloudforce_Revamped.Properties.Resources.New_Project__3___1_;
             this.guna2GradientButton8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton8.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton8.Location = new System.Drawing.Point(572, 230);
+            this.guna2GradientButton8.Location = new System.Drawing.Point(1144, 442);
+            this.guna2GradientButton8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton8.Name = "guna2GradientButton8";
             this.guna2GradientButton8.ShadowDecoration.Parent = this.guna2GradientButton8;
-            this.guna2GradientButton8.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton8.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton8.TabIndex = 27;
             this.guna2GradientButton8.Text = "ZortosUnzipper V1";
             this.guna2GradientButton8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -557,10 +596,11 @@
             this.guna2GradientButton15.Image = global::Cloudforce_Revamped.Properties.Resources.fox_480px;
             this.guna2GradientButton15.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton15.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton15.Location = new System.Drawing.Point(405, 230);
+            this.guna2GradientButton15.Location = new System.Drawing.Point(810, 442);
+            this.guna2GradientButton15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton15.Name = "guna2GradientButton15";
             this.guna2GradientButton15.ShadowDecoration.Parent = this.guna2GradientButton15;
-            this.guna2GradientButton15.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton15.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton15.TabIndex = 26;
             this.guna2GradientButton15.Text = "LibreWolf";
             this.guna2GradientButton15.Click += new System.EventHandler(this.guna2GradientButton15_Click);
@@ -579,10 +619,11 @@
             this.guna2GradientButton14.Image = global::Cloudforce_Revamped.Properties.Resources.fox_480px;
             this.guna2GradientButton14.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton14.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton14.Location = new System.Drawing.Point(238, 230);
+            this.guna2GradientButton14.Location = new System.Drawing.Point(476, 442);
+            this.guna2GradientButton14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton14.Name = "guna2GradientButton14";
             this.guna2GradientButton14.ShadowDecoration.Parent = this.guna2GradientButton14;
-            this.guna2GradientButton14.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton14.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton14.TabIndex = 25;
             this.guna2GradientButton14.Text = "Firefox";
             this.guna2GradientButton14.Click += new System.EventHandler(this.guna2GradientButton14_Click);
@@ -601,10 +642,11 @@
             this.guna2GradientButton13.Image = global::Cloudforce_Revamped.Properties.Resources.anydesk_240px;
             this.guna2GradientButton13.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton13.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton13.Location = new System.Drawing.Point(71, 230);
+            this.guna2GradientButton13.Location = new System.Drawing.Point(142, 442);
+            this.guna2GradientButton13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton13.Name = "guna2GradientButton13";
             this.guna2GradientButton13.ShadowDecoration.Parent = this.guna2GradientButton13;
-            this.guna2GradientButton13.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton13.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton13.TabIndex = 24;
             this.guna2GradientButton13.Text = "Anydesk";
             this.guna2GradientButton13.Click += new System.EventHandler(this.guna2GradientButton13_Click);
@@ -623,10 +665,11 @@
             this.guna2GradientButton4.Image = global::Cloudforce_Revamped.Properties.Resources.opened_folder_480px;
             this.guna2GradientButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton4.Location = new System.Drawing.Point(572, 179);
+            this.guna2GradientButton4.Location = new System.Drawing.Point(1144, 344);
+            this.guna2GradientButton4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton4.Name = "guna2GradientButton4";
             this.guna2GradientButton4.ShadowDecoration.Parent = this.guna2GradientButton4;
-            this.guna2GradientButton4.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton4.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton4.TabIndex = 23;
             this.guna2GradientButton4.Text = "Explorer ++";
             this.guna2GradientButton4.Click += new System.EventHandler(this.guna2GradientButton4_Click);
@@ -645,10 +688,11 @@
             this.guna2GradientButton12.Image = global::Cloudforce_Revamped.Properties.Resources.system_task_480px;
             this.guna2GradientButton12.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton12.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2GradientButton12.Location = new System.Drawing.Point(405, 179);
+            this.guna2GradientButton12.Location = new System.Drawing.Point(810, 344);
+            this.guna2GradientButton12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton12.Name = "guna2GradientButton12";
             this.guna2GradientButton12.ShadowDecoration.Parent = this.guna2GradientButton12;
-            this.guna2GradientButton12.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton12.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton12.TabIndex = 22;
             this.guna2GradientButton12.Text = "Proccess Hacker";
             this.guna2GradientButton12.Click += new System.EventHandler(this.guna2GradientButton12_Click);
@@ -667,10 +711,11 @@
             this.guna2GradientButton11.Image = global::Cloudforce_Revamped.Properties.Resources.discord_480px;
             this.guna2GradientButton11.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton11.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton11.Location = new System.Drawing.Point(238, 179);
+            this.guna2GradientButton11.Location = new System.Drawing.Point(476, 344);
+            this.guna2GradientButton11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton11.Name = "guna2GradientButton11";
             this.guna2GradientButton11.ShadowDecoration.Parent = this.guna2GradientButton11;
-            this.guna2GradientButton11.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton11.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton11.TabIndex = 21;
             this.guna2GradientButton11.Text = "Discord";
             this.guna2GradientButton11.Click += new System.EventHandler(this.guna2GradientButton11_Click);
@@ -689,41 +734,53 @@
             this.guna2GradientButton10.Image = global::Cloudforce_Revamped.Properties.Resources.desktop_480px;
             this.guna2GradientButton10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton10.Location = new System.Drawing.Point(71, 179);
+            this.guna2GradientButton10.Location = new System.Drawing.Point(142, 344);
+            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton10.Name = "guna2GradientButton10";
             this.guna2GradientButton10.ShadowDecoration.Parent = this.guna2GradientButton10;
-            this.guna2GradientButton10.Size = new System.Drawing.Size(161, 45);
+            this.guna2GradientButton10.Size = new System.Drawing.Size(322, 87);
             this.guna2GradientButton10.TabIndex = 20;
             this.guna2GradientButton10.Text = "Desktop";
             this.guna2GradientButton10.Click += new System.EventHandler(this.guna2GradientButton10_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(903, 158);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 21;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 67);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 96);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // guna2GradientButton25
+            // 
+            this.guna2GradientButton25.Animated = true;
+            this.guna2GradientButton25.BorderRadius = 14;
+            this.guna2GradientButton25.CheckedState.Parent = this.guna2GradientButton25;
+            this.guna2GradientButton25.CustomImages.Parent = this.guna2GradientButton25;
+            this.guna2GradientButton25.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton25.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton25.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton25.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton25.HoverState.Parent = this.guna2GradientButton25;
+            this.guna2GradientButton25.Image = global::Cloudforce_Revamped.Properties.Resources.brave_logo;
+            this.guna2GradientButton25.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton25.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2GradientButton25.Location = new System.Drawing.Point(476, 638);
+            this.guna2GradientButton25.Margin = new System.Windows.Forms.Padding(6);
+            this.guna2GradientButton25.Name = "guna2GradientButton25";
+            this.guna2GradientButton25.ShadowDecoration.Parent = this.guna2GradientButton25;
+            this.guna2GradientButton25.Size = new System.Drawing.Size(322, 87);
+            this.guna2GradientButton25.TabIndex = 63;
+            this.guna2GradientButton25.Text = "OBS Studio";
+            this.guna2GradientButton25.Click += new System.EventHandler(this.guna2GradientButton25_Click);
+            // 
             // Utility
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 582);
+            this.ClientSize = new System.Drawing.Size(2028, 1119);
+            this.Controls.Add(this.guna2GradientButton25);
             this.Controls.Add(this.guna2GradientButton24);
             this.Controls.Add(this.guna2GradientButton23);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -755,13 +812,14 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Utility";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Utility";
             this.Load += new System.EventHandler(this.Utility_Load);
             this.Shown += new System.EventHandler(this.Utility_Shown);
-            this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -804,5 +862,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton23;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton24;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton25;
     }
 }

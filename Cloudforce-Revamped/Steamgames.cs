@@ -294,5 +294,48 @@ namespace Cloudforce_Revamped
                 p.Kill();
             Process.Start(@"C:\Program Files (x86)\Steam\steam.exe");
         }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            guna2HtmlLabel1.ForeColor = Color.White;
+            if (File.Exists($"{downloadfolder}teardown\\teardown.exe"))
+            {
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{downloadfolder}teardown\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"{downloadfolder}teardown\\teardown.exe"
+                    }
+                }.Start();
+                guna2HtmlLabel1.Text = "[-] Started: TearDown";
+            }
+            else
+            {
+                guna2ProgressBar1.Style = ProgressBarStyle.Blocks;
+                guna2HtmlLabel1.Text = "[-] Creating Directorys.";
+                Directory.CreateDirectory($"{downloadfolder}teardown");
+                // -----------------------------------------------------------------------
+                guna2GradientButton3.Enabled = false;
+                guna2HtmlLabel1.Text = "[-] Downloading TearDown.";
+                Game_Downloader("https://files.zortos.me/Files/Games/Teardown_steam.zip", $"{downloadfolder}teardownstem.zip");
+                ZipFile.ExtractToDirectory($"{downloadfolder}teardownstem.zip", $"{downloadfolder}teardown");
+                // -----------------------------------------------------------------------
+                ResetButtons(true);
+                back.Enabled = true;
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{downloadfolder}teardown\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"{downloadfolder}teardown\\teardown.exe"
+                    }
+                }.Start();
+                guna2HtmlLabel1.Text = "[-] Started: TearDown";
+            }
+        }
+
     }
 }

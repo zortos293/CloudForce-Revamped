@@ -50,13 +50,14 @@
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(65, 42);
+            this.guna2TextBox1.Location = new System.Drawing.Point(130, 81);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "Username";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
+            this.guna2TextBox1.Size = new System.Drawing.Size(400, 69);
             this.guna2TextBox1.TabIndex = 0;
             // 
             // guna2TextBox2
@@ -73,13 +74,14 @@
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(65, 97);
+            this.guna2TextBox2.Location = new System.Drawing.Point(130, 187);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '*';
             this.guna2TextBox2.PlaceholderText = "Password";
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(200, 36);
+            this.guna2TextBox2.Size = new System.Drawing.Size(400, 69);
             this.guna2TextBox2.TabIndex = 1;
             // 
             // guna2GradientButton7
@@ -93,10 +95,11 @@
             this.guna2GradientButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton7.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton7.HoverState.Parent = this.guna2GradientButton7;
-            this.guna2GradientButton7.Location = new System.Drawing.Point(12, 144);
+            this.guna2GradientButton7.Location = new System.Drawing.Point(24, 277);
+            this.guna2GradientButton7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton7.Name = "guna2GradientButton7";
             this.guna2GradientButton7.ShadowDecoration.Parent = this.guna2GradientButton7;
-            this.guna2GradientButton7.Size = new System.Drawing.Size(142, 33);
+            this.guna2GradientButton7.Size = new System.Drawing.Size(284, 63);
             this.guna2GradientButton7.TabIndex = 100003;
             this.guna2GradientButton7.Text = "Login";
             this.guna2GradientButton7.Click += new System.EventHandler(this.guna2GradientButton7_Click);
@@ -107,10 +110,12 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(65, 12);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(130, 23);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(217, 21);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(434, 40);
             this.guna2HtmlLabel1.TabIndex = 100004;
+            this.guna2HtmlLabel1.Text = null;
             // 
             // guna2GradientButton1
             // 
@@ -123,26 +128,29 @@
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(160, 144);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(320, 277);
+            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(142, 33);
+            this.guna2GradientButton1.Size = new System.Drawing.Size(284, 63);
             this.guna2GradientButton1.TabIndex = 100005;
             this.guna2GradientButton1.Text = "Register";
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 189);
+            this.ClientSize = new System.Drawing.Size(656, 363);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2GradientButton7);
             this.Controls.Add(this.guna2TextBox2);
             this.Controls.Add(this.guna2TextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.ResumeLayout(false);
 

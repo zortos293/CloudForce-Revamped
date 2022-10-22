@@ -366,5 +366,47 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
+
+        private void guna2GradientButton7_Click(object sender, EventArgs e)
+        {
+            guna2HtmlLabel1.ForeColor = Color.White;
+            if (File.Exists($"{downloadfolder}teardown\\teardown.exe"))
+            {
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{downloadfolder}teardown\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"{downloadfolder}teardown\\teardown.exe"
+                    }
+                }.Start();
+                guna2HtmlLabel1.Text = "[-] Started: TearDown";
+            }
+            else
+            {
+                guna2ProgressBar1.Style = ProgressBarStyle.Blocks;
+                guna2HtmlLabel1.Text = "[-] Creating Directorys.";
+                Directory.CreateDirectory($"{downloadfolder}teardown");
+                // -----------------------------------------------------------------------
+                guna2GradientButton7.Enabled = false;
+                guna2HtmlLabel1.Text = "[-] Downloading TearDown.";
+                File_Downloader("https://files.zortos.me/Files/Games/Teardown_crack.zip", $"{downloadfolder}teardownstem.zip", guna2GradientButton7);
+                ZipFile.ExtractToDirectory($"{downloadfolder}teardownstem.zip", $"{downloadfolder}teardown");
+                // -----------------------------------------------------------------------
+                ResetButtons(true);
+                back.Enabled = true;
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{downloadfolder}teardown\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = $"{downloadfolder}teardown\\teardown.exe"
+                    }
+                }.Start();
+                guna2HtmlLabel1.Text = "[-] Started: TearDown";
+            }
+        }
     }
 }
