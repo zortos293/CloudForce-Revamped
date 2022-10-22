@@ -345,7 +345,7 @@ namespace Cloudforce_Revamped
                         FileName = $"{mainpath}\\shard.bat"
                     }
                 }.Start();
-                DialogResult dialogResult = MessageBox.Show("Did you log in", "Quesiton", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
                     new Process()
@@ -359,9 +359,10 @@ namespace Cloudforce_Revamped
                     }.Start();
                 }
                 // -----------------------------------------------------------------------
+                MessageBox.Show("Launch Fall guys!!!!!!!");
                 ResetButtons(true);
                 back.Enabled = true;
-                guna2HtmlLabel1.Text = "[-] Started: Fall Guys";
+                guna2HtmlLabel1.Text = "[-] Started: EpicGames.";
                 wait_Timer();
             }
         }
