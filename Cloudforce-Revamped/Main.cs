@@ -132,21 +132,17 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            steam.ShowDialog();
-            this.Show();
-            checktheme();
-            //if (login.SubExist("premium"))
-            //{
-            //    this.Hide();
-            //    steam.ShowDialog();
-            //    this.Show();
-            //    checktheme();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("You need to have Cloudforce Early Access to use this feature");
-            //}
+            if (login.SubExist("premium"))
+            {
+                this.Hide();
+                steam.ShowDialog();
+                this.Show();
+                checktheme();
+            }
+            else
+            {
+                MessageBox.Show("You need to have Cloudforce Early Access to use this feature");
+            }
         }
 
         private void guna2GradientButton7_Click(object sender, EventArgs e)

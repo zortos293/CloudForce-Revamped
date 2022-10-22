@@ -180,13 +180,7 @@ namespace Cloudforce_Revamped
                 ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
                 guna2GradientButton10.Enabled = false;
-                MessageBox.Show("Relaunch roblox after install ;) Roblox has an issue with the update service. CloudForce will auto stop the install.");
-                Thread.Sleep(7000);
-                Process[] ps = Process.GetProcessesByName("RobloxPlayerLauncher");
-
-                foreach (Process p in ps)
-                    p.Kill();
-                Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
+                MessageBox.Show("Relaunch roblox after install ;)");
                 wait_Timer();
             }
         }
@@ -201,7 +195,7 @@ namespace Cloudforce_Revamped
             }
             else
             {
-                File_Downloader("https://picteon.dev/files/Lunar_Client_v2.12.8.exe", mainpath + "\\Lunar_Install.exe", guna2GradientButton10);
+                File_Downloader("https://launcherupdates.lunarclientcdn.com/Lunar%20Client%20v2.13.0.exe", mainpath + "\\Lunar_Install.exe", guna2GradientButton10);
                 Process.Start(mainpath + "\\Lunar_Install.exe");
                 guna2GradientButton2.Enabled = false;
                 wait_Timer();
@@ -283,23 +277,31 @@ namespace Cloudforce_Revamped
                 wait_Timer();
             }
         }
-        private string downloadfolder = $"B:\\falldigs\\";
+        private string downloadfolder = $"C:\\users\\{Environment.UserName}\\downloads\\";
         private void guna2GradientButton6_Click(object sender, EventArgs e)
         {
-            if (timercheck() == false) return;
-            if (File.Exists($"{downloadfolder}FallGuys\\FallGuys_client.exe"))
+            if(!login.SubExist("premium"))
             {
-                guna2HtmlLabel1.Text = "[-] Starting: Fall Guys";
-                new Process()
+                MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys");
+                return;
+            }
+            if (timercheck() == false) return;
+            if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
+            {
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                MessageBox.Show("After login Close this messagebox");
+                Process[] ps = Process.GetProcessesByName("EpicWebHelper");
+
+                foreach (Process p in ps)
+                    p.Kill();
+                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Delete", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
                 {
-                    StartInfo = new ProcessStartInfo()
-                    {
-                        WorkingDirectory = $"{downloadfolder}FallGuys\\",
-                        WindowStyle = ProcessWindowStyle.Normal,
-                        FileName = $"{downloadfolder}FallGuys\\FallGuys_client_game.exe",
-                        Arguments = ""
-                    }
-                }.Start();
+                    Process[] ps1 = Process.GetProcessesByName("EpicWebHelper");
+
+                    foreach (Process p in ps1)
+                        p.Kill();
+                }
                 guna2HtmlLabel1.Text = "[-] Started: Fall Guys";
                 Thread.Sleep(10000);
                 wait_Timer();
@@ -308,40 +310,42 @@ namespace Cloudforce_Revamped
             {
                 guna2ProgressBar1.Style = ProgressBarStyle.Blocks;
                 guna2HtmlLabel1.Text = "[-] Creating Directorys.";
-                Directory.CreateDirectory($"B:\\falldigs");
-                Directory.CreateDirectory($"C:\\ProgramData\\EpicGamesLauncher\\");
-                Directory.CreateDirectory($"C:\\ProgramData\\EpicGamesLauncher\\Data\\");
-                Directory.CreateDirectory($"C:\\ProgramData\\EpicGamesLauncher\\Data\\Manifests");
-                // -----------------------------------------------------------------------
+                Directory.CreateDirectory($"{downloadfolder}\\FallGuys");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
+                Directory.CreateDirectory(@"B:\\FallGuys");
+                File_Downloader("https://cdn.discordapp.com/attachments/914711133162717214/1033315971160625172/882D7E384AEE27D7ED9F51BF72FACD60.item" , @"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", guna2GradientButton6);
+                // ----------------------------------------------------------------------- < Installing FallGuys
                 guna2GradientButton6.Enabled = false;
                 guna2HtmlLabel1.Text = "[-] Starting Downloads.";
-                guna2HtmlLabel1.Text = "[-] Downloading: FallGuys.zip, after it will freeze because of extraction.";
+                guna2HtmlLabel1.Text = "[-] Downloading: FallGuys.zip";
                 File_Downloader("http://188.166.135.171/Files/Fall%20Guys.zip", $"{downloadfolder}FallGuys.zip", guna2GradientButton6);
                 guna2HtmlLabel1.Text = "[-] Extracting: FallGuys.zip FREEZE OCCURING.";
-                Thread.Sleep(5000);
-                ZipFile.ExtractToDirectory($"{downloadfolder}FallGuys.zip", $"{downloadfolder}FallGuys\\");
-                guna2HtmlLabel1.Text = "[-] Preparing Fallguys. App will freeze, be patient";
-                File_Downloader("https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2GradientButton6);
-                File_Downloader("https://cdn.discordapp.com/attachments/914711133162717214/1033208219625062511/882D7E384AEE27D7ED9F51BF72FACD60.item", "C:\\ProgramData\\EpicGamesLauncher\\Data\\Manifests\\882D7E384AEE27D7ED9F51BF72FACD60.item", guna2GradientButton6);
+                ZipFile.ExtractToDirectory($"{downloadfolder}\\FallGuys.zip", @"B:\FallGuys\");
+                // ----------------------------------------------------------------------- < Installing Epic Games Launcher
+                guna2HtmlLabel1.Text = "[-] Installing: Epic Games services PLEASE WAIT IT Will FREEZE";
+                File_Downloader(" https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2GradientButton5);
                 ZipFile.ExtractToDirectory(mainpath + "\\Epic%20Games.zip", mainpath + "\\");
-                // -----------------------------------------------------------------------
-                Thread.Sleep(10000);
                 Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
-                guna2HtmlLabel1.Text = "[-] Read instructions";
-                switch (MessageBox.Show("Epic games has started.\nLogin then press 'yes'. Then start fall guys. DO NOT PRESS OK IN THE PROMPT\nTo cancel the operation, press 'no'", "Read me.", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    case DialogResult.Yes:
-                        break;
-
-                    case DialogResult.No:
-                        break;
-                }
+                MessageBox.Show("After login Close this messagebox");
                 Process[] ps = Process.GetProcessesByName("EpicWebHelper");
+
                 foreach (Process p in ps)
                     p.Kill();
+                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    Process[] ps1 = Process.GetProcessesByName("EpicWebHelper");
+
+                    foreach (Process p in ps1)
+                        p.Kill();
+                }
+                // -----------------------------------------------------------------------
                 ResetButtons(true);
                 back.Enabled = true;
-                MessageBox.Show("Launch Fall Guys");
+                guna2HtmlLabel1.Text = "[-] Started: Fall Guys";
                 wait_Timer();
             }
         }
