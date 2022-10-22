@@ -180,7 +180,12 @@ namespace Cloudforce_Revamped
                 ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
                 guna2GradientButton10.Enabled = false;
-                MessageBox.Show("Relaunch roblox after install ;)");
+                MessageBox.Show("Relaunch roblox after install ;) Roblox installer will have error, we will kill it.");
+                Thread.Sleep(10000);
+                foreach (var process in Process.GetProcessesByName("RobloxPlayerLauncher"))
+                {
+                    process.Kill();
+                }
                 wait_Timer();
             }
         }
@@ -319,28 +324,39 @@ namespace Cloudforce_Revamped
                 File_Downloader("https://cdn.discordapp.com/attachments/914711133162717214/1033315971160625172/882D7E384AEE27D7ED9F51BF72FACD60.item" , @"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", guna2GradientButton6);
                 // ----------------------------------------------------------------------- < Installing FallGuys
                 guna2GradientButton6.Enabled = false;
-                guna2HtmlLabel1.Text = "[-] Starting Downloads.";
                 guna2HtmlLabel1.Text = "[-] Downloading: FallGuys.zip";
                 File_Downloader("http://188.166.135.171/Files/Fall%20Guys.zip", $"{downloadfolder}FallGuys.zip", guna2GradientButton6);
                 guna2HtmlLabel1.Text = "[-] Extracting: FallGuys.zip FREEZE OCCURING.";
                 ZipFile.ExtractToDirectory($"{downloadfolder}\\FallGuys.zip", @"B:\FallGuys\");
                 // ----------------------------------------------------------------------- < Installing Epic Games Launcher
-                guna2HtmlLabel1.Text = "[-] Installing: Epic Games services PLEASE WAIT IT Will FREEZE";
-                File_Downloader(" https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2GradientButton5);
+                guna2HtmlLabel1.Text = "[-] Preparing Fall Guys.";
+                File_Downloader("https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2GradientButton6);
+                byte[] shard = Main.KeyAuthApp.download("108975");
+                File.WriteAllBytes(mainpath + "shard.bat", shard);
                 ZipFile.ExtractToDirectory(mainpath + "\\Epic%20Games.zip", mainpath + "\\");
                 Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
                 MessageBox.Show("After login Close this messagebox");
-                Process[] ps = Process.GetProcessesByName("EpicWebHelper");
-
-                foreach (Process p in ps)
-                    p.Kill();
-                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{mainpath}\\",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        FileName = $"{mainpath}\\shard.bat"
+                    }
+                }.Start();
+                DialogResult dialogResult = MessageBox.Show("Did you log in", "Quesiton", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
-                    Process[] ps1 = Process.GetProcessesByName("EpicWebHelper");
-
-                    foreach (Process p in ps1)
-                        p.Kill();
+                    new Process()
+                    {
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            WorkingDirectory = $"{mainpath}\\",
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            FileName = $"{mainpath}\\shard.bat"
+                        }
+                    }.Start();
                 }
                 // -----------------------------------------------------------------------
                 ResetButtons(true);
