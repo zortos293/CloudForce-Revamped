@@ -63,7 +63,7 @@
             this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2GradientButton1.Location = new System.Drawing.Point(142, 354);
-            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(6);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.Size = new System.Drawing.Size(322, 87);
@@ -85,12 +85,12 @@
             this.back.HoverState.Parent = this.back;
             this.back.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.back.ImageSize = new System.Drawing.Size(40, 40);
-            this.back.Location = new System.Drawing.Point(1710, 1038);
-            this.back.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.back.Location = new System.Drawing.Point(1694, 1033);
+            this.back.Margin = new System.Windows.Forms.Padding(6);
             this.back.Name = "back";
             this.back.ShadowDecoration.BorderRadius = 4;
             this.back.ShadowDecoration.Parent = this.back;
-            this.back.Size = new System.Drawing.Size(294, 71);
+            this.back.Size = new System.Drawing.Size(248, 54);
             this.back.TabIndex = 37;
             this.back.Text = "Back";
             this.back.Click += new System.EventHandler(this.back_Click);
@@ -99,8 +99,8 @@
             // 
             this.guna2ProgressBar1.BorderRadius = 5;
             this.guna2ProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(24, 1048);
-            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(24, 1029);
+            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(6);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -118,7 +118,7 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(2028, 315);
@@ -133,7 +133,7 @@
             this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox2.Location = new System.Drawing.Point(1852, 6);
-            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(6);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
             this.guna2ControlBox2.Size = new System.Drawing.Size(90, 56);
@@ -148,7 +148,7 @@
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.Location = new System.Drawing.Point(1938, 6);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(6);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(90, 56);
@@ -165,7 +165,7 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::Cloudforce_Revamped.Properties.Resources.CG;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 6);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(1806, 304);
@@ -180,7 +180,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(26, 996);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(1656, 40);
             this.guna2HtmlLabel1.TabIndex = 59;
@@ -207,7 +207,7 @@
             this.guna2GradientButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton4.ImageSize = new System.Drawing.Size(35, 35);
             this.guna2GradientButton4.Location = new System.Drawing.Point(476, 354);
-            this.guna2GradientButton4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2GradientButton4.Margin = new System.Windows.Forms.Padding(6);
             this.guna2GradientButton4.Name = "guna2GradientButton4";
             this.guna2GradientButton4.ShadowDecoration.Parent = this.guna2GradientButton4;
             this.guna2GradientButton4.Size = new System.Drawing.Size(322, 87);
@@ -230,7 +230,7 @@
             this.guna2GradientButton10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2GradientButton10.Location = new System.Drawing.Point(142, 354);
-            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(6);
             this.guna2GradientButton10.Name = "guna2GradientButton10";
             this.guna2GradientButton10.ShadowDecoration.Parent = this.guna2GradientButton10;
             this.guna2GradientButton10.Size = new System.Drawing.Size(322, 87);
@@ -241,7 +241,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 77);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 96);
             this.pictureBox1.TabIndex = 35;
@@ -264,7 +264,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Patches";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patches";

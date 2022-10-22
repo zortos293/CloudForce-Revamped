@@ -70,7 +70,7 @@
             this.back.Name = "back";
             this.back.ShadowDecoration.BorderRadius = 4;
             this.back.ShadowDecoration.Parent = this.back;
-            this.back.Size = new System.Drawing.Size(294, 71);
+            this.back.Size = new System.Drawing.Size(232, 71);
             this.back.TabIndex = 63;
             this.back.Text = "Back";
             this.back.Click += new System.EventHandler(this.back_Click);
@@ -188,12 +188,12 @@
             this.guna2GradientButton23.HoverState.Parent = this.guna2GradientButton23;
             this.guna2GradientButton23.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton23.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2GradientButton23.Location = new System.Drawing.Point(1710, 971);
+            this.guna2GradientButton23.Location = new System.Drawing.Point(1710, 969);
             this.guna2GradientButton23.Margin = new System.Windows.Forms.Padding(6);
             this.guna2GradientButton23.Name = "guna2GradientButton23";
             this.guna2GradientButton23.ShadowDecoration.BorderRadius = 4;
             this.guna2GradientButton23.ShadowDecoration.Parent = this.guna2GradientButton23;
-            this.guna2GradientButton23.Size = new System.Drawing.Size(294, 54);
+            this.guna2GradientButton23.Size = new System.Drawing.Size(232, 54);
             this.guna2GradientButton23.TabIndex = 69;
             this.guna2GradientButton23.Text = "Skip Timer";
             this.guna2GradientButton23.Click += new System.EventHandler(this.guna2GradientButton23_Click);
@@ -246,12 +246,12 @@
             this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
             this.guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2GradientButton2.Location = new System.Drawing.Point(1710, 906);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(1710, 903);
             this.guna2GradientButton2.Margin = new System.Windows.Forms.Padding(6);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.ShadowDecoration.BorderRadius = 4;
             this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(294, 54);
+            this.guna2GradientButton2.Size = new System.Drawing.Size(232, 54);
             this.guna2GradientButton2.TabIndex = 71;
             this.guna2GradientButton2.Text = "Login Steam";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
@@ -278,15 +278,12 @@
             this.guna2GradientButton3.TabIndex = 72;
             this.guna2GradientButton3.Text = "TearDown";
             this.guna2GradientButton3.Click += new System.EventHandler(this.guna2GradientButton3_Click);
-
             // 
             // steamgames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2028, 1119);
-
             this.Controls.Add(this.guna2GradientButton3);
             this.Controls.Add(this.guna2GradientButton2);
             this.Controls.Add(this.guna2GradientButton10);
@@ -299,7 +296,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.MinimumSize = new System.Drawing.Size(2028, 1119);
+            this.MinimumSize = new System.Drawing.Size(1862, 1019);
             this.Name = "steamgames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Games";
