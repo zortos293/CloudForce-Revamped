@@ -492,7 +492,13 @@ namespace Cloudforce_Revamped
 
         private void guna2GradientButton25_Click(object sender, EventArgs e)
         {
-            //https://cdn-fastly.obsproject.com/downloads/OBS-Studio-28.0.3-Full-Installer-x64.exe
+            
+            if (timercheck() == false) return;
+            MessageBox.Show("If you already installed, open ir via explorer++\n If not install it to C:\\OBS");
+                File_Downloader("https://cdn-fastly.obsproject.com/downloads/OBS-Studio-28.0.3-Full-Installer-x64.exe", mainpath + "\\ops.exe", guna2GradientButton20);
+                Process.Start(mainpath + "\\ops.exe");
+                guna2GradientButton20.Enabled = true;
+                wait_Timer();
         }
     }
 }
