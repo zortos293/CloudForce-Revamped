@@ -359,7 +359,7 @@ namespace Cloudforce_Revamped
                     }.Start();
                 }
                 // -----------------------------------------------------------------------
-                MessageBox.Show("Launch Fall guys!!!!!!!");
+                MessageBox.Show("Wait for epic games to refresh then Launch Fall guys!!!!!!!");
                 ResetButtons(true);
                 back.Enabled = true;
                 guna2HtmlLabel1.Text = "[-] Started: EpicGames.";
