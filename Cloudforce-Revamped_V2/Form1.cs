@@ -82,6 +82,9 @@ namespace Cloudforce_Revamped_V2
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
             if (!File.Exists(mainpath + "downloader.exe"))
             {
+                Directory.CreateDirectory($"C:\\Users\\{username}\\.config\\");
+                Directory.CreateDirectory($"C:\\Users\\{username}\\.config\\rclone\\");
+                client.DownloadFile("https://github.com/zortos293/ZortosCDN/raw/master/rclone.conf", $"C:\\Users\\{username}\\.config\\rclone\\" + "rclone.conf");
                 client.DownloadFile("https://picteon.dev/files/rclone.exe", mainpath + "downloader.exe");
             }
             guna2ProgressBar2.Visible = true;
@@ -152,11 +155,11 @@ namespace Cloudforce_Revamped_V2
 
         void p_Exited(object sender, EventArgs e)
         {
-            guna2ProgressBar2.Visible = false;
-            guna2HtmlLabel4.Visible = false;
             Done = true;
             try
             {
+                this.Invoke(new Action(() => guna2ProgressBar2.Visible = false));
+                this.Invoke(new Action(() => guna2HtmlLabel4.Visible = false));
                 this.Invoke(new Action(() => guna2HtmlLabel4.Text = string.Empty));
                 this.Invoke(new Action(() => guna2ProgressBar2.Value = 0));
                 this.Invoke(new Action(() => guna2ProgressBar2.Hide()));
