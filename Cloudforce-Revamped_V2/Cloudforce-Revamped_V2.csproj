@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,7 +74,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +89,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opened_folder_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_task_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project %283%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad_240px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anydesk_240px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fox_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brave-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parsec_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spotify_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmdprompt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OBIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200px-OBS_Studio_Logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\O5jbqLhD_400x400.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Overwatch2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teardown-cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Robloxposter.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
