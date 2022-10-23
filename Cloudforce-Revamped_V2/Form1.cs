@@ -92,7 +92,7 @@ namespace Cloudforce_Revamped_V2
                         int index = string2.IndexOf('%');
                         string[] split = string2.Split(',');
 
-                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2HtmlLabel4.Text = split[3]));
+                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2HtmlLabel4.Text = split[2] +  " " +split[3]));
 
                         if (index >= 0)
                         {
@@ -133,11 +133,17 @@ namespace Cloudforce_Revamped_V2
                 return;
             }
         }
-        private void Startgame(int JsonNumber)
+        private bool Startgame(int JsonNumber)
         {
             string jsonString = File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
-            Process.Start(mainpath + results.Game[JsonNumber].AppExe);
+            if (File.Exists(mainpath + results.Game[JsonNumber].AppExe))
+            {
+                Process.Start(mainpath + results.Game[JsonNumber].AppExe);
+                return true;
+            }
+            
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -156,6 +162,7 @@ namespace Cloudforce_Revamped_V2
 
         private async void guna2ImageButton1_Click(object sender, EventArgs e)
         {
+            Startgame(0);
             DownloadGame(0); // Overwatch
             while (Done == false)
             {
@@ -185,7 +192,7 @@ namespace Cloudforce_Revamped_V2
                 ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
             });
             File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
-            Startgame(0); // Overwatche
+            Startgame(0); // Overwatch
         }
     }
 }
