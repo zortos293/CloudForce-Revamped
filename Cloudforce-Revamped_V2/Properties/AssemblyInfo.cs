@@ -1,27 +1,26 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Cloudforce-Revamped")]
-[assembly: AssemblyDescription("CloudForce-Now")]
+[assembly: AssemblyTitle("Cloudforce-Revamped_V2")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CloudForce")]
-[assembly: AssemblyProduct("Cloudforce-Revamped")]
-[assembly: AssemblyCopyright("Zortos 293 Kief ©  2022")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Cloudforce-Revamped_V2")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the types in this assembly not visibleb
+// Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("30586a70-42c0-4939-869a-3bec0d027baf")]
+[assembly: Guid("64647bc1-4eeb-4443-95b9-d2d1ce84a375")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,6 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.6.4")]
-[assembly: AssemblyFileVersion("1.2.6.4")]
-[assembly: NeutralResourcesLanguage("en-US")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

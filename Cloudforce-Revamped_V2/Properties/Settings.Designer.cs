@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Cloudforce_Revamped.Properties
+namespace Cloudforce_Revamped_V2.Properties
 {
 
 
