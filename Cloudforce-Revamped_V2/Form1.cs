@@ -75,9 +75,10 @@ namespace Cloudforce_Revamped_V2
 
         public void DownloadGame(int JsonNumber) // Download Game Trough Onedrive <<<<
         {
+            var username = Environment.UserName;
             Done = false;
             WebClient client = new WebClient();
-            string jsonString = File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
+            string jsonString = File.ReadAllText($"C:\\Users\\{username}\\Downloads\\test.json");  //Need to change
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
             if (!File.Exists(mainpath + "downloader.exe"))
             {
@@ -102,6 +103,7 @@ namespace Cloudforce_Revamped_V2
 
         void process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
+            var username = Environment.UserName;
             try
             {
                 if (ForceExit)
@@ -110,7 +112,7 @@ namespace Cloudforce_Revamped_V2
 
                     foreach (Process p in ps)
                         p.Kill();
-                    string jsonString = System.IO.File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
+                    string jsonString = System.IO.File.ReadAllText($"C:\\Users\\{username}\\Downloads\\test.json");  //Need to change
                     var results = JsonConvert.DeserializeObject<Root>(jsonString);
                     Directory.Delete(mainpath + results.Game[BtnNumber].GameOnedrive, true);
 
@@ -169,7 +171,8 @@ namespace Cloudforce_Revamped_V2
         }
         private bool Startgame(int JsonNumber)
         {
-            string jsonString = File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
+            var username = Environment.UserName;
+            string jsonString = File.ReadAllText($"C:\\Users\\{username}\\Downloads\\test.json");  //Need to change
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
             if (File.Exists(mainpath + results.Game[JsonNumber].AppExe))
             {
