@@ -1,0 +1,6 @@
+- You may NOT attempt to break the keyauth API
+- You may not attempt to steal any of the programs hard coded method
+- You may not change credits
+- You may not distrobute the app
+- You may not sell the app in any form of way
+- By looking though source, you agree to these terms.
