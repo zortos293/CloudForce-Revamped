@@ -176,6 +176,10 @@ namespace Cloudforce_Revamped_V2
                 Process.Start(mainpath + results.Game[JsonNumber].AppExe);
                 return true;
             }
+            else
+            {
+                return false;
+            }
             
             
         }
