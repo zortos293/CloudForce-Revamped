@@ -157,7 +157,7 @@ namespace Cloudforce_Revamped_V2
 
         void p_Exited(object sender, EventArgs e)
         {
-            Done = true;
+            
             try
             {
                 this.Invoke(new Action(() => guna2ProgressBar2.Visible = false));
@@ -173,6 +173,7 @@ namespace Cloudforce_Revamped_V2
 
                 return;
             }
+            Done = true;
         }
         public void Alert(string msg, Form_Alert.enmType type)
         {
@@ -220,7 +221,23 @@ namespace Cloudforce_Revamped_V2
             {
                 Application.DoEvents();
             }
+            guna2HtmlLabel4.Visible = true;
             guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
+            for (int i = 0; i < 20; i++)
+            {
+                if (i >= 10)
+                {
+                    File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data{i}");
+                }
+                else if (i >= 20)
+                {
+                    File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data20");
+                }
+                else
+                {
+                    File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data0{i}");
+                }
+            }
             await Task.Run(() =>
             {
                 ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\");
@@ -244,6 +261,7 @@ namespace Cloudforce_Revamped_V2
                 ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
             });
             File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
+            guna2HtmlLabel4.Visible = false;
             Startgame(0); // Overwatch
         }
 
