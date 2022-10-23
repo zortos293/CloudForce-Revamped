@@ -38,6 +38,40 @@ namespace Cloudforce_Revamped_V2
         {
             public List<Game> Game { get; set; }
         }
+        private bool DownloadFinished;
+        public void File_Downloader(string URL, string path, Guna.UI2.WinForms.Guna2Button button)
+        {
+            // download file with progress bar
+            DownloadFinished = false;
+            WebClient client = new WebClient();
+            button.Enabled = false;
+            guna2ProgressBar1.Value = 0;
+            client.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
+            client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadChanged);
+            client.DownloadFileAsync(new Uri(URL), path);
+            while (DownloadFinished == false)
+                Application.DoEvents();
+        }
+
+
+        private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                DownloadFinished = true;
+                guna2ProgressBar1.Value = 0;
+                ((WebClient)sender).Dispose();
+            }
+            else
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+        }
+
+        private void DownloadChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            guna2ProgressBar1.Value = e.ProgressPercentage;
+        }
 
         public void DownloadGame(int JsonNumber) // Download Game Trough Onedrive <<<<
         {
@@ -186,6 +220,79 @@ namespace Cloudforce_Revamped_V2
             });
             File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
             Startgame(0); // Overwatche
+        }
+
+        private void guna2Button15_Click(object sender, EventArgs e)
+        {
+            var username = Environment.UserName;
+            var download_link = guna2TextBox3.Text;
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxysz";
+            var stringChars = new char[8];
+            var random = new Random();
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var exe_name = new String(stringChars);
+            Uri uriResult;
+            bool result = Uri.TryCreate(download_link, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            if (download_link == "" || download_link == " " || result == false)
+            {
+                guna2HtmlLabel1.Text = "Please put a valid download link in the input field.";
+                guna2HtmlLabel1.ForeColor = Color.Red;
+                guna2TextBox3.ForeColor = Color.Red;
+                guna2TextBox3.PlaceholderText = "Invalid link.";
+                guna2TextBox3.Text = "";
+                guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+            }
+            else
+            {
+                Boolean dresult = download_link.Contains(".zip");
+                if (dresult == true)
+                {
+                    try
+                    {
+                        File_Downloader(download_link, mainpath + $"\\{exe_name}.zip", guna2Button15);
+                        guna2HtmlLabel1.Text = $"Downloaded: C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
+                        guna2TextBox3.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
+                        guna2HtmlLabel2.Text = "Status: Ready.";
+                    }
+                    catch
+                    {
+                        guna2HtmlLabel1.Text = "An error occured while trying to download.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel1.ForeColor = Color.Red;
+                        guna2TextBox3.ForeColor = Color.Red;
+                        guna2TextBox3.PlaceholderText = "Invalid link.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2Button15);
+                        guna2HtmlLabel1.Text = $"Downloaded: {mainpath}\\{exe_name}.exe";
+                        guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.exe";
+                        guna2HtmlLabel2.Text = "Status: Ready.";
+                    }
+                    catch
+                    {
+                        guna2HtmlLabel1.Text = "An error occured while trying to download.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel1.ForeColor = Color.Red;
+                        guna2TextBox3.ForeColor = Color.Red;
+                        guna2TextBox3.PlaceholderText = "Invalid link.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel2.Text = "Error | Ready for next operation.";
+                    }
+                }
+                guna2TextBox3.PlaceholderText = "Link here";
+                guna2TextBox3.Text = "";
+            }
         }
     }
 }
