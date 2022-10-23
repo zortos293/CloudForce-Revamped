@@ -3,6 +3,10 @@
       {
         "GameOnedrive": "overwatch\\",
         "AppExe": "overwatch\\_retail_\\Overwatch.exe"
+      },
+      {
+        "GameOnedrive": "FallGuys\\",
+        "AppExe": "NOTHING"
       }
       
     ]
