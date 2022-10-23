@@ -84,7 +84,7 @@ namespace Cloudforce_Revamped_V2
             {
                 Directory.CreateDirectory($"C:\\Users\\{username}\\.config\\");
                 Directory.CreateDirectory($"C:\\Users\\{username}\\.config\\rclone\\");
-                client.DownloadFile("https://github.com/zortos293/ZortosCDN/raw/master/rclone.conf", $"C:\\Users\\{username}\\.config\\rclone\\" + "rclone.conf");
+                client.DownloadFile("https://github.com/zortos293/ZortosCDN/raw/master/rclone.conf", $"C:\\Users\\{username}\\.config\\rclone\\rclone.conf");
                 client.DownloadFile("https://picteon.dev/files/rclone.exe", mainpath + "downloader.exe");
             }
             guna2ProgressBar2.Visible = true;
