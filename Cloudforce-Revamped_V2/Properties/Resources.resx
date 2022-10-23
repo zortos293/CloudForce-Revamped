@@ -118,71 +118,89 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mc1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Teardown-cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Teardown-cover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="desktop_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\desktop_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="downloadico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\downloadico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1200px-OBS_Studio_Logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1200px-OBS_Studio_Logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Overwatch2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Overwatch2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brave-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brave-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="system_task_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\system_task_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notepad_240px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notepad_240px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="New Project (3) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\New Project (3) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mc.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cmdprompt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cmdprompt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nouser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nouser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anydesk_240px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anydesk_240px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OBIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OBIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unzip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unzip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="download icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="soretoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soretoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kief" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kief.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="downloadico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downloadico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="O5jbqLhD_400x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\O5jbqLhD_400x400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="spotify_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\spotify_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mc.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notepad_240px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notepad_240px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Teardown-cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Teardown-cover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="discord_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\discord_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_cancel_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_cancel_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brave-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brave-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mc1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1200px-OBS_Studio_Logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1200px-OBS_Studio_Logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="opened_folder_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\opened_folder_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cmdprompt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cmdprompt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spotify_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spotify_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soretoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soretoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desktop_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desktop_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unzip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unzip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kief" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kief.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New Project (3) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New Project (3) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="system_task_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system_task_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OBIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OBIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Overwatch2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Overwatch2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Run Command_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Run Command_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fox_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fox_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,7 +208,10 @@
   <data name="Robloxposter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Robloxposter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Run Command_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Run Command_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
