@@ -111,7 +111,7 @@
             this.Tabs.Controls.Add(this.Epic_Games);
             this.Tabs.Controls.Add(this.Extras);
             this.Tabs.Controls.Add(this.Settings);
-            this.Tabs.Font = new System.Drawing.Font("Minecraft", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Tabs.ItemSize = new System.Drawing.Size(102, 38);
             this.Tabs.Location = new System.Drawing.Point(4, -2);
             this.Tabs.Name = "Tabs";
@@ -119,17 +119,17 @@
             this.Tabs.Size = new System.Drawing.Size(927, 486);
             this.Tabs.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.Tabs.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(31)))));
-            this.Tabs.TabButtonHoverState.Font = new System.Drawing.Font("Minecraft", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tabs.TabButtonHoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Tabs.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
             this.Tabs.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
             this.Tabs.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
             this.Tabs.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
-            this.Tabs.TabButtonIdleState.Font = new System.Drawing.Font("Minecraft", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tabs.TabButtonIdleState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Tabs.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
             this.Tabs.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
             this.Tabs.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
             this.Tabs.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(31)))));
-            this.Tabs.TabButtonSelectedState.Font = new System.Drawing.Font("Minecraft", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tabs.TabButtonSelectedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Tabs.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
             this.Tabs.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
             this.Tabs.TabButtonSize = new System.Drawing.Size(102, 38);
@@ -529,16 +529,19 @@
             // guna2ImageButton1
             // 
             this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.Location = new System.Drawing.Point(3, 3);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.Size = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.TabIndex = 0;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
             // Steam_Games
             // 
@@ -660,11 +663,11 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Minecraft", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Minecraft", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(13, 377);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(81, 15);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(72, 15);
             this.guna2HtmlLabel4.TabIndex = 24;
             this.guna2HtmlLabel4.Text = "Loading :";
             this.guna2HtmlLabel4.Visible = false;

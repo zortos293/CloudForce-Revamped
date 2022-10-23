@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -38,16 +39,18 @@ namespace Cloudforce_Revamped_V2
             public List<Game> Game { get; set; }
         }
 
-        public void DownloadGame(int JsonNumber)
+        public void DownloadGame(int JsonNumber) // Download Game Trough Onedrive <<<<
         {
+            Done = false;
             WebClient client = new WebClient();
-            string jsonString = File.ReadAllText("D:\\GameJSON.json");  //Need to change
+            string jsonString = File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
             if (!File.Exists(mainpath + "downloader.exe"))
             {
                 client.DownloadFile("https://picteon.dev/files/rclone.exe", mainpath + "downloader.exe");
             }
-
+            guna2ProgressBar2.Visible = true;
+            guna2HtmlLabel4.Visible = true;
             Process process = new Process();
             process.OutputDataReceived += new DataReceivedEventHandler(process_OutputDataReceived);
             process.StartInfo.FileName = mainpath + "downloader.exe";
@@ -73,9 +76,9 @@ namespace Cloudforce_Revamped_V2
 
                     foreach (Process p in ps)
                         p.Kill();
-                    string jsonString = System.IO.File.ReadAllText("D:\\GameJSON.json");  //Need to change
+                    string jsonString = System.IO.File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
                     var results = JsonConvert.DeserializeObject<Root>(jsonString);
-                    Directory.Delete(mainpath + results.Games[BtnNumber].GameOnedrive, true);
+                    Directory.Delete(mainpath + results.Game[BtnNumber].GameOnedrive, true);
 
                 }
 
@@ -89,7 +92,7 @@ namespace Cloudforce_Revamped_V2
                         int index = string2.IndexOf('%');
                         string[] split = string2.Split(',');
 
-                        DownloadForm.TimeLBL.Invoke(new Action(() => DownloadForm.TimeLBL.Text = split[3]));
+                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2HtmlLabel4.Text = split[3]));
 
                         if (index >= 0)
                         {
@@ -97,7 +100,7 @@ namespace Cloudforce_Revamped_V2
                             string sub2 = sub.Substring(sub.IndexOf(",") + 1);
                             int.TryParse(sub2, out progress);
                         }
-                        DownloadForm.Progress.Invoke(new Action(() => DownloadForm.Progress.Value = progress));
+                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2ProgressBar2.Value = progress));
                     }
 
 
@@ -113,13 +116,15 @@ namespace Cloudforce_Revamped_V2
 
         void p_Exited(object sender, EventArgs e)
         {
-
+            guna2ProgressBar2.Visible = false;
+            guna2HtmlLabel4.Visible = false;
             Done = true;
             try
             {
-                DownloadForm.Invoke(new Action(() => DownloadForm.FilenameLB.Text = string.Empty));
-                DownloadForm.Invoke(new Action(() => DownloadForm.Progress.Value = 0));
-                DownloadForm.Invoke(new Action(() => DownloadForm.Hide()));
+                this.Invoke(new Action(() => guna2HtmlLabel4.Text = string.Empty));
+                this.Invoke(new Action(() => guna2ProgressBar2.Value = 0));
+                this.Invoke(new Action(() => guna2ProgressBar2.Hide()));
+                
 
             }
             catch (Exception er)
@@ -130,22 +135,9 @@ namespace Cloudforce_Revamped_V2
         }
         private void Startgame(int JsonNumber)
         {
-            string jsonString = System.IO.File.ReadAllText("D:\\GameJSON.json");  //Need to change
-            var results = JsonConvert.DeserializeObject<GamesRoot>(jsonString);
-            if (!guna2ImageCheckBox2.Checked)
-            {
-                return;
-            }
-
-
-            Process pr = new Process();
-            ProcessStartInfo prs = new ProcessStartInfo();
-            prs.FileName = DriveTXTBOX.Text + results.Games[JsonNumber].GameOnedrive + results.Games[JsonNumber].GameStartLocation;
-            pr.StartInfo = prs;
-
-            ThreadStart ths = new ThreadStart(() => pr.Start());
-            Thread th = new Thread(ths);
-            th.Start();
+            string jsonString = File.ReadAllText("C:\\Users\\Zortos\\Downloads\\test.json");  //Need to change
+            var results = JsonConvert.DeserializeObject<Root>(jsonString);
+            Process.Start(mainpath + results.Game[JsonNumber].AppExe);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -160,6 +152,40 @@ namespace Cloudforce_Revamped_V2
         private void Games_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            DownloadGame(0); // Overwatch
+            while (Done == false)
+            {
+                Application.DoEvents();
+            }
+            guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
+            await Task.Run(() =>
+            {
+                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\");
+            });
+            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip");
+            guna2HtmlLabel4.Text = "[/] Extracting Data 10 - 13 (Please Be patient)";
+            await Task.Run(() =>
+            {
+                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\");
+            });
+            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip");
+            guna2HtmlLabel4.Text = "[/] Extracting Data 14 - 17 (Please Be patient)";
+            await Task.Run(() =>
+            {
+                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\");
+            });
+            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip");
+            guna2HtmlLabel4.Text = "[/] Extracting Data 18 - 20 (Please Be patient)";
+            await Task.Run(() =>
+            {
+                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
+            });
+            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
+            Startgame(0); // Overwatch
         }
     }
 }
