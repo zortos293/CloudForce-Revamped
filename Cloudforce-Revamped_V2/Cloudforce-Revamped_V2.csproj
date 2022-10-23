@@ -113,6 +113,7 @@
     <Compile Include="Form_Alert.Designer.cs">
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeyAuth.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

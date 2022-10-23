@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timer = System.Windows.Forms.Timer;
+using KeyAuth;
 
 namespace Cloudforce_Revamped_V2
 {
@@ -24,7 +24,22 @@ namespace Cloudforce_Revamped_V2
         public Form1()
         {
             InitializeComponent();
+            KeyAuthApp.init();
+            if (!KeyAuthApp.response.success)
+            {
+                MessageBox.Show(KeyAuthApp.response.message);
+            }
+            WebClient a = new WebClient();
+            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
+            dynamic array = JsonConvert.DeserializeObject(json);
+            guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
+        public static api KeyAuthApp = new api(
+            name: "CF Early",
+            ownerid: "0t0Sr0pLaB",
+            secret: "c52ed8ebcefc829ffed9a73e9c85b73fd5a8e244abec5531ef1cf87628d181e0",
+            version: "1.0"
+        );
         private string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
         public int BtnNumber;
         public static bool ForceExit = false;
@@ -54,47 +69,7 @@ namespace Cloudforce_Revamped_V2
             while (DownloadFinished == false)
                 Application.DoEvents();
         }
-        public bool afk_timer_Done;
-        private Timer kick_timer1 = new Timer();
-        private int counter = 0;
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            counter++;
-            if (!this.Visible == false)
-            {
-                guna2HtmlLabel3.ForeColor = Color.White;
-                guna2HtmlLabel3.Text = $"{120 - counter} seconds left until you can launch exes.";
-            }
-            if (counter == 120)  //or whatever your limit is
-            {
-                kick_timer1.Stop();
-                afk_timer_Done = true;
-                guna2HtmlLabel3.ForeColor = Color.White;
-                guna2HtmlLabel3.Text = "You can now run an app.";
-                counter = 0;
-            }
-        }
-
-        private bool timercheck()
-        {
-            if (afk_timer_Done == false)
-            {
-                guna2HtmlLabel3.ForeColor = Color.MediumVioletRed;
-                guna2HtmlLabel3.Text = "You are currently in Cooldown, please wait until the timer is done.";
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private void wait_Timer()
-        {
-            afk_timer_Done = false;
-            kick_timer1.Start();
-        }
 
 
         private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
@@ -140,7 +115,7 @@ namespace Cloudforce_Revamped_V2
             process.StartInfo.RedirectStandardError = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.Arguments = "copy -P " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + mainpath + results.Game[JsonNumber].GameOnedrive ;
+            process.StartInfo.Arguments = "copy -P " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + mainpath + results.Game[JsonNumber].GameOnedrive;
             process.Exited += new EventHandler(p_Exited);
             process.EnableRaisingEvents = true;
             process.Start();
@@ -174,7 +149,7 @@ namespace Cloudforce_Revamped_V2
                         int index = string2.IndexOf('%');
                         string[] split = string2.Split(',');
 
-                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2HtmlLabel4.Text = split[2] +  " " +split[3]));
+                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2HtmlLabel4.Text = split[2] + " " + split[3]));
 
                         if (index >= 0)
                         {
@@ -198,7 +173,7 @@ namespace Cloudforce_Revamped_V2
 
         void p_Exited(object sender, EventArgs e)
         {
-            
+
             try
             {
                 this.Invoke(new Action(() => guna2ProgressBar2.Visible = false));
@@ -206,7 +181,7 @@ namespace Cloudforce_Revamped_V2
                 this.Invoke(new Action(() => guna2HtmlLabel4.Text = string.Empty));
                 this.Invoke(new Action(() => guna2ProgressBar2.Value = 0));
                 this.Invoke(new Action(() => guna2ProgressBar2.Hide()));
-                
+
 
             }
             catch (Exception er)
@@ -235,8 +210,8 @@ namespace Cloudforce_Revamped_V2
             {
                 return false;
             }
-            
-            
+
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
