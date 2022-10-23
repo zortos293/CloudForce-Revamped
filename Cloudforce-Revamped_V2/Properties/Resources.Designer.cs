@@ -113,9 +113,39 @@ namespace Cloudforce_Revamped_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_icon {
+            get {
+                object obj = ResourceManager.GetObject("download icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downloadico {
+            get {
+                object obj = ResourceManager.GetObject("downloadico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fox_480px {
             get {
                 object obj = ResourceManager.GetObject("fox_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kief {
+            get {
+                object obj = ResourceManager.GetObject("kief", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +253,26 @@ namespace Cloudforce_Revamped_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Run_Command_512px {
+            get {
+                object obj = ResourceManager.GetObject("Run Command_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap soretoes {
+            get {
+                object obj = ResourceManager.GetObject("soretoes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap spotify_480px {
             get {
                 object obj = ResourceManager.GetObject("spotify_480px", resourceCulture);
@@ -246,6 +296,16 @@ namespace Cloudforce_Revamped_V2.Properties {
         internal static System.Drawing.Bitmap Teardown_cover {
             get {
                 object obj = ResourceManager.GetObject("Teardown-cover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unzip {
+            get {
+                object obj = ResourceManager.GetObject("unzip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

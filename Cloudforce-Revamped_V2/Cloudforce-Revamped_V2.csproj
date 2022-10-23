@@ -148,5 +148,23 @@
   <ItemGroup>
     <None Include="Resources\Robloxposter.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kief.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soretoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downloadico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unzip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Run Command_512px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
