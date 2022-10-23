@@ -185,7 +185,7 @@ namespace Cloudforce_Revamped_V2
                 ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
             });
             File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
-            Startgame(0); // Overwatch
+            Startgame(0); // Overwatche
         }
     }
 }
