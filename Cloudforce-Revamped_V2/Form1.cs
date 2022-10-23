@@ -53,47 +53,7 @@ namespace Cloudforce_Revamped_V2
             while (DownloadFinished == false)
                 Application.DoEvents();
         }
-        public bool afk_timer_Done;
-        private Timer kick_timer1 = new Timer();
-        private int counter = 0;
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            counter++;
-            if (!this.Visible == false)
-            {
-                guna2HtmlLabel3.ForeColor = Color.White;
-                guna2HtmlLabel3.Text = $"{120 - counter} seconds left until you can launch exes.";
-            }
-            if (counter == 120)  //or whatever your limit is
-            {
-                kick_timer1.Stop();
-                afk_timer_Done = true;
-                guna2HtmlLabel3.ForeColor = Color.White;
-                guna2HtmlLabel3.Text = "You can now run an app.";
-                counter = 0;
-            }
-        }
-
-        private bool timercheck()
-        {
-            if (afk_timer_Done == false)
-            {
-                guna2HtmlLabel3.ForeColor = Color.MediumVioletRed;
-                guna2HtmlLabel3.Text = "You are currently in Cooldown, please wait until the timer is done.";
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private void wait_Timer()
-        {
-            afk_timer_Done = false;
-            kick_timer1.Start();
-        }
 
 
         private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
