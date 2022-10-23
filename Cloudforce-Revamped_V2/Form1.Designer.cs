@@ -705,13 +705,12 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(94, 150);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(5, 3);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(3, 3);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.ShadowDecoration.Depth = 100;
-            this.guna2ImageButton1.ShadowDecoration.Enabled = true;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(90, 148);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.TabIndex = 0;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
