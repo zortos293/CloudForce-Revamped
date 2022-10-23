@@ -60,10 +60,10 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Games = new System.Windows.Forms.TabPage();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.Steam_Games = new System.Windows.Forms.TabPage();
             this.Epic_Games = new System.Windows.Forms.TabPage();
             this.Extras = new System.Windows.Forms.TabPage();
@@ -178,7 +178,7 @@
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(284, 416);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(322, 416);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(59, 18);
             this.guna2HtmlLabel9.TabIndex = 9;
@@ -245,9 +245,9 @@
             this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(4, 419);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(53, 18);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(57, 18);
             this.guna2HtmlLabel5.TabIndex = 5;
-            this.guna2HtmlLabel5.Text = "V2 Dev";
+            this.guna2HtmlLabel5.Text = "V2 Beta";
             // 
             // guna2CirclePictureBox2
             // 
@@ -658,33 +658,6 @@
             this.Games.Text = "Games";
             this.Games.Click += new System.EventHandler(this.Games_Click);
             // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(13, 377);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(58, 18);
-            this.guna2HtmlLabel4.TabIndex = 24;
-            this.guna2HtmlLabel4.Text = "Loading :";
-            this.guna2HtmlLabel4.Visible = false;
-            // 
-            // guna2ProgressBar2
-            // 
-            this.guna2ProgressBar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
-            this.guna2ProgressBar2.BorderRadius = 4;
-            this.guna2ProgressBar2.BorderThickness = 2;
-            this.guna2ProgressBar2.Location = new System.Drawing.Point(13, 398);
-            this.guna2ProgressBar2.Name = "guna2ProgressBar2";
-            this.guna2ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
-            this.guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2ProgressBar2.Size = new System.Drawing.Size(893, 30);
-            this.guna2ProgressBar2.TabIndex = 23;
-            this.guna2ProgressBar2.Text = "guna2ProgressBar2";
-            this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2ProgressBar2.Visible = false;
-            // 
             // guna2Panel3
             // 
             this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
@@ -713,6 +686,33 @@
             this.guna2ImageButton1.Size = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.TabIndex = 0;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(13, 377);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(58, 18);
+            this.guna2HtmlLabel4.TabIndex = 24;
+            this.guna2HtmlLabel4.Text = "Loading :";
+            this.guna2HtmlLabel4.Visible = false;
+            // 
+            // guna2ProgressBar2
+            // 
+            this.guna2ProgressBar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2ProgressBar2.BorderRadius = 4;
+            this.guna2ProgressBar2.BorderThickness = 2;
+            this.guna2ProgressBar2.Location = new System.Drawing.Point(13, 398);
+            this.guna2ProgressBar2.Name = "guna2ProgressBar2";
+            this.guna2ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
+            this.guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2ProgressBar2.Size = new System.Drawing.Size(893, 30);
+            this.guna2ProgressBar2.TabIndex = 23;
+            this.guna2ProgressBar2.Text = "guna2ProgressBar2";
+            this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ProgressBar2.Visible = false;
             // 
             // Steam_Games
             // 
