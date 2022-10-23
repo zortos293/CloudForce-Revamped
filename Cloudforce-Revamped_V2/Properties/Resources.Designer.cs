@@ -153,6 +153,16 @@ namespace Cloudforce_Revamped_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fallguys {
+            get {
+                object obj = ResourceManager.GetObject("Fallguys", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fox_480px {
             get {
                 object obj = ResourceManager.GetObject("fox_480px", resourceCulture);
@@ -296,6 +306,36 @@ namespace Cloudforce_Revamped_V2.Properties {
         internal static System.Drawing.Bitmap Robloxposter {
             get {
                 object obj = ResourceManager.GetObject("Robloxposter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rpsc3 {
+            get {
+                object obj = ResourceManager.GetObject("rpsc3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rpsc3_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("rpsc3-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rpsc3trans {
+            get {
+                object obj = ResourceManager.GetObject("rpsc3trans", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
