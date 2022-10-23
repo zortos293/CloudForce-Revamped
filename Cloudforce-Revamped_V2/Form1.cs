@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Newtonsoft.Json;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -254,55 +255,87 @@ namespace Cloudforce_Revamped_V2
 
         private async void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            Startgame(0);
-            DownloadGame(0); // Overwatch
-            this.Alert("Downloading overwatch, please wait.", Form_Alert.enmType.Info);
-            while (Done == false)
+            if (Startgame(0) == false)
             {
-                Application.DoEvents();
+                DownloadGame(0); // Overwatch
+                this.Alert("Downloading overwatch, please wait.", Form_Alert.enmType.Info);
+                while (Done == false)
+                {
+                    Application.DoEvents();
+                }
+                guna2HtmlLabel4.Visible = true;
+                if (File.Exists(mainpath + $"overwatch\\data\\casc\\data\\data.20"))
+                {
+                    for (int i = 0; i < 20; i++)
+                    {
+                        try
+                        {
+                            if (i >= 10)
+                            {
+                                File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data.{i}");
+                            }
+                            else if (i >= 20)
+                            {
+                                File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data.20");
+                            }
+                            else
+                            {
+                                File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data.0{i}");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            SentrySdk.CaptureException(ex);
+                            MessageBox.Show("An error occured \n" + ex.Message);
+                        }
+
+                    }
+                }
+                try
+                {
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                    });
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 10 - 13 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                    });
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 14 - 17 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                    });
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 18 - 20 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                    });
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting indicies (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\indices\\indices.zip", mainpath + "overwatch\\data\\casc\\indices\\");
+                    });
+                    File.Delete(mainpath + "overwatch\\data\\casc\\indices\\indices.zip");
+                    guna2HtmlLabel4.Visible = false;
+                    Startgame(0); // Overwatch
+                }
+                catch (Exception ex)
+                {
+                    SentrySdk.CaptureException(ex);
+                }
+                
             }
-            guna2HtmlLabel4.Visible = true;
-            guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
-            for (int i = 0; i < 20; i++)
-            {
-                if (i >= 10)
-                {
-                    File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data{i}");
-                }
-                else if (i >= 20)
-                {
-                    File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data20");
-                }
-                else
-                {
-                    File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data0{i}");
-                }
-            }
-            await Task.Run(() =>
-            {
-                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\");
-            });
-            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip");
-            guna2HtmlLabel4.Text = "[/] Extracting Data 10 - 13 (Please Be patient)";
-            await Task.Run(() =>
-            {
-                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\");
-            });
-            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip");
-            guna2HtmlLabel4.Text = "[/] Extracting Data 14 - 17 (Please Be patient)";
-            await Task.Run(() =>
-            {
-                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\");
-            });
-            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip");
-            guna2HtmlLabel4.Text = "[/] Extracting Data 18 - 20 (Please Be patient)";
-            await Task.Run(() =>
-            {
-                ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
-            });
-            File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
-            guna2HtmlLabel4.Visible = false;
-            Startgame(0); // Overwatch
+            
+            
+
         }
 
         private void guna2Button15_Click(object sender, EventArgs e)
@@ -465,11 +498,21 @@ namespace Cloudforce_Revamped_V2
 
         private void guna2Button18_Click(object sender, EventArgs e) //Discord
         {
-            System.Windows.Forms.Clipboard.SetText("https://discord.com/invite/znCq8VjghQ");
+            Clipboard.SetText("https://discord.com/invite/znCq8VjghQ");
             this.Alert("Invite link copied to clipboard", Form_Alert.enmType.Info);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e) // Explorer ++
+        {
+
+        }
+
+        private void guna2Button19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
 
         }
