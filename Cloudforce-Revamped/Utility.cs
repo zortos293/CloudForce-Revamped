@@ -188,20 +188,11 @@ namespace Cloudforce_Revamped
         private void guna2GradientButton11_Click(object sender, EventArgs e) // Discord
         {
             if (timercheck() == false) return;
-            if (Directory.Exists(mainpath + "\\Discord\\"))
-            {
-                Process.Start(mainpath + "\\Discord.zip");
-                wait_Timer();
-            }
-            else
-            {
-                File_Downloader("https://picteon.dev/files/Discord.zip", mainpath + "\\Discord.zip", guna2GradientButton11);
+                File_Downloader("https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86", mainpath + "\\shardshardup.exe", guna2GradientButton11);
 
-                ZipFile.ExtractToDirectory(mainpath + "\\Discord.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\discord2\\discord-portable.exe");
+                Process.Start(mainpath + "\\shardshardup.ex");
                 guna2GradientButton11.Enabled = true;
                 wait_Timer();
-            }
         }
 
         private void Utility_Shown(object sender, EventArgs e)

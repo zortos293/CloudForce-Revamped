@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="crafting_table_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crafting_table_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brave-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brave-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="civilization6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\civilization6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,9 +184,6 @@
   <data name="fox_480px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fox_480px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fall guys" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fall guys.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +193,8 @@
   <data name="OBIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OBIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crafting_table_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\crafting_table_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Parsec_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parsec_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fox_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fox_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +202,7 @@
   <data name="cmdprompt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cmdprompt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brave-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brave-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1200px-OBS_Studio_Logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1200px-OBS_Studio_Logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

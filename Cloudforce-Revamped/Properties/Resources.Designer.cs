@@ -63,6 +63,16 @@ namespace Cloudforce_Revamped.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1200px_OBS_Studio_Logo_svg {
+            get {
+                object obj = ResourceManager.GetObject("1200px-OBS_Studio_Logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap among_us {
             get {
                 object obj = ResourceManager.GetObject("among-us", resourceCulture);

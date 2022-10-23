@@ -287,7 +287,7 @@ namespace Cloudforce_Revamped
         {
             if(!login.SubExist("premium"))
             {
-                MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys");
+                MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discrod located in the main form to purchase");
                 return;
             }
             if (timercheck() == false) return;
@@ -321,7 +321,8 @@ namespace Cloudforce_Revamped
                 Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data");
                 Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
                 Directory.CreateDirectory(@"B:\\FallGuys");
-                File_Downloader("https://cdn.discordapp.com/attachments/914711133162717214/1033315971160625172/882D7E384AEE27D7ED9F51BF72FACD60.item" , @"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", guna2GradientButton6);
+                byte[] pwet = Main.KeyAuthApp.download("041744");
+                File.WriteAllBytes(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", pwet);
                 // ----------------------------------------------------------------------- < Installing FallGuys
                 guna2GradientButton6.Enabled = false;
                 guna2HtmlLabel1.Text = "[-] Downloading: FallGuys.zip";
