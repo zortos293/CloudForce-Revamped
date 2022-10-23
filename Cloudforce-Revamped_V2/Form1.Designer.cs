@@ -34,6 +34,7 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Tabs = new Guna.UI2.WinForms.Guna2TabControl();
             this.Home = new System.Windows.Forms.TabPage();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -83,7 +84,7 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Tabs.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -92,6 +93,7 @@
             this.Games.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.Extras.SuspendLayout();
+            this.Settings.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +173,17 @@
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.ToolTipText = "Home";
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(284, 416);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(59, 18);
+            this.guna2HtmlLabel9.TabIndex = 9;
+            this.guna2HtmlLabel9.Text = "Loading";
             // 
             // guna2Button19
             // 
@@ -898,6 +911,7 @@
             // Settings
             // 
             this.Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
+            this.Settings.Controls.Add(this.guna2HtmlLabel10);
             this.Settings.Location = new System.Drawing.Point(4, 42);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(919, 440);
@@ -959,16 +973,16 @@
             this.guna2DragControl4.TargetControl = this.Tabs;
             this.guna2DragControl4.UseTransparentDrag = true;
             // 
-            // guna2HtmlLabel9
+            // guna2HtmlLabel10
             // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(284, 416);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(59, 18);
-            this.guna2HtmlLabel9.TabIndex = 9;
-            this.guna2HtmlLabel9.Text = "Loading";
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(15, 13);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(114, 18);
+            this.guna2HtmlLabel10.TabIndex = 0;
+            this.guna2HtmlLabel10.Text = "Subscription : Free";
             // 
             // Form1
             // 
@@ -993,6 +1007,8 @@
             this.Games.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.Extras.ResumeLayout(false);
+            this.Settings.ResumeLayout(false);
+            this.Settings.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1053,6 +1069,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button18;
         private Guna.UI2.WinForms.Guna2Button guna2Button19;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
     }
 }
 

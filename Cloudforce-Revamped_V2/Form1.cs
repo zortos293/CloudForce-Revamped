@@ -30,21 +30,34 @@ namespace Cloudforce_Revamped_V2
                 MessageBox.Show(KeyAuthApp.response.message);
             }
             WebClient a = new WebClient();
-            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
+            string json = a.DownloadString(KeyAuthApp.getvar("online_users"));
             dynamic array = JsonConvert.DeserializeObject(json);
             guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
+
+        #region Login Stuff
         public static api KeyAuthApp = new api(
             name: "CF Early",
             ownerid: "0t0Sr0pLaB",
             secret: "c52ed8ebcefc829ffed9a73e9c85b73fd5a8e244abec5531ef1cf87628d181e0",
             version: "1.0"
         );
-        private string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
-        public int BtnNumber;
+
+        public static bool SubExist(string name)
+        {
+            if (KeyAuthApp.user_data.subscriptions == null)
+                return false;
+            if (KeyAuthApp.user_data.subscriptions.Exists(x => x.subscription == name))
+                return true;
+            return false;
+        }
+        #endregion
+        #region Download Stuff
+        public static string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
+        string jsonString = File.ReadAllText(mainpath + "games.json");  //Need to change
         public static bool ForceExit = false;
         public static bool Done = false;
-
+        public int BtnNumber;
         public class Game
         {
             public string GameOnedrive { get; set; }
@@ -56,7 +69,7 @@ namespace Cloudforce_Revamped_V2
             public List<Game> Game { get; set; }
         }
         private bool DownloadFinished;
-        public void File_Downloader(string URL, string path, Guna.UI2.WinForms.Guna2Button button)
+        public void File_Downloader(string URL, string path, Guna2Button button)
         {
             // download file with progress bar
             DownloadFinished = false;
@@ -108,6 +121,7 @@ namespace Cloudforce_Revamped_V2
             guna2ProgressBar2.Visible = true;
             guna2HtmlLabel4.Visible = true;
             Process process = new Process();
+            BtnNumber = JsonNumber;
             process.OutputDataReceived += new DataReceivedEventHandler(process_OutputDataReceived);
             process.StartInfo.FileName = mainpath + "downloader.exe";
             process.StartInfo.UseShellExecute = false;
@@ -133,7 +147,7 @@ namespace Cloudforce_Revamped_V2
 
                     foreach (Process p in ps)
                         p.Kill();
-                    string jsonString = System.IO.File.ReadAllText($"C:\\Users\\{username}\\Downloads\\test.json");  //Need to change
+                    
                     var results = JsonConvert.DeserializeObject<Root>(jsonString);
                     Directory.Delete(mainpath + results.Game[BtnNumber].GameOnedrive, true);
 
@@ -199,7 +213,7 @@ namespace Cloudforce_Revamped_V2
         private bool Startgame(int JsonNumber)
         {
             var username = Environment.UserName;
-            string jsonString = File.ReadAllText($"C:\\Users\\{username}\\Downloads\\test.json");  //Need to change
+            
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
             if (File.Exists(mainpath + results.Game[JsonNumber].AppExe))
             {
@@ -213,6 +227,7 @@ namespace Cloudforce_Revamped_V2
 
 
         }
+        #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -233,7 +248,7 @@ namespace Cloudforce_Revamped_V2
             if (Startgame(0) == false)
             {
                 DownloadGame(0); // Overwatch
-                this.Alert("Downloading overwatch, please wait.", Form_Alert.enmType.Info);
+                
                 while (Done == false)
                 {
                     Application.DoEvents();
@@ -301,6 +316,7 @@ namespace Cloudforce_Revamped_V2
                     File.Delete(mainpath + "overwatch\\data\\casc\\indices\\indices.zip");
                     guna2HtmlLabel4.Visible = false;
                     Startgame(0); // Overwatch
+                    this.Alert("Starting overwatch, please wait.", Form_Alert.enmType.Success);
                 }
                 catch (Exception ex)
                 {
