@@ -16,6 +16,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KeyAuth;
+using Newtonsoft.Json.Linq;
 
 namespace Cloudforce_Revamped_V2
 {
@@ -30,9 +31,17 @@ namespace Cloudforce_Revamped_V2
                 MessageBox.Show(KeyAuthApp.response.message);
             }
             WebClient a = new WebClient();
-            string json = a.DownloadString(KeyAuthApp.getvar("online_users"));
-            dynamic array = JsonConvert.DeserializeObject(json);
-            guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
+            string json = KeyAuthApp.getvar("online_users");
+            if (!KeyAuthApp.response.success)
+            {
+                guna2HtmlLabel9.Text = $"Failed to load users online.";
+            }
+            else
+            {
+                dynamic array = JsonConvert.DeserializeObject(json);
+                Console.WriteLine("\n User variable value: " + json);
+                guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
+            }
         }
 
         #region Login Stuff
@@ -366,6 +375,7 @@ namespace Cloudforce_Revamped_V2
                         guna2HtmlLabel8.Text = $"Downloaded: C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
                         guna2TextBox3.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
                         guna2HtmlLabel7.Text = "Status: Ready.";
+                        this.Alert("Downloading success!", Form_Alert.enmType.Success);
                     }
                     catch
                     {
@@ -387,6 +397,7 @@ namespace Cloudforce_Revamped_V2
                         guna2HtmlLabel8.Text = $"Downloaded: {mainpath}\\{exe_name}.exe";
                         guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.exe";
                         guna2HtmlLabel7.Text = "Status: Ready.";
+                        this.Alert("Downloading success!", Form_Alert.enmType.Success);
                     }
                     catch
                     {
@@ -403,6 +414,7 @@ namespace Cloudforce_Revamped_V2
                 guna2TextBox3.PlaceholderText = "Link here";
                 guna2TextBox3.Text = "";
             }
+            guna2Button15.Enabled = true;
         }
 
         private async void guna2Button16_Click(object sender, EventArgs e)
@@ -431,6 +443,7 @@ namespace Cloudforce_Revamped_V2
                     guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\";
                     guna2HtmlLabel7.Text = "Status: Ready.";
                     guna2TextBox1.Text = "";
+                    this.Alert("Extracting success!", Form_Alert.enmType.Success);
                 }
                 catch
                 {
@@ -443,6 +456,7 @@ namespace Cloudforce_Revamped_V2
                     this.Alert("Extracting Failed.", Form_Alert.enmType.Error);
                 }
             }
+            guna2Button16.Enabled = true;
         }
 
         private void guna2Button17_Click(object sender, EventArgs e)
@@ -457,6 +471,7 @@ namespace Cloudforce_Revamped_V2
                 guna2TextBox2.Text = "";
                 guna2HtmlLabel7.Text = "Error | Ready for next operation.";
                 this.Alert("Invalid Path", Form_Alert.enmType.Error);
+
             }
             else
             {
@@ -473,6 +488,7 @@ namespace Cloudforce_Revamped_V2
                     }.Start();
                     guna2HtmlLabel8.Text = $"[-] Started {run_path}";
                     guna2HtmlLabel7.Text = "Status: Ready.";
+                    this.Alert("Starting exe success!", Form_Alert.enmType.Success);
                 }
                 catch
                 {
@@ -485,6 +501,7 @@ namespace Cloudforce_Revamped_V2
                     this.Alert("Failed to start exe.", Form_Alert.enmType.Error);
                 }
             }
+            guna2Button17.Enabled = true;
         }
 
         private void guna2Button18_Click(object sender, EventArgs e) //Discord
@@ -495,7 +512,19 @@ namespace Cloudforce_Revamped_V2
 
         private void guna2Button2_Click(object sender, EventArgs e) // Explorer ++
         {
+            if (File.Exists(mainpath + "\\DoraTheExplorer.exe"))
+            {
+                Process.Start(mainpath + "\\DoraTheExplorer.exe");
+                this.Alert("Started Explorer++", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Explorer++.exe", mainpath + "\\DoraTheExplorer.exe", guna2Button2);
 
+                Process.Start(mainpath + "\\DoraTheExplorer.exe"); // TODO
+                guna2Button2.Enabled = true;
+                this.Alert("Started Explorer++", Form_Alert.enmType.Success);
+            }
         }
 
         private void guna2Button19_Click(object sender, EventArgs e)
@@ -506,6 +535,215 @@ namespace Cloudforce_Revamped_V2
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e) //PH64
+        {
+            if (File.Exists(mainpath + "\\ProcessHacker\\ProcessHacker.exe"))
+            {
+                Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe");
+                this.Alert("Started ProcessHacker", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/ProcessHacker.zip", mainpath + "\\ProcessHacker.zip", guna2Button5);
+
+                ZipFile.ExtractToDirectory(mainpath + "\\ProcessHacker.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\ProcessHacker\\\\ProcessHacker.exe");
+                this.Alert("Started ProcessHacker", Form_Alert.enmType.Success);
+                guna2Button5.Enabled = true;
+            }
+        }
+
+        private void guna2Button20_Click(object sender, EventArgs e) //Discord
+        {
+            File_Downloader("https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86", mainpath + "\\shardshardup.exe", guna2Button20);
+            Process.Start(mainpath + "\\shardshardup.exe");
+            this.Alert("Started Discord installer", Form_Alert.enmType.Success);
+            guna2Button20.Enabled = true;
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e) //Zorots Unpwetter
+        {
+            if (File.Exists(mainpath + "\\ZortosUnpwetterA.exe"))
+            {
+                Process.Start(mainpath + "\\ZortosUnpwetterA.exe");
+                this.Alert("Started Zortos Unpwetter", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://op-ffa.net/gfn/ZortosUnpwetterA.exe", mainpath + "\\ZortosUnpwetterA.exe", guna2Button3);
+
+                Process.Start(mainpath + "\\ZortosUnpwetterA.exe"); // TODO
+                this.Alert("Started Zortos Unpwetter", Form_Alert.enmType.Success);
+                guna2Button3.Enabled = true;
+            }
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e) //Anypwet
+        {
+            if (File.Exists(mainpath + "\\AnyPwet.exe"))
+            {
+                Process.Start(mainpath + "\\AnyPwet.exe");
+                this.Alert("Started AnyPwet", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/AnyDesk.exe", mainpath + "\\AnyPwet.exe", guna2Button6);
+                Process.Start(mainpath + "\\AnyPwet.exe");
+                this.Alert("Started AnyPwet", Form_Alert.enmType.Success);
+                guna2Button6.Enabled = true;
+            }
+        }
+
+        private void guna2Button12_Click(object sender, EventArgs e) //Cmd
+        {
+            if (Directory.Exists(mainpath + "\\cmdpwet.exe"))
+            {
+                Process.Start(mainpath + "\\cmdpwetaa.exe");
+                this.Alert("Started CommpandPrompt", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/NotCMDNvidia.exe", mainpath + "\\cmdpwetaa.exe", guna2Button12);
+                Process.Start(mainpath + "\\cmdpwetaa.exe");
+                guna2Button12.Enabled = true;
+                this.Alert("Started CommandPrompt", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e) //parsec
+        {
+            if (Directory.Exists(mainpath + "\\Parsec\\"))
+            {
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = mainpath + "\\Parsec\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = mainpath + "\\Parsec\\parsecd.exe"
+                    }
+                }.Start();
+                this.Alert("Started Parsec", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Parsec%20%282%29.zip", mainpath + "\\Parsec.zip", guna2Button10);
+                Directory.CreateDirectory(mainpath + "\\Parsec\\");
+                ZipFile.ExtractToDirectory(mainpath + "\\Parsec.zip", mainpath + "\\Parsec");
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = mainpath + "\\Parsec\\",
+                        WindowStyle = ProcessWindowStyle.Normal,
+                        FileName = mainpath + "\\Parsec\\parsecd.exe"
+                    }
+                }.Start();
+                guna2Button10.Enabled = true;
+                this.Alert("Started Parsec", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button13_Click(object sender, EventArgs e) //OBS
+        {
+            MessageBox.Show("If you already installed, open ir via explorer++\n If not install it to C:\\OBS");
+            File_Downloader("https://cdn-fastly.obsproject.com/downloads/OBS-Studio-28.0.3-Full-Installer-x64.exe", mainpath + "\\ops.exe", guna2Button13);
+            Process.Start(mainpath + "\\ops.exe");
+            guna2Button13.Enabled = true;
+            this.Alert("Started OBS Installer", Form_Alert.enmType.Success);
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e) //Firefox
+        {
+            if (Directory.Exists(mainpath + "\\Firefox\\"))
+            {
+                Process.Start(mainpath + "\\Firefox\\runthis.exe");
+                this.Alert("Started FireFox", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Firefox.zip", mainpath + "\\Firefox.zip", guna2Button8);
+
+                ZipFile.ExtractToDirectory(mainpath + "\\Firefox.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\Firefox\\runthis.exe");
+                guna2Button8.Enabled = true;
+                this.Alert("Started FireFox", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e) //LibreWolf
+        {
+            if (Directory.Exists(mainpath + "\\librewolf-105.0.1\\"))
+            {
+                Process.Start(mainpath + "\\librewolf-105.0.1\\LibreWolf-Portable.exe");
+                this.Alert("Started FireFox", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://gitlab.com/librewolf-community/browser/windows/uploads/a9d86b83d8e66b9c3c75a0c2221aecdd/librewolf-105.0.1-1.en-US.win64-portable.zip", mainpath + "\\librewolf.zip", guna2Button7);
+
+                ZipFile.ExtractToDirectory(mainpath + "\\librewolf.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\librewolf-105.0.1\\LibreWolf-Portable.exe");
+                this.Alert("Started FireFox", Form_Alert.enmType.Success);
+                guna2Button7.Enabled = true;
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e) // Notepad
+        {
+            if (File.Exists(mainpath + "\\Notepad2x64.exe"))
+            {
+                Process.Start(mainpath + "\\Notepad2x64.exe");
+                this.Alert("Started Notepad", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Notepad2x64.exe", mainpath + "\\Notepad2x64.exe", guna2Button4);
+                Process.Start(mainpath + "\\Notepad2x64.exe");
+                guna2Button4.Enabled = true;
+                this.Alert("Started Notepad", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)// Spotify
+        {
+            if (Directory.Exists(mainpath + "\\Spotify\\"))
+            {
+                Process.Start(mainpath + "\\Spotify\\Spotify.exe");
+                this.Alert("Started Spotify", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Spotify.zip", mainpath + "\\Spotify.zip", guna2Button11);
+                ZipFile.ExtractToDirectory(mainpath + "\\Spotify.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\Spotify\\Spotify.exe");
+                guna2Button11.Enabled = true;
+                this.Alert("Started Spotify", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            if (File.Exists(mainpath + "\\ZortosDesktop.exe"))
+            {
+                Process.Start(mainpath + "\\ZortosDesktop.exe", "");
+            }
+            else
+            {
+                File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/DesktopOverlay.exe", mainpath + "\\ZortosDesktop.exe", guna2Button1);
+                File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/1.png", mainpath + "\\1.png", guna2Button1);
+                File_Downloader("https://github.com/zortos293/ZortosToolBox/raw/main/WinXShell.jcfg", mainpath + "\\WinXShell.jcfg", guna2Button1);
+
+                Process[] ps = Process.GetProcessesByName("explorer");
+
+                foreach (Process p in ps)
+                    p.Kill();
+                Process.Start(mainpath + "\\ZortosDesktop.exe", "-Desktop");
+                guna2Button1.Enabled = true;
+                this.Alert("Launched Desktop", Form_Alert.enmType.Success);
+            }
         }
     }
 }

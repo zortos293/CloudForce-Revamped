@@ -46,7 +46,6 @@
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
@@ -84,7 +83,7 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
             this.Tabs.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -93,7 +92,6 @@
             this.Games.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.Extras.SuspendLayout();
-            this.Settings.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -281,11 +279,11 @@
             // Utilities
             // 
             this.Utilities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
+            this.Utilities.Controls.Add(this.guna2Button20);
             this.Utilities.Controls.Add(this.guna2HtmlLabel3);
             this.Utilities.Controls.Add(this.guna2ProgressBar1);
             this.Utilities.Controls.Add(this.guna2Panel1);
             this.Utilities.Controls.Add(this.guna2Button13);
-            this.Utilities.Controls.Add(this.guna2Button14);
             this.Utilities.Controls.Add(this.guna2Button12);
             this.Utilities.Controls.Add(this.guna2Button11);
             this.Utilities.Controls.Add(this.guna2Button10);
@@ -352,32 +350,12 @@
             this.guna2Button13.Image = global::Cloudforce_Revamped_V2.Properties.Resources._1200px_OBS_Studio_Logo_svg;
             this.guna2Button13.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button13.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button13.Location = new System.Drawing.Point(556, 122);
+            this.guna2Button13.Location = new System.Drawing.Point(376, 122);
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.Size = new System.Drawing.Size(174, 46);
             this.guna2Button13.TabIndex = 20;
             this.guna2Button13.Text = "OBS Studio";
-            // 
-            // guna2Button14
-            // 
-            this.guna2Button14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
-            this.guna2Button14.BorderRadius = 4;
-            this.guna2Button14.BorderThickness = 2;
-            this.guna2Button14.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button14.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button14.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button14.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button14.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.guna2Button14.ForeColor = System.Drawing.Color.White;
-            this.guna2Button14.Image = global::Cloudforce_Revamped_V2.Properties.Resources.OBIcon;
-            this.guna2Button14.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button14.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button14.Location = new System.Drawing.Point(376, 122);
-            this.guna2Button14.Name = "guna2Button14";
-            this.guna2Button14.Size = new System.Drawing.Size(174, 46);
-            this.guna2Button14.TabIndex = 17;
-            this.guna2Button14.Text = "SilverBullet";
+            this.guna2Button13.Click += new System.EventHandler(this.guna2Button13_Click);
             // 
             // guna2Button12
             // 
@@ -399,6 +377,7 @@
             this.guna2Button12.Size = new System.Drawing.Size(174, 46);
             this.guna2Button12.TabIndex = 16;
             this.guna2Button12.Text = "CMD";
+            this.guna2Button12.Click += new System.EventHandler(this.guna2Button12_Click);
             // 
             // guna2Button11
             // 
@@ -420,6 +399,7 @@
             this.guna2Button11.Size = new System.Drawing.Size(174, 46);
             this.guna2Button11.TabIndex = 15;
             this.guna2Button11.Text = "Spotify";
+            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
             // 
             // guna2Button10
             // 
@@ -441,6 +421,7 @@
             this.guna2Button10.Size = new System.Drawing.Size(174, 46);
             this.guna2Button10.TabIndex = 14;
             this.guna2Button10.Text = "Parsec";
+            this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
             // 
             // guna2Button9
             // 
@@ -483,6 +464,7 @@
             this.guna2Button8.Size = new System.Drawing.Size(174, 46);
             this.guna2Button8.TabIndex = 12;
             this.guna2Button8.Text = "Firefox";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
             // 
             // guna2Button7
             // 
@@ -504,6 +486,7 @@
             this.guna2Button7.Size = new System.Drawing.Size(174, 46);
             this.guna2Button7.TabIndex = 12;
             this.guna2Button7.Text = "LibreWolf";
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
             // 
             // guna2Button6
             // 
@@ -525,6 +508,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(174, 46);
             this.guna2Button6.TabIndex = 11;
             this.guna2Button6.Text = "Anydesk";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button5
             // 
@@ -547,6 +531,7 @@
             this.guna2Button5.TabIndex = 10;
             this.guna2Button5.Text = "Process Hacker";
             this.guna2Button5.TextOffset = new System.Drawing.Point(9, 0);
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button4
             // 
@@ -568,6 +553,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(174, 46);
             this.guna2Button4.TabIndex = 9;
             this.guna2Button4.Text = "Notepad";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button3
             // 
@@ -590,6 +576,7 @@
             this.guna2Button3.TabIndex = 8;
             this.guna2Button3.Text = "ZortosUnzipper";
             this.guna2Button3.TextOffset = new System.Drawing.Point(9, 0);
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 
@@ -633,6 +620,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(174, 46);
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "Desktop";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // Games
             // 
@@ -911,7 +899,6 @@
             // Settings
             // 
             this.Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
-            this.Settings.Controls.Add(this.guna2HtmlLabel10);
             this.Settings.Location = new System.Drawing.Point(4, 42);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(919, 440);
@@ -973,16 +960,27 @@
             this.guna2DragControl4.TargetControl = this.Tabs;
             this.guna2DragControl4.UseTransparentDrag = true;
             // 
-            // guna2HtmlLabel10
+            // guna2Button20
             // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(15, 13);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(114, 18);
-            this.guna2HtmlLabel10.TabIndex = 0;
-            this.guna2HtmlLabel10.Text = "Subscription : Free";
+            this.guna2Button20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Button20.BorderRadius = 4;
+            this.guna2Button20.BorderThickness = 2;
+            this.guna2Button20.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button20.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.guna2Button20.ForeColor = System.Drawing.Color.White;
+            this.guna2Button20.Image = global::Cloudforce_Revamped_V2.Properties.Resources.discord_480px;
+            this.guna2Button20.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button20.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button20.Location = new System.Drawing.Point(556, 122);
+            this.guna2Button20.Name = "guna2Button20";
+            this.guna2Button20.Size = new System.Drawing.Size(174, 46);
+            this.guna2Button20.TabIndex = 23;
+            this.guna2Button20.Text = "Discord";
+            this.guna2Button20.Click += new System.EventHandler(this.guna2Button20_Click);
             // 
             // Form1
             // 
@@ -1007,8 +1005,6 @@
             this.Games.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.Extras.ResumeLayout(false);
-            this.Settings.ResumeLayout(false);
-            this.Settings.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1028,7 +1024,6 @@
         private System.Windows.Forms.TabPage Extras;
         private System.Windows.Forms.TabPage Settings;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button14;
         private Guna.UI2.WinForms.Guna2Button guna2Button12;
         private Guna.UI2.WinForms.Guna2Button guna2Button11;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
@@ -1069,7 +1064,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button18;
         private Guna.UI2.WinForms.Guna2Button guna2Button19;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2Button guna2Button20;
     }
 }
 
