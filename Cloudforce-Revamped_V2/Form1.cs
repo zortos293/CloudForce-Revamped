@@ -24,13 +24,15 @@ namespace Cloudforce_Revamped_V2
         public Form1()
         {
             InitializeComponent();
-            KeyAuthApp.init();
+            KeyAuthApp.init();  
             if (!KeyAuthApp.response.success)
             {
                 MessageBox.Show(KeyAuthApp.response.message);
             }
             WebClient a = new WebClient();
-            string json = a.DownloadString(KeyAuthApp.getvar("online_users"));
+
+            
+            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
             dynamic array = JsonConvert.DeserializeObject(json);
             guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
@@ -228,7 +230,7 @@ namespace Cloudforce_Revamped_V2
 
         }
         #endregion
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
 
         }
@@ -735,6 +737,16 @@ namespace Cloudforce_Revamped_V2
                 guna2Button1.Enabled = true;
                 this.Alert("Launched Desktop", Form_Alert.enmType.Success);
             }
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

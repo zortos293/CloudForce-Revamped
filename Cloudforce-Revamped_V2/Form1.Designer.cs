@@ -42,6 +42,7 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Utilities = new System.Windows.Forms.TabPage();
+            this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -83,7 +84,6 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
             this.Tabs.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -171,6 +171,7 @@
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.ToolTipText = "Home";
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // guna2HtmlLabel9
             // 
@@ -302,6 +303,28 @@
             this.Utilities.Size = new System.Drawing.Size(919, 440);
             this.Utilities.TabIndex = 1;
             this.Utilities.Text = "Utilities";
+            // 
+            // guna2Button20
+            // 
+            this.guna2Button20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Button20.BorderRadius = 4;
+            this.guna2Button20.BorderThickness = 2;
+            this.guna2Button20.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button20.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.guna2Button20.ForeColor = System.Drawing.Color.White;
+            this.guna2Button20.Image = global::Cloudforce_Revamped_V2.Properties.Resources.discord_480px;
+            this.guna2Button20.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button20.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button20.Location = new System.Drawing.Point(556, 122);
+            this.guna2Button20.Name = "guna2Button20";
+            this.guna2Button20.Size = new System.Drawing.Size(174, 46);
+            this.guna2Button20.TabIndex = 23;
+            this.guna2Button20.Text = "Discord";
+            this.guna2Button20.Click += new System.EventHandler(this.guna2Button20_Click);
             // 
             // guna2HtmlLabel3
             // 
@@ -625,9 +648,9 @@
             // Games
             // 
             this.Games.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
+            this.Games.Controls.Add(this.guna2Panel3);
             this.Games.Controls.Add(this.guna2HtmlLabel4);
             this.Games.Controls.Add(this.guna2ProgressBar2);
-            this.Games.Controls.Add(this.guna2Panel3);
             this.Games.Location = new System.Drawing.Point(4, 42);
             this.Games.Name = "Games";
             this.Games.Size = new System.Drawing.Size(919, 440);
@@ -666,7 +689,7 @@
             // 
             this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
             this.guna2Panel3.BorderRadius = 4;
-            this.guna2Panel3.BorderThickness = 2;
+            this.guna2Panel3.BorderThickness = 3;
             this.guna2Panel3.Controls.Add(this.guna2ImageButton1);
             this.guna2Panel3.Location = new System.Drawing.Point(13, 12);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -682,13 +705,13 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(94, 150);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(3, 3);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(5, 3);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.ShadowDecoration.Depth = 100;
             this.guna2ImageButton1.ShadowDecoration.Enabled = true;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(90, 148);
             this.guna2ImageButton1.TabIndex = 0;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -960,28 +983,6 @@
             this.guna2DragControl4.TargetControl = this.Tabs;
             this.guna2DragControl4.UseTransparentDrag = true;
             // 
-            // guna2Button20
-            // 
-            this.guna2Button20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
-            this.guna2Button20.BorderRadius = 4;
-            this.guna2Button20.BorderThickness = 2;
-            this.guna2Button20.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button20.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button20.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.guna2Button20.ForeColor = System.Drawing.Color.White;
-            this.guna2Button20.Image = global::Cloudforce_Revamped_V2.Properties.Resources.discord_480px;
-            this.guna2Button20.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button20.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button20.Location = new System.Drawing.Point(556, 122);
-            this.guna2Button20.Name = "guna2Button20";
-            this.guna2Button20.Size = new System.Drawing.Size(174, 46);
-            this.guna2Button20.TabIndex = 23;
-            this.guna2Button20.Text = "Discord";
-            this.guna2Button20.Click += new System.EventHandler(this.guna2Button20_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -994,6 +995,7 @@
             this.Name = "Form1";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.Tabs.ResumeLayout(false);
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
