@@ -31,7 +31,8 @@ namespace Cloudforce_Revamped_V2
             }
             WebClient a = new WebClient();
 
-            
+            a.DownloadFile("https://raw.githubusercontent.com/zortos293/CloudForce-Revamped/master/games.json",mainpath + "games.json");
+            jsonString = File.ReadAllText(mainpath + "games.json");
             string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
             dynamic array = JsonConvert.DeserializeObject(json);
             guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
@@ -56,7 +57,7 @@ namespace Cloudforce_Revamped_V2
         #endregion
         #region Download Stuff
         public static string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
-        string jsonString = File.ReadAllText(mainpath + "games.json");  //Need to change
+        public string jsonString;  //Need to change
         public static bool ForceExit = false;
         public static bool Done = false;
         public int BtnNumber;
@@ -106,12 +107,11 @@ namespace Cloudforce_Revamped_V2
             guna2ProgressBar1.Value = e.ProgressPercentage;
         }
 
-        public void DownloadGame(int JsonNumber) // Download Game Trough Onedrive <<<<
+        public void DownloadGame(int JsonNumber, string downloadpath) // Download Game Trough Onedrive <<<<
         {
             var username = Environment.UserName;
             Done = false;
-            WebClient client = new WebClient();
-            string jsonString = File.ReadAllText($"C:\\Users\\{username}\\Downloads\\test.json");  //Need to change
+            WebClient client = new WebClient(); 
             var results = JsonConvert.DeserializeObject<Root>(jsonString);
             if (!File.Exists(mainpath + "downloader.exe"))
             {
@@ -131,15 +131,45 @@ namespace Cloudforce_Revamped_V2
             process.StartInfo.RedirectStandardError = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.Arguments = "copy -P " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + mainpath + results.Game[JsonNumber].GameOnedrive;
+            process.StartInfo.Arguments = "copy -P " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
             process.Exited += new EventHandler(p_Exited);
             process.EnableRaisingEvents = true;
             process.Start();
             process.BeginOutputReadLine();
         }
-
-        void process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        public void ExtractZipFileToDirectory(string sourceZipFilePath, string destinationDirectoryName, bool overwrite)
         {
+            using (var archive = ZipFile.Open(sourceZipFilePath, ZipArchiveMode.Read))
+            {
+                if (!overwrite)
+                {
+                    archive.ExtractToDirectory(destinationDirectoryName);
+                    return;
+                }
+
+                DirectoryInfo di = Directory.CreateDirectory(destinationDirectoryName);
+                string destinationDirectoryFullPath = di.FullName;
+
+                foreach (ZipArchiveEntry file in archive.Entries)
+                {
+                    string completeFileName = Path.GetFullPath(Path.Combine(destinationDirectoryFullPath, file.FullName));
+
+                    if (!completeFileName.StartsWith(destinationDirectoryFullPath, StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new IOException("Trying to extract file outside of destination directory. See this link for more info: https://snyk.io/research/zip-slip-vulnerability");
+                    }
+
+                    if (file.Name == "")
+                    {// Assuming Empty for Directory
+                        Directory.CreateDirectory(Path.GetDirectoryName(completeFileName));
+                        continue;
+                    }
+                    file.ExtractToFile(completeFileName, true);
+                }
+            }
+        }
+            void process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+            {
             var username = Environment.UserName;
             try
             {
@@ -181,9 +211,18 @@ namespace Cloudforce_Revamped_V2
             }
             catch (Exception er)
             {
-                MessageBox.Show("An Error occoured\n" + er.Message + "\nPress ok to Continue");
+                // if exeception is object refrence
+                if (er.InnerException is NullReferenceException)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("An Error occoured\n" + er.Message + "\nPress ok to Continue");
 
-                return;
+                    return;
+                }
+               
             }
         }
 
@@ -249,76 +288,51 @@ namespace Cloudforce_Revamped_V2
         {
             if (Startgame(0) == false)
             {
-                DownloadGame(0); // Overwatch
+                DownloadGame(0, mainpath); // Overwatch
                 
                 while (Done == false)
                 {
                     Application.DoEvents();
                 }
                 guna2HtmlLabel4.Visible = true;
-                if (File.Exists(mainpath + $"overwatch\\data\\casc\\data\\data.20"))
-                {
-                    for (int i = 0; i < 20; i++)
-                    {
-                        try
-                        {
-                            if (i >= 10)
-                            {
-                                File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data.{i}");
-                            }
-                            else if (i >= 20)
-                            {
-                                File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data.20");
-                            }
-                            else
-                            {
-                                File.Delete(mainpath + $"overwatch\\data\\casc\\data\\data.0{i}");
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            SentrySdk.CaptureException(ex);
-                            MessageBox.Show("An error occured \n" + ex.Message);
-                        }
-
-                    }
-                }
                 try
                 {
                     guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
                     await Task.Run(() =>
                     {
-                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
                     });
                     File.Delete(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip");
                     guna2HtmlLabel4.Text = "[/] Extracting Data 10 - 13 (Please Be patient)";
                     await Task.Run(() =>
                     {
-                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
                     });
                     File.Delete(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip");
                     guna2HtmlLabel4.Text = "[/] Extracting Data 14 - 17 (Please Be patient)";
                     await Task.Run(() =>
                     {
-                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
                     });
                     File.Delete(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip");
                     guna2HtmlLabel4.Text = "[/] Extracting Data 18 - 20 (Please Be patient)";
                     await Task.Run(() =>
                     {
-                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\");
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
                     });
                     File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
                     guna2HtmlLabel4.Text = "[/] Extracting indicies (Please Be patient)";
                     await Task.Run(() =>
                     {
-                        ZipFile.ExtractToDirectory(mainpath + "overwatch\\data\\casc\\indices\\indices.zip", mainpath + "overwatch\\data\\casc\\indices\\");
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\indices\\indices.zip", mainpath + "overwatch\\data\\casc\\indices\\", true);
                     });
                     File.Delete(mainpath + "overwatch\\data\\casc\\indices\\indices.zip");
                     guna2HtmlLabel4.Visible = false;
-                    Startgame(0); // Overwatch
-                    this.Alert("Starting overwatch, please wait.", Form_Alert.enmType.Success);
+                    if (Startgame(0)) // Overwatch
+                    {
+                        this.Alert("Starting overwatch, please wait.", Form_Alert.enmType.Success);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -717,7 +731,7 @@ namespace Cloudforce_Revamped_V2
             }
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
+        private void guna2Button1_Click_1(object sender, EventArgs e) // Desktop
         {
             if (File.Exists(mainpath + "\\ZortosDesktop.exe"))
             {
@@ -738,7 +752,23 @@ namespace Cloudforce_Revamped_V2
                 this.Alert("Launched Desktop", Form_Alert.enmType.Success);
             }
         }
+        private void guna2Button14_Click(object sender, EventArgs e) // rpcs3
+        {
 
+            if (Directory.Exists(mainpath + "\\rpcs3\\"))
+            {
+                Process.Start(mainpath + "\\rpcs3\\rpcs3.exe");
+                this.Alert("Started rpcs3", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://files.zortos.me/Files/Launchers/rpcs3.zip", mainpath + "\\rpcs3.zip", guna2Button14);
+                ZipFile.ExtractToDirectory(mainpath + "\\rpcs3.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\rpcs3\\rpcs3.exe");
+                guna2Button14.Enabled = true;
+                this.Alert("Started rpcs3", Form_Alert.enmType.Success);
+            }
+        }
         private void Home_Click(object sender, EventArgs e)
         {
 
@@ -748,5 +778,103 @@ namespace Cloudforce_Revamped_V2
         {
 
         }
+
+        private async void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            KeyAuthApp.login("zortos", "lmao");
+            if (!SubExist("premium"))
+            {
+                MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discrod located in the main form to purchase");
+                return;
+            }
+            if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
+            {
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                MessageBox.Show("After login Close this messagebox");
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{mainpath}\\",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        FileName = $"{mainpath}\\shard.bat"
+                    }
+                }.Start();
+                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    new Process()
+                    {
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            WorkingDirectory = $"{mainpath}\\",
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            FileName = $"{mainpath}\\shard.bat"
+                        }
+                    }.Start();
+                }
+                guna2HtmlLabel4.Text = "[-] Started: Fall Guys";
+            }
+            else
+            {
+                guna2ProgressBar2.Style = ProgressBarStyle.Blocks;
+                guna2HtmlLabel4.Text = "[-] Creating Directorys.";
+                Directory.CreateDirectory(@"c:\ProgramData\Epic");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
+                byte[] pwet = KeyAuthApp.download("041744");
+                File.WriteAllBytes(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", pwet);
+                // ----------------------------------------------------------------------- < Installing FallGuys
+                guna2HtmlLabel4.Text = "[-] Downloading: FallGuys.zip";
+                guna2HtmlLabel4.Visible = true;
+                DownloadGame(1, "b:\\");
+                while (Done == false)
+                {
+                    Application.DoEvents();
+                }
+                guna2HtmlLabel4.Visible = true;
+                // ----------------------------------------------------------------------- < Installing Epic Games Launcher
+                guna2HtmlLabel4.Text = "[-] Preparing Fall Guys.";
+                File_Downloader("https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2Button10);
+                byte[] shard = KeyAuthApp.download("108975");
+                File.WriteAllBytes(mainpath + "shard.bat", shard);
+                await Task.Run(() =>
+                {
+                    ZipFile.ExtractToDirectory(mainpath + "\\Epic%20Games.zip", mainpath + "\\");
+                });
+                guna2Button10.Enabled = true;
+                guna2HtmlLabel4.Visible = false;
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                MessageBox.Show("After login Close this messagebox");
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{mainpath}\\",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        FileName = $"{mainpath}\\shard.bat"
+                    }
+                }.Start();
+                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    new Process()
+                    {
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            WorkingDirectory = $"{mainpath}\\",
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            FileName = $"{mainpath}\\shard.bat"
+                        }
+                    }.Start();
+                }
+                // -----------------------------------------------------------------------
+                MessageBox.Show("Wait for epic games to refresh then Launch Fall guys!!!!!!!");
+                guna2HtmlLabel4.Text = "[-] Started: EpicGames.";
+            }
+        }
+
+
     }
 }
