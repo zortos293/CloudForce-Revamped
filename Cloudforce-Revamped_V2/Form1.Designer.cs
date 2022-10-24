@@ -88,6 +88,13 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ImageButton5 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2Button21 = new Guna.UI2.WinForms.Guna2Button();
             this.Tabs.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -100,6 +107,9 @@
             this.Settings.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -288,6 +298,7 @@
             // Utilities
             // 
             this.Utilities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
+            this.Utilities.Controls.Add(this.guna2Button21);
             this.Utilities.Controls.Add(this.guna2Button14);
             this.Utilities.Controls.Add(this.guna2Button20);
             this.Utilities.Controls.Add(this.guna2HtmlLabel3);
@@ -679,6 +690,9 @@
             // Games
             // 
             this.Games.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(17)))));
+            this.Games.Controls.Add(this.guna2Panel7);
+            this.Games.Controls.Add(this.guna2Panel6);
+            this.Games.Controls.Add(this.guna2Panel5);
             this.Games.Controls.Add(this.guna2Panel3);
             this.Games.Controls.Add(this.guna2HtmlLabel4);
             this.Games.Controls.Add(this.guna2ProgressBar2);
@@ -703,7 +717,7 @@
             // guna2ImageButton1
             // 
             this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2ImageButton1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
@@ -711,7 +725,7 @@
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.Location = new System.Drawing.Point(3, 3);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(94, 150);
             this.guna2ImageButton1.ShadowDecoration.Depth = 100;
             this.guna2ImageButton1.Size = new System.Drawing.Size(94, 150);
@@ -1055,6 +1069,115 @@
             this.guna2HtmlLabel10.TabIndex = 2;
             this.guna2HtmlLabel10.Text = "Login to see ";
             // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Panel5.BorderRadius = 4;
+            this.guna2Panel5.BorderThickness = 3;
+            this.guna2Panel5.Controls.Add(this.guna2ImageButton3);
+            this.guna2Panel5.Location = new System.Drawing.Point(119, 12);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(100, 156);
+            this.guna2Panel5.TabIndex = 9;
+            // 
+            // guna2ImageButton3
+            // 
+            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.HoverState.Image = global::Cloudforce_Revamped_V2.Properties.Resources.O5jbqLhD_400x400;
+            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton3.Image = global::Cloudforce_Revamped_V2.Properties.Resources.O5jbqLhD_400x400;
+            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton3.ImageRotate = 0F;
+            this.guna2ImageButton3.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(3, 3);
+            this.guna2ImageButton3.Name = "guna2ImageButton3";
+            this.guna2ImageButton3.PressedState.Image = global::Cloudforce_Revamped_V2.Properties.Resources.O5jbqLhD_400x400;
+            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton3.ShadowDecoration.Depth = 100;
+            this.guna2ImageButton3.Size = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton3.TabIndex = 0;
+            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Panel6.BorderRadius = 4;
+            this.guna2Panel6.BorderThickness = 3;
+            this.guna2Panel6.Controls.Add(this.guna2ImageButton4);
+            this.guna2Panel6.Location = new System.Drawing.Point(225, 12);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(100, 156);
+            this.guna2Panel6.TabIndex = 10;
+            // 
+            // guna2ImageButton4
+            // 
+            this.guna2ImageButton4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.HoverState.Image = global::Cloudforce_Revamped_V2.Properties.Resources.mc;
+            this.guna2ImageButton4.HoverState.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton4.Image = global::Cloudforce_Revamped_V2.Properties.Resources.mc;
+            this.guna2ImageButton4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton4.ImageRotate = 0F;
+            this.guna2ImageButton4.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton4.Location = new System.Drawing.Point(3, 3);
+            this.guna2ImageButton4.Name = "guna2ImageButton4";
+            this.guna2ImageButton4.PressedState.Image = global::Cloudforce_Revamped_V2.Properties.Resources.mc;
+            this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton4.ShadowDecoration.Depth = 100;
+            this.guna2ImageButton4.Size = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton4.TabIndex = 0;
+            this.guna2ImageButton4.Click += new System.EventHandler(this.guna2ImageButton4_Click);
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Panel7.BorderRadius = 4;
+            this.guna2Panel7.BorderThickness = 3;
+            this.guna2Panel7.Controls.Add(this.guna2ImageButton5);
+            this.guna2Panel7.Location = new System.Drawing.Point(331, 12);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(100, 156);
+            this.guna2Panel7.TabIndex = 11;
+            // 
+            // guna2ImageButton5
+            // 
+            this.guna2ImageButton5.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton5.HoverState.Image = global::Cloudforce_Revamped_V2.Properties.Resources.Robloxposter;
+            this.guna2ImageButton5.HoverState.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton5.Image = global::Cloudforce_Revamped_V2.Properties.Resources.Robloxposter;
+            this.guna2ImageButton5.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton5.ImageRotate = 0F;
+            this.guna2ImageButton5.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton5.Location = new System.Drawing.Point(3, 3);
+            this.guna2ImageButton5.Name = "guna2ImageButton5";
+            this.guna2ImageButton5.PressedState.Image = global::Cloudforce_Revamped_V2.Properties.Resources.Robloxposter;
+            this.guna2ImageButton5.PressedState.ImageSize = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton5.ShadowDecoration.Depth = 100;
+            this.guna2ImageButton5.Size = new System.Drawing.Size(94, 150);
+            this.guna2ImageButton5.TabIndex = 0;
+            this.guna2ImageButton5.Click += new System.EventHandler(this.guna2ImageButton5_Click);
+            // 
+            // guna2Button21
+            // 
+            this.guna2Button21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Button21.BorderRadius = 4;
+            this.guna2Button21.BorderThickness = 2;
+            this.guna2Button21.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button21.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button21.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button21.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button21.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.guna2Button21.ForeColor = System.Drawing.Color.White;
+            this.guna2Button21.Image = global::Cloudforce_Revamped_V2.Properties.Resources.rpsc3_removebg_preview;
+            this.guna2Button21.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button21.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button21.Location = new System.Drawing.Point(17, 174);
+            this.guna2Button21.Name = "guna2Button21";
+            this.guna2Button21.Size = new System.Drawing.Size(174, 46);
+            this.guna2Button21.TabIndex = 25;
+            this.guna2Button21.Text = "7-Zip";
+            this.guna2Button21.Click += new System.EventHandler(this.guna2Button21_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1086,6 +1209,9 @@
             this.Settings.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1149,6 +1275,13 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button21;
     }
 }
 

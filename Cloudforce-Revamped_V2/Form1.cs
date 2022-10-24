@@ -905,5 +905,78 @@ namespace Cloudforce_Revamped_V2
                 this.Show();
             }
         }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e) // Lunar Client
+        {
+            if (Directory.Exists(mainpath + $"C:\\Users\\{Environment.UserName}\\AppData\\Local\\Programs\\lunarclient\\"))
+            {
+                Process.Start($"C:\\Users\\{Environment.UserName}\\AppData\\Local\\Programs\\lunarclient\\Lunar Client.exe");
+                this.Alert("Launched Lunar Client", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://launcherupdates.lunarclientcdn.com/Lunar%20Client%20v2.13.0.exe", mainpath + "\\Lunar_Install.exe", guna2Button2);
+                Process.Start(mainpath + "\\Lunar_Install.exe");
+                guna2Button2.Enabled = true;
+                this.Alert("Launched Lunar Client", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2ImageButton4_Click(object sender, EventArgs e) //Minecraft launcher
+        {
+            if (File.Exists(mainpath + "\\Minecraft.exe"))
+            {
+                Process.Start(mainpath + "\\Minecraft.exe");
+
+            }
+            else
+            {
+                File_Downloader("https://cdn.discordapp.com/attachments/1029959860428742706/1030223464646312036/Minecraft.exe", mainpath + "\\Minecraft.exe", guna2Button2);
+                Process.Start(mainpath + "\\Minecraft.exe");
+                guna2Button2.Enabled = true;
+            }
+        }
+
+        private async void guna2ImageButton5_Click(object sender, EventArgs e)
+        {
+
+            if (Directory.Exists($"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox"))
+            {
+                Process.Start($@"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox\\Roblox Player.lnk");
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/Roblox.zip", mainpath + "\\Roblox.zip", guna2Button2);
+                await Task.Run(() =>
+                {
+                    ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
+                });
+                Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
+                guna2Button2.Enabled = true;
+                MessageBox.Show("Relaunch roblox after install ;) Roblox installer will have error, we will kill it.");
+                await Task.Delay(10000);
+                foreach (var process in Process.GetProcessesByName("RobloxPlayerLauncher"))
+                {
+                    process.Kill();
+                }
+            }
+        }
+
+        private void guna2Button21_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(mainpath + "\\7-Zip\\"))
+            {
+                Process.Start(mainpath + "\\7-Zip\\7zFM.exe");
+                this.Alert("Started 7-Zip", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/7-Zip.zip", mainpath + "\\7-Zip.zip", guna2Button21);
+                ZipFile.ExtractToDirectory(mainpath + "\\7-Zip.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\7-Zip\\7zFM.exe");
+                guna2Button21.Enabled = true;
+                this.Alert("Started 7-Zip", Form_Alert.enmType.Success);
+            }
+        }
     }
 }
