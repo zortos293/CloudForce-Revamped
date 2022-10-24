@@ -242,6 +242,12 @@
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </Compile>
     <Compile Include="KeyAuth.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -381,6 +390,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rpsc3-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sed-18-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloudForce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_user_male_208px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

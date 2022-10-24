@@ -42,6 +42,7 @@
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.Games = new System.Windows.Forms.TabPage();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
@@ -62,7 +63,6 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -91,10 +91,10 @@
             this.Home.SuspendLayout();
             this.Utilities.SuspendLayout();
             this.Games.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.Extras.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -283,6 +283,17 @@
             this.Games.TabIndex = 5;
             this.Games.Text = "Games";
             this.Games.Click += new System.EventHandler(this.Games_Click);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
+            this.guna2Panel4.BorderRadius = 4;
+            this.guna2Panel4.BorderThickness = 3;
+            this.guna2Panel4.Controls.Add(this.guna2ImageButton2);
+            this.guna2Panel4.Location = new System.Drawing.Point(119, 12);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(100, 156);
+            this.guna2Panel4.TabIndex = 9;
             // 
             // guna2Panel3
             // 
@@ -536,17 +547,6 @@
             this.guna2DragControl4.TargetControl = this.Tabs;
             this.guna2DragControl4.UseTransparentDrag = true;
             // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
-            this.guna2Panel4.BorderRadius = 4;
-            this.guna2Panel4.BorderThickness = 3;
-            this.guna2Panel4.Controls.Add(this.guna2ImageButton2);
-            this.guna2Panel4.Location = new System.Drawing.Point(119, 12);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(100, 156);
-            this.guna2Panel4.TabIndex = 9;
-            // 
             // guna2Button19
             // 
             this.guna2Button19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(113)))), ((int)(((byte)(137)))));
@@ -567,6 +567,7 @@
             this.guna2Button19.Size = new System.Drawing.Size(143, 40);
             this.guna2Button19.TabIndex = 8;
             this.guna2Button19.Text = "Login";
+            this.guna2Button19.Click += new System.EventHandler(this.guna2Button19_Click_1);
             // 
             // guna2Button18
             // 
@@ -1059,10 +1060,10 @@
             this.Utilities.PerformLayout();
             this.Games.ResumeLayout(false);
             this.Games.PerformLayout();
+            this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.Extras.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);

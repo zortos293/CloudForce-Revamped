@@ -93,6 +93,26 @@ namespace Cloudforce_Revamped_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checked_user_male_208px {
+            get {
+                object obj = ResourceManager.GetObject("checked_user_male_208px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CloudForce {
+            get {
+                object obj = ResourceManager.GetObject("CloudForce", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cmdprompt {
             get {
                 object obj = ResourceManager.GetObject("cmdprompt", resourceCulture);
@@ -196,6 +216,16 @@ namespace Cloudforce_Revamped_V2.Properties {
         internal static System.Drawing.Bitmap kief {
             get {
                 object obj = ResourceManager.GetObject("kief", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_2 {
+            get {
+                object obj = ResourceManager.GetObject("lock-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +376,16 @@ namespace Cloudforce_Revamped_V2.Properties {
         internal static System.Drawing.Bitmap Run_Command_512px {
             get {
                 object obj = ResourceManager.GetObject("Run Command_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sed_18_512 {
+            get {
+                object obj = ResourceManager.GetObject("Sed-18-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

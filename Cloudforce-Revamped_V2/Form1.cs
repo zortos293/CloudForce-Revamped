@@ -16,6 +16,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KeyAuth;
+using LoginScreen;
+
 
 namespace Cloudforce_Revamped_V2
 {
@@ -37,6 +39,7 @@ namespace Cloudforce_Revamped_V2
             dynamic array = JsonConvert.DeserializeObject(json);
             guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
+
 
         #region Login Stuff
         public static api KeyAuthApp = new api(
@@ -781,15 +784,16 @@ namespace Cloudforce_Revamped_V2
 
         private async void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            KeyAuthApp.login("zortos", "lmao");
-            if (!SubExist("premium"))
+            if (!Login.SubExist("premium"))
             {
                 MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discrod located in the main form to purchase");
+                this.Alert("Join Discord to download!", Form_Alert.enmType.Error);
                 return;
             }
             if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
             {
                 Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                this.Alert("Login then return to CF", Form_Alert.enmType.Info);
                 MessageBox.Show("After login Close this messagebox");
                 new Process()
                 {
@@ -801,6 +805,7 @@ namespace Cloudforce_Revamped_V2
                     }
                 }.Start();
                 DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
+                this.Alert("CF has a prompt for you.", Form_Alert.enmType.Info);
                 if (dialogResult == DialogResult.No)
                 {
                     new Process()
@@ -814,11 +819,13 @@ namespace Cloudforce_Revamped_V2
                     }.Start();
                 }
                 guna2HtmlLabel4.Text = "[-] Started: Fall Guys";
+                this.Alert("Started Fall Guys", Form_Alert.enmType.Success);
             }
             else
             {
                 guna2ProgressBar2.Style = ProgressBarStyle.Blocks;
                 guna2HtmlLabel4.Text = "[-] Creating Directorys.";
+                this.Alert("Creating Directorys", Form_Alert.enmType.Info);
                 Directory.CreateDirectory(@"c:\ProgramData\Epic");
                 Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher");
                 Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data");
@@ -827,6 +834,7 @@ namespace Cloudforce_Revamped_V2
                 File.WriteAllBytes(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", pwet);
                 // ----------------------------------------------------------------------- < Installing FallGuys
                 guna2HtmlLabel4.Text = "[-] Downloading: FallGuys.zip";
+                this.Alert("Downloading Fall Guys", Form_Alert.enmType.Info);
                 guna2HtmlLabel4.Visible = true;
                 DownloadGame(1, "b:\\");
                 while (Done == false)
@@ -835,6 +843,7 @@ namespace Cloudforce_Revamped_V2
                 }
                 guna2HtmlLabel4.Visible = true;
                 // ----------------------------------------------------------------------- < Installing Epic Games Launcher
+                this.Alert("Preparing Fall guys", Form_Alert.enmType.Info);
                 guna2HtmlLabel4.Text = "[-] Preparing Fall Guys.";
                 File_Downloader("https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2Button10);
                 byte[] shard = KeyAuthApp.download("108975");
@@ -846,6 +855,7 @@ namespace Cloudforce_Revamped_V2
                 guna2Button10.Enabled = true;
                 guna2HtmlLabel4.Visible = false;
                 Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                this.Alert("After login return to CF", Form_Alert.enmType.Info); 
                 MessageBox.Show("After login Close this messagebox");
                 new Process()
                 {
@@ -856,6 +866,8 @@ namespace Cloudforce_Revamped_V2
                         FileName = $"{mainpath}\\shard.bat"
                     }
                 }.Start();
+                Thread.Sleep(10000);
+                this.Alert("CF has a prompt for you", Form_Alert.enmType.Info);
                 DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
@@ -870,11 +882,28 @@ namespace Cloudforce_Revamped_V2
                     }.Start();
                 }
                 // -----------------------------------------------------------------------
-                MessageBox.Show("Wait for epic games to refresh then Launch Fall guys!!!!!!!");
+                this.Alert("Wait for epic games to refresh", Form_Alert.enmType.Info);
+                Thread.Sleep(3000);
+                this.Alert("Refreshed epic games.", Form_Alert.enmType.Success);
                 guna2HtmlLabel4.Text = "[-] Started: EpicGames.";
+                this.Alert("Launch Fall guys now!", Form_Alert.enmType.Info);
             }
         }
-
-
+        private Login login = new Login();
+        public void guna2Button19_Click_1(object sender, EventArgs e) //login
+        {
+            if (Login.SubExist("premium")) return;
+            else
+            {
+                this.Hide();
+                login.ShowDialog();
+                if (Login.SubExist("premium"))
+                {
+                    guna2Button19.Text = "Logged in";
+                    guna2Button19.Image = global::Cloudforce_Revamped_V2.Properties.Resources.checked_user_male_208px;
+                }
+                this.Show();
+            }
+        }
     }
 }

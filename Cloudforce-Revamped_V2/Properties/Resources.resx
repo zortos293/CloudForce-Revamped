@@ -121,6 +121,9 @@
   <data name="Fallguys" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fallguys.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Sed-18-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sed-18-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nouser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nouser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,6 +132,9 @@
   </data>
   <data name="downloadico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\downloadico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="O5jbqLhD_400x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\O5jbqLhD_400x400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,11 +190,17 @@
   <data name="unzip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unzip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rpsc3-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rpsc3-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kief" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kief.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rpsc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rpsc3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloudForce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloudForce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="New Project (3) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New Project (3) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,7 +235,7 @@
   <data name="download icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rpsc3-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rpsc3-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="checked_user_male_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checked_user_male_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
