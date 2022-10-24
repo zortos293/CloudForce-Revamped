@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-  <version>1.2.6.4</version>
-  <url>https://github.com/zortos293/CloudForce-Revamped/releases/download/V1.26.4/Cloudforce-Revamped.exe</url>
+  <version>2.0.0.0</version>
+  <url>https://github.com/zortos293/CloudForce-Revamped/releases/download/v2.0/Cloudforce_Revamped_V2.exe</url>
   <changelog></changelog>
-  <mandatory>true</mandatory>
+  <mandatory>false</mandatory>
 </item>
