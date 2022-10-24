@@ -1,4 +1,5 @@
-﻿using Sentry;
+﻿using AutoUpdaterDotNET;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,6 +30,10 @@ namespace Cloudforce_Revamped_V2
             }))
             {
                 Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\");
+                AutoUpdater.ShowRemindLaterButton = true;
+                AutoUpdater.RunUpdateAsAdmin = false;
+                AutoUpdater.DownloadPath = Environment.SpecialFolder.ApplicationData + "\\Cloudforce\\";
+                AutoUpdater.Start("https://raw.githubusercontent.com/zortos293/CloudForce-Revamped/master/cfupdate.xml");
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Form1());

@@ -787,7 +787,6 @@ namespace Cloudforce_Revamped_V2
             if (!Login.SubExist("premium"))
             {
                 MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discrod located in the main form to purchase");
-                this.Alert("Join Discord to download!", Form_Alert.enmType.Error);
                 return;
             }
             if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
@@ -900,6 +899,7 @@ namespace Cloudforce_Revamped_V2
                 if (Login.SubExist("premium"))
                 {
                     guna2Button19.Text = "Logged in";
+                    guna2HtmlLabel10.Text = "Number of Early Access users : " + KeyAuthApp.app_data.numOnlineUsers;
                     guna2Button19.Image = global::Cloudforce_Revamped_V2.Properties.Resources.checked_user_male_208px;
                 }
                 this.Show();
