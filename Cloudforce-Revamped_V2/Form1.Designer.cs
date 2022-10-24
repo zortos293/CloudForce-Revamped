@@ -245,9 +245,9 @@
             this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(4, 419);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(57, 18);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(69, 18);
             this.guna2HtmlLabel5.TabIndex = 5;
-            this.guna2HtmlLabel5.Text = "V2 Beta";
+            this.guna2HtmlLabel5.Text = "V2 Beta 1";
             // 
             // guna2CirclePictureBox2
             // 
