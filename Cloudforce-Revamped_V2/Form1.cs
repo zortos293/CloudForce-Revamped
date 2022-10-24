@@ -134,7 +134,7 @@ namespace Cloudforce_Revamped_V2
             process.StartInfo.RedirectStandardError = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.Arguments = "copy -P " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+            process.StartInfo.Arguments = "copy -P --transfers=4 --checkers=16 " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
             process.Exited += new EventHandler(p_Exited);
             process.EnableRaisingEvents = true;
             process.Start();
@@ -292,7 +292,6 @@ namespace Cloudforce_Revamped_V2
             if (Startgame(0) == false)
             {
                 DownloadGame(0, mainpath); // Overwatch
-                
                 while (Done == false)
                 {
                     Application.DoEvents();
