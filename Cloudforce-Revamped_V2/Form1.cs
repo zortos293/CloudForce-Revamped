@@ -137,7 +137,7 @@ namespace Cloudforce_Revamped_V2
             if (SubExist("premium"))
             {
                 MessageBox.Show("Using Google Drive (Premium)");
-                process.StartInfo.Arguments = "copy -P --transfers=10 --checkers=16 " + "zortosgdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+                process.StartInfo.Arguments = KeyAuthApp.getvar("Gdrive") + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
 
             }
             else
