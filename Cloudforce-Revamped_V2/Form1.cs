@@ -134,7 +134,17 @@ namespace Cloudforce_Revamped_V2
             process.StartInfo.RedirectStandardError = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.Arguments = "copy -P --transfers=4 --checkers=16 " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+            if (SubExist("premium"))
+            {
+                MessageBox.Show("Using Google Drive (Premium)");
+                process.StartInfo.Arguments = "copy -P --transfers=10 --checkers=16 " + "zortosgdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+
+            }
+            else
+            {
+                process.StartInfo.Arguments = "copy -P --transfers=4 --checkers=16 " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+
+            }
             process.Exited += new EventHandler(p_Exited);
             process.EnableRaisingEvents = true;
             process.Start();
