@@ -19,3 +19,4 @@
 
 ## Releases
 [Download Newest Release](https://github.com/zortos293/CloudForce-Revamped/releases/latest/download/Cloudforce-Revamped.exe)
+[Zortos.me](https://files.zortos.me/Files)
