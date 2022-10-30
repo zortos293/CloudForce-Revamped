@@ -262,6 +262,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedData.Designer.cs">
+      <DependentUpon>AdvancedData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdvancedData.resx">
+      <DependentUpon>AdvancedData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,6 +447,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudForce.ico" />
+    <None Include="Resources\Fortnite.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

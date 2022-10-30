@@ -121,6 +121,9 @@
   <data name="Fallguys" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fallguys.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fox_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fox_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Sed-18-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sed-18-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,17 +148,14 @@
   <data name="notepad_240px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad_240px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="soretoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soretoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="discord_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\discord_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_cancel_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_cancel_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brave-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brave-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +199,9 @@
   <data name="rpsc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rpsc3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="checked_user_male_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checked_user_male_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CloudForce" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloudForce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -226,16 +229,16 @@
   <data name="Overwatch2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Overwatch2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fox_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fox_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_cancel_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_cancel_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Robloxposter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Robloxposter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="soretoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soretoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checked_user_male_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checked_user_male_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fortnite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fortnite.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

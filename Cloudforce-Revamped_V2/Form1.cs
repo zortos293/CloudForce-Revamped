@@ -19,6 +19,7 @@ using KeyAuth;
 using LoginScreen;
 
 
+
 namespace Cloudforce_Revamped_V2
 {
     public partial class Form1 : Form
@@ -31,16 +32,22 @@ namespace Cloudforce_Revamped_V2
             {
                 MessageBox.Show(KeyAuthApp.response.message);
             }
-            WebClient a = new WebClient();
-
-            a.DownloadFile("https://raw.githubusercontent.com/zortos293/CloudForce-Revamped/master/games.json",mainpath + "games.json");
-            jsonString = File.ReadAllText(mainpath + "games.json");
-            string json = a.DownloadString("https://keyauth.win/api/seller/?sellerkey=84e4776b79c0528d2d3246b4f2bd8178&type=fetchallsessions");
-            dynamic array = JsonConvert.DeserializeObject(json);
-            guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
-
-
+        // --------------------------------------------------------
+        #region Strings/Bools/Stuff
+        public static string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
+        public string jsonString;  //Need to change
+        public static bool ForceExit = false;
+        public static bool Done = false;
+        public int BtnNumber;
+        public Guna2ProgressBar progressBar_btn;
+        public Guna2HtmlLabel htmllabel_btn;
+        public Guna2Button advanced_btn;
+        public bool exractdone = true;
+        AdvancedData advancedData = new AdvancedData();
+        private Login login = new Login();
+        #endregion
+        // --------------------------------------------------------
         #region Login Stuff
         public static api KeyAuthApp = new api(
             name: "CF Early",
@@ -58,12 +65,9 @@ namespace Cloudforce_Revamped_V2
             return false;
         }
         #endregion
+        // --------------------------------------------------------
         #region Download Stuff
-        public static string mainpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Cloudforce\\";
-        public string jsonString;  //Need to change
-        public static bool ForceExit = false;
-        public static bool Done = false;
-        public int BtnNumber;
+
         public class Game
         {
             public string GameOnedrive { get; set; }
@@ -110,7 +114,7 @@ namespace Cloudforce_Revamped_V2
             guna2ProgressBar1.Value = e.ProgressPercentage;
         }
 
-        public void DownloadGame(int JsonNumber, string downloadpath) // Download Game Trough Onedrive <<<<
+        public void DownloadGame(int JsonNumber, string downloadpath, Guna2ProgressBar progressBar,Guna2HtmlLabel htmllabel,Guna2Button Advanced) // Download Game Trough Onedrive <<<<
         {
             var username = Environment.UserName;
             Done = false;
@@ -123,10 +127,15 @@ namespace Cloudforce_Revamped_V2
                 client.DownloadFile("https://raw.githubusercontent.com/zortos293/ZortosCDN/master/rclone.conf", $"C:\\Users\\{username}\\.config\\rclone\\rclone.conf");
                 client.DownloadFile("https://picteon.dev/files/rclone.exe", mainpath + "downloader.exe");
             }
-            guna2ProgressBar2.Visible = true;
-            guna2HtmlLabel4.Visible = true;
+            progressBar.Invoke(new Action(() => progressBar.Visible = true));
+            htmllabel.Invoke(new Action(() => htmllabel.Visible = true));
+            Advanced.Invoke(new Action(() => Advanced.Visible = true));
+            
             Process process = new Process();
             BtnNumber = JsonNumber;
+            progressBar_btn = progressBar;
+            htmllabel_btn = htmllabel;
+            advanced_btn = Advanced;
             process.OutputDataReceived += new DataReceivedEventHandler(process_OutputDataReceived);
             process.StartInfo.FileName = mainpath + "downloader.exe";
             process.StartInfo.UseShellExecute = false;
@@ -134,11 +143,12 @@ namespace Cloudforce_Revamped_V2
             process.StartInfo.RedirectStandardError = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            if (SubExist("premium"))
+            if (SubExist("premium") || SubExist("booster"))
             {
                 MessageBox.Show("Using Google Drive (Premium)");
-                process.StartInfo.Arguments = KeyAuthApp.getvar("Gdrive") + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+                process.StartInfo.Arguments = "copy -P --transfers=4 --checkers=16 " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
 
+                //process.StartInfo.Arguments = KeyAuthApp.var("Gdrive") + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
             }
             else
             {
@@ -181,7 +191,8 @@ namespace Cloudforce_Revamped_V2
                 }
             }
         }
-            void process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        public static int lines = 0;
+        void process_OutputDataReceived(object sender, DataReceivedEventArgs e)
             {
             var username = Environment.UserName;
             try
@@ -195,29 +206,91 @@ namespace Cloudforce_Revamped_V2
                     
                     var results = JsonConvert.DeserializeObject<Root>(jsonString);
                     Directory.Delete(mainpath + results.Game[BtnNumber].GameOnedrive, true);
+                    ForceExit = false;
 
                 }
-
+                
                 if (Process.GetProcessesByName("downloader").Length > 0)
                 {
-                    if (e.Data.Contains("ETA"))
+
+                    if (advancedData.FilenameLB.Visible == true)
                     {
-                        string string1 = e.Data;
-                        string string2 = string1.Substring(string1.IndexOf("Transferred:"));
-                        int progress = 0;
-                        int index = string2.IndexOf('%');
-                        string[] split = string2.Split(',');
 
-                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2HtmlLabel4.Text = split[2] + " " + split[3]));
-
-                        if (index >= 0)
+                        if (e.Data.Contains("ETA"))
                         {
-                            string sub = string2.Substring(0, index);
-                            string sub2 = sub.Substring(sub.IndexOf(",") + 1);
-                            int.TryParse(sub2, out progress);
+                            string string1 = e.Data;
+                            string string2 = string1.Substring(string1.IndexOf("Transferred:"));
+                            int progress = 0;
+                            int index = string2.IndexOf('%');
+                            string[] split = string2.Split(',');
+                            advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.Text = ""));
+                            advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.AppendText(Environment.NewLine)));
+                            advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.AppendText(string2)));
+
+                            this.htmllabel_btn.Invoke(new Action(() => this.htmllabel_btn.Text = split[2] + " " + split[3]));
+
+                            if (index >= 0)
+                            {
+                                string sub = string2.Substring(0, index);
+                                string sub2 = sub.Substring(sub.IndexOf(",") + 1);
+                                int.TryParse(sub2, out progress);
+                            }
+                            this.progressBar_btn.Invoke(new Action(() => this.progressBar_btn.Value = progress));
+
                         }
-                        this.guna2ProgressBar2.Invoke(new Action(() => this.guna2ProgressBar2.Value = progress));
+
+
+                        var lines = advancedData.FilenameLB.Lines.Length;
+
+                        if (e.Data.Contains("*") && !e.Data.Contains("ETA") && lines < 1)
+                        {
+                            try
+                            {
+                                advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.AppendText(Environment.NewLine)));
+                                advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.AppendText(e.Data)));
+                            }
+                            catch (System.InvalidOperationException)
+                            {
+
+
+                            }
+                        }
+                        else if (e.Data.Contains("*") && !e.Data.Contains("ETA") && lines >= 1)
+                        {
+                            try
+                            {
+                                advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.Text.Remove(0, advancedData.FilenameLB.Text.Length)));
+                                advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.AppendText(Environment.NewLine)));
+                                advancedData.FilenameLB.Invoke(new Action(() => advancedData.FilenameLB.AppendText(e.Data)));
+                            }
+                            catch (System.InvalidOperationException)
+                            {
+                            }
+
+                        }
                     }
+                    else
+                    {
+                        if (e.Data.Contains("ETA"))
+                        {
+                            string string1 = e.Data;
+                            string string2 = string1.Substring(string1.IndexOf("Transferred:"));
+                            int progress = 0;
+                            int index = string2.IndexOf('%');
+                            string[] split = string2.Split(',');
+
+                            this.htmllabel_btn.Invoke(new Action(() => this.htmllabel_btn.Text = split[2] + " " + split[3]));
+
+                            if (index >= 0)
+                            {
+                                string sub = string2.Substring(0, index);
+                                string sub2 = sub.Substring(sub.IndexOf(",") + 1);
+                                int.TryParse(sub2, out progress);
+                            }
+                            this.progressBar_btn.Invoke(new Action(() => this.progressBar_btn.Value = progress));
+                        }
+                    }
+                    
 
 
                 }
@@ -225,13 +298,13 @@ namespace Cloudforce_Revamped_V2
             catch (Exception er)
             {
                 // if exeception is object refrence
-                if (er.InnerException is NullReferenceException)
+                if (er is NullReferenceException)
                 {
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("An Error occoured\n" + er.Message + "\nPress ok to Continue");
+                    SentrySdk.CaptureException(er);
 
                     return;
                 }
@@ -244,11 +317,11 @@ namespace Cloudforce_Revamped_V2
 
             try
             {
-                this.Invoke(new Action(() => guna2ProgressBar2.Visible = false));
-                this.Invoke(new Action(() => guna2HtmlLabel4.Visible = false));
-                this.Invoke(new Action(() => guna2HtmlLabel4.Text = string.Empty));
-                this.Invoke(new Action(() => guna2ProgressBar2.Value = 0));
-                this.Invoke(new Action(() => guna2ProgressBar2.Hide()));
+                this.Invoke(new Action(() => progressBar_btn.Visible = false));
+                this.Invoke(new Action(() => htmllabel_btn.Visible = false));
+                this.Invoke(new Action(() => htmllabel_btn.Text = string.Empty));
+                this.Invoke(new Action(() => progressBar_btn.Value = 0));
+                this.advanced_btn.Invoke(new Action(() => this.advanced_btn.Visible = false));
 
 
             }
@@ -282,245 +355,54 @@ namespace Cloudforce_Revamped_V2
 
         }
         #endregion
+        // --------------------------------------------------------
+        #region Forum Loading Stuff
         private async void Form1_Load(object sender, EventArgs e)
         {
+            WebClient a = new WebClient();
 
+            a.DownloadFile("https://raw.githubusercontent.com/zortos293/CloudForce-Revamped/master/games.json", mainpath + "games.json");
+            jsonString = File.ReadAllText(mainpath + "games.json");
+            string json = a.DownloadString(KeyAuthApp.var("online_users"));
+            dynamic array = JsonConvert.DeserializeObject(json);
+            guna2HtmlLabel9.Text = $"CloudForce Users Online: {array.sessions.Count}";
         }
 
-        private void Epic_Games_Click(object sender, EventArgs e)
+        public void guna2Button19_Click_1(object sender, EventArgs e) //login
         {
-
-        }
-
-        private void Games_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            if (Startgame(0) == false)
+            if (Login.SubExist("premium") || Login.SubExist("booster")) return;
+            else
             {
-                DownloadGame(0, mainpath); // Overwatch
-                while (Done == false)
+                this.Hide();
+                login.ShowDialog();
+                if (Login.SubExist("premium") || Login.SubExist("booster"))
                 {
-                    Application.DoEvents();
+                    guna2Button19.Text = "Logged in";
+                    guna2HtmlLabel10.Text = "Number of Early Access users : " + KeyAuthApp.app_data.numOnlineUsers;
+                    guna2Button19.Image = Properties.Resources.checked_user_male_208px;
                 }
-                guna2HtmlLabel4.Visible = true;
-                try
-                {
-                    guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
-                    await Task.Run(() =>
-                    {
-                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
-                    });
-                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip");
-                    guna2HtmlLabel4.Text = "[/] Extracting Data 10 - 13 (Please Be patient)";
-                    await Task.Run(() =>
-                    {
-                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
-                    });
-                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip");
-                    guna2HtmlLabel4.Text = "[/] Extracting Data 14 - 17 (Please Be patient)";
-                    await Task.Run(() =>
-                    {
-                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
-                    });
-                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip");
-                    guna2HtmlLabel4.Text = "[/] Extracting Data 18 - 20 (Please Be patient)";
-                    await Task.Run(() =>
-                    {
-                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
-                    });
-                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
-                    guna2HtmlLabel4.Text = "[/] Extracting indicies (Please Be patient)";
-                    await Task.Run(() =>
-                    {
-                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\indices\\indices.zip", mainpath + "overwatch\\data\\casc\\indices\\", true);
-                    });
-                    File.Delete(mainpath + "overwatch\\data\\casc\\indices\\indices.zip");
-                    guna2HtmlLabel4.Visible = false;
-                    if (Startgame(0)) // Overwatch
-                    {
-                        this.Alert("Starting overwatch, please wait.", Form_Alert.enmType.Success);
-                    }
-                    
-                }
-                catch (Exception ex)
-                {
-                    SentrySdk.CaptureException(ex);
-                }
-                
+                this.Show();
             }
-            
-            
-
         }
 
-        private void guna2Button15_Click(object sender, EventArgs e)
+        #endregion
+        // --------------------------------------------------------
+        #region Utilities
+        private void guna2Button21_Click(object sender, EventArgs e)
         {
-            var username = Environment.UserName;
-            var download_link = guna2TextBox3.Text;
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxysz";
-            var stringChars = new char[8];
-            var random = new Random();
-            for (int i = 0; i < stringChars.Length; i++)
+            if (Directory.Exists(mainpath + "\\7-Zip\\"))
             {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-            var exe_name = new String(stringChars);
-            Uri uriResult;
-            bool result = Uri.TryCreate(download_link, UriKind.Absolute, out uriResult)
-                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
-
-            if (download_link == "" || download_link == " " || result == false)
-            {
-                guna2HtmlLabel8.Text = "Please put a valid download link in the input field.";
-                guna2HtmlLabel8.ForeColor = Color.Red;
-                guna2TextBox3.PlaceholderForeColor = Color.Red;
-                guna2TextBox3.PlaceholderText = "Invalid link.";
-                guna2TextBox3.Text = "";
-                guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                this.Alert("Invalid Download Link", Form_Alert.enmType.Error);
+                Process.Start(mainpath + "\\7-Zip\\7zFM.exe");
+                this.Alert("Started 7-Zip", Form_Alert.enmType.Success);
             }
             else
             {
-                Boolean dresult = download_link.Contains(".zip");
-                if (dresult == true)
-                {
-                    try
-                    {
-                        File_Downloader(download_link, mainpath + $"\\{exe_name}.zip", guna2Button15);
-                        guna2HtmlLabel8.Text = $"Downloaded: C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
-                        guna2TextBox3.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
-                        guna2HtmlLabel7.Text = "Status: Ready.";
-                        this.Alert("Downloading success!", Form_Alert.enmType.Success);
-                    }
-                    catch
-                    {
-                        guna2HtmlLabel8.Text = "An error occured while trying to download.";
-                        guna2TextBox3.Text = "";
-                        guna2HtmlLabel8.ForeColor = Color.Red;
-                        guna2TextBox3.ForeColor = Color.Red;
-                        guna2TextBox3.PlaceholderText = "Invalid link.";
-                        guna2TextBox3.Text = "";
-                        guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                        this.Alert("Error while downloading", Form_Alert.enmType.Error);
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2Button15);
-                        guna2HtmlLabel8.Text = $"Downloaded: {mainpath}\\{exe_name}.exe";
-                        guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.exe";
-                        guna2HtmlLabel7.Text = "Status: Ready.";
-                        this.Alert("Downloading success!", Form_Alert.enmType.Success);
-                    }
-                    catch
-                    {
-                        guna2HtmlLabel8.Text = "An error occured while trying to download.";
-                        guna2TextBox3.Text = "";
-                        guna2HtmlLabel8.ForeColor = Color.Red;
-                        guna2TextBox3.PlaceholderForeColor = Color.Red;
-                        guna2TextBox3.PlaceholderText = "Invalid link.";
-                        guna2TextBox3.Text = "";
-                        guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                        this.Alert("Error while downloading", Form_Alert.enmType.Error);
-                    }
-                }
-                guna2TextBox3.PlaceholderText = "Link here";
-                guna2TextBox3.Text = "";
+                File_Downloader("https://picteon.dev/files/7-Zip.zip", mainpath + "\\7-Zip.zip", guna2Button21);
+                ZipFile.ExtractToDirectory(mainpath + "\\7-Zip.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\7-Zip\\7zFM.exe");
+                guna2Button21.Enabled = true;
+                this.Alert("Started 7-Zip", Form_Alert.enmType.Success);
             }
-            guna2Button15.Enabled = true;
-        }
-
-        private async void guna2Button16_Click(object sender, EventArgs e)
-        {
-            var username = Environment.UserName;
-            var extract_path = guna2TextBox1.Text;
-            if (extract_path == "" || extract_path == " " || File.Exists(extract_path) == false || extract_path.Contains(".zip") == false)
-            {
-                guna2HtmlLabel8.Text = "Please put a valid path in the input field.";
-                guna2HtmlLabel8.ForeColor = Color.Red;
-                guna2TextBox1.PlaceholderForeColor = Color.Red;
-                guna2TextBox1.PlaceholderText = "Invalid path.";
-                guna2TextBox1.Text = "";
-                guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                this.Alert("Invalid Path", Form_Alert.enmType.Error);
-            }
-            else
-            {
-                try
-                {
-                    await Task.Run(() =>
-                    {
-                        ZipFile.ExtractToDirectory($@"{extract_path}", $@"C:\users\{username}\AppData\Roaming\Cloudforce");
-                    });
-                    guna2HtmlLabel8.Text = $"[-] Extracted: {extract_path}";
-                    guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\";
-                    guna2HtmlLabel7.Text = "Status: Ready.";
-                    guna2TextBox1.Text = "";
-                    this.Alert("Extracting success!", Form_Alert.enmType.Success);
-                }
-                catch
-                {
-                    guna2HtmlLabel8.Text = "Failed to extract zip.";
-                    guna2HtmlLabel8.ForeColor = Color.Red;
-                    guna2TextBox1.PlaceholderForeColor = Color.Red;
-                    guna2TextBox1.PlaceholderText = "Failed to extract";
-                    guna2TextBox1.Text = "";
-                    guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                    this.Alert("Extracting Failed.", Form_Alert.enmType.Error);
-                }
-            }
-            guna2Button16.Enabled = true;
-        }
-
-        private void guna2Button17_Click(object sender, EventArgs e)
-        {
-            var run_path = guna2TextBox2.Text;
-            if (run_path == "" || run_path == " " || File.Exists(run_path) == false || run_path.Contains(".exe") == false)
-            {
-                guna2HtmlLabel8.Text = "Please put a valid path in the input field.";
-                guna2HtmlLabel8.ForeColor = Color.Red;
-                guna2TextBox2.PlaceholderForeColor = Color.Red;
-                guna2TextBox2.PlaceholderText = "Invalid path.";
-                guna2TextBox2.Text = "";
-                guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                this.Alert("Invalid Path", Form_Alert.enmType.Error);
-
-            }
-            else
-            {
-                try
-                {
-                    new Process()
-                    {
-                        StartInfo = new ProcessStartInfo()
-                        {
-                            WorkingDirectory = $"{mainpath}\\",
-                            WindowStyle = ProcessWindowStyle.Normal,
-                            FileName = run_path,
-                        }
-                    }.Start();
-                    guna2HtmlLabel8.Text = $"[-] Started {run_path}";
-                    guna2HtmlLabel7.Text = "Status: Ready.";
-                    this.Alert("Starting exe success!", Form_Alert.enmType.Success);
-                }
-                catch
-                {
-                    guna2HtmlLabel8.Text = "Failed to start exe.";
-                    guna2HtmlLabel8.ForeColor = Color.Red;
-                    guna2TextBox2.PlaceholderForeColor = Color.Red;
-                    guna2TextBox2.PlaceholderText = "Failed to start";
-                    guna2TextBox2.Text = "";
-                    guna2HtmlLabel7.Text = "Error | Ready for next operation.";
-                    this.Alert("Failed to start exe.", Form_Alert.enmType.Error);
-                }
-            }
-            guna2Button17.Enabled = true;
         }
 
         private void guna2Button18_Click(object sender, EventArgs e) //Discord
@@ -545,17 +427,6 @@ namespace Cloudforce_Revamped_V2
                 this.Alert("Started Explorer++", Form_Alert.enmType.Success);
             }
         }
-
-        private void guna2Button19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button5_Click(object sender, EventArgs e) //PH64
         {
             if (File.Exists(mainpath + "\\ProcessHacker\\ProcessHacker.exe"))
@@ -781,140 +652,206 @@ namespace Cloudforce_Revamped_V2
                 this.Alert("Started rpcs3", Form_Alert.enmType.Success);
             }
         }
-        private void Home_Click(object sender, EventArgs e)
+        #endregion
+        // --------------------------------------------------------
+        #region Extra's
+        private void guna2Button15_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void guna2ImageButton2_Click(object sender, EventArgs e)
-        {
-            if (!Login.SubExist("premium"))
+            var username = Environment.UserName;
+            var download_link = guna2TextBox3.Text;
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxysz";
+            var stringChars = new char[8];
+            var random = new Random();
+            for (int i = 0; i < stringChars.Length; i++)
             {
-                MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discrod located in the main form to purchase");
-                return;
+                stringChars[i] = chars[random.Next(chars.Length)];
             }
-            if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
+            var exe_name = new String(stringChars);
+            Uri uriResult;
+            bool result = Uri.TryCreate(download_link, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+
+            if (download_link == "" || download_link == " " || result == false)
             {
-                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
-                this.Alert("Login then return to CF", Form_Alert.enmType.Info);
-                MessageBox.Show("After login Close this messagebox");
-                new Process()
+                guna2HtmlLabel8.Text = "Please put a valid download link in the input field.";
+                guna2HtmlLabel8.ForeColor = Color.Red;
+                guna2TextBox3.PlaceholderForeColor = Color.Red;
+                guna2TextBox3.PlaceholderText = "Invalid link.";
+                guna2TextBox3.Text = "";
+                guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                this.Alert("Invalid Download Link", Form_Alert.enmType.Error);
+            }
+            else
+            {
+                Boolean dresult = download_link.Contains(".zip");
+                if (dresult == true)
                 {
-                    StartInfo = new ProcessStartInfo()
+                    try
                     {
-                        WorkingDirectory = $"{mainpath}\\",
-                        WindowStyle = ProcessWindowStyle.Hidden,
-                        FileName = $"{mainpath}\\shard.bat"
+                        File_Downloader(download_link, mainpath + $"\\{exe_name}.zip", guna2Button15);
+                        guna2HtmlLabel8.Text = $"Downloaded: C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
+                        guna2TextBox3.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.zip";
+                        guna2HtmlLabel7.Text = "Status: Ready.";
+                        this.Alert("Downloading success!", Form_Alert.enmType.Success);
                     }
-                }.Start();
-                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
-                this.Alert("CF has a prompt for you.", Form_Alert.enmType.Info);
-                if (dialogResult == DialogResult.No)
+                    catch
+                    {
+                        guna2HtmlLabel8.Text = "An error occured while trying to download.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel8.ForeColor = Color.Red;
+                        guna2TextBox3.ForeColor = Color.Red;
+                        guna2TextBox3.PlaceholderText = "Invalid link.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                        this.Alert("Error while downloading", Form_Alert.enmType.Error);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        File_Downloader(download_link, mainpath + $"\\{exe_name}.exe", guna2Button15);
+                        guna2HtmlLabel8.Text = $"Downloaded: {mainpath}\\{exe_name}.exe";
+                        guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\{exe_name}.exe";
+                        guna2HtmlLabel7.Text = "Status: Ready.";
+                        this.Alert("Downloading success!", Form_Alert.enmType.Success);
+                    }
+                    catch
+                    {
+                        guna2HtmlLabel8.Text = "An error occured while trying to download.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel8.ForeColor = Color.Red;
+                        guna2TextBox3.PlaceholderForeColor = Color.Red;
+                        guna2TextBox3.PlaceholderText = "Invalid link.";
+                        guna2TextBox3.Text = "";
+                        guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                        this.Alert("Error while downloading", Form_Alert.enmType.Error);
+                    }
+                }
+                guna2TextBox3.PlaceholderText = "Link here";
+                guna2TextBox3.Text = "";
+            }
+            guna2Button15.Enabled = true;
+        }
+
+        private async void guna2Button16_Click(object sender, EventArgs e)
+        {
+            var username = Environment.UserName;
+            var extract_path = guna2TextBox1.Text;
+            if (extract_path == "" || extract_path == " " || File.Exists(extract_path) == false || extract_path.Contains(".zip") == false)
+            {
+                guna2HtmlLabel8.Text = "Please put a valid path in the input field.";
+                guna2HtmlLabel8.ForeColor = Color.Red;
+                guna2TextBox1.PlaceholderForeColor = Color.Red;
+                guna2TextBox1.PlaceholderText = "Invalid path.";
+                guna2TextBox1.Text = "";
+                guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                this.Alert("Invalid Path", Form_Alert.enmType.Error);
+            }
+            else
+            {
+                try
+                {
+                    await Task.Run(() =>
+                    {
+                        ZipFile.ExtractToDirectory($@"{extract_path}", $@"C:\users\{username}\AppData\Roaming\Cloudforce");
+                    });
+                    guna2HtmlLabel8.Text = $"[-] Extracted: {extract_path}";
+                    guna2TextBox2.Text = $"C:\\users\\{username}\\AppData\\Roaming\\Cloudforce\\";
+                    guna2HtmlLabel7.Text = "Status: Ready.";
+                    guna2TextBox1.Text = "";
+                    this.Alert("Extracting success!", Form_Alert.enmType.Success);
+                }
+                catch
+                {
+                    guna2HtmlLabel8.Text = "Failed to extract zip.";
+                    guna2HtmlLabel8.ForeColor = Color.Red;
+                    guna2TextBox1.PlaceholderForeColor = Color.Red;
+                    guna2TextBox1.PlaceholderText = "Failed to extract";
+                    guna2TextBox1.Text = "";
+                    guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                    this.Alert("Extracting Failed.", Form_Alert.enmType.Error);
+                }
+            }
+            guna2Button16.Enabled = true;
+        }
+
+        private void guna2Button17_Click(object sender, EventArgs e)
+        {
+            var run_path = guna2TextBox2.Text;
+            if (run_path == "" || run_path == " " || File.Exists(run_path) == false || run_path.Contains(".exe") == false)
+            {
+                guna2HtmlLabel8.Text = "Please put a valid path in the input field.";
+                guna2HtmlLabel8.ForeColor = Color.Red;
+                guna2TextBox2.PlaceholderForeColor = Color.Red;
+                guna2TextBox2.PlaceholderText = "Invalid path.";
+                guna2TextBox2.Text = "";
+                guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                this.Alert("Invalid Path", Form_Alert.enmType.Error);
+
+            }
+            else
+            {
+                try
                 {
                     new Process()
                     {
                         StartInfo = new ProcessStartInfo()
                         {
                             WorkingDirectory = $"{mainpath}\\",
-                            WindowStyle = ProcessWindowStyle.Hidden,
-                            FileName = $"{mainpath}\\shard.bat"
+                            WindowStyle = ProcessWindowStyle.Normal,
+                            FileName = run_path,
                         }
                     }.Start();
+                    guna2HtmlLabel8.Text = $"[-] Started {run_path}";
+                    guna2HtmlLabel7.Text = "Status: Ready.";
+                    this.Alert("Starting exe success!", Form_Alert.enmType.Success);
                 }
-                guna2HtmlLabel4.Text = "[-] Started: Fall Guys";
-                this.Alert("Started Fall Guys", Form_Alert.enmType.Success);
+                catch
+                {
+                    guna2HtmlLabel8.Text = "Failed to start exe.";
+                    guna2HtmlLabel8.ForeColor = Color.Red;
+                    guna2TextBox2.PlaceholderForeColor = Color.Red;
+                    guna2TextBox2.PlaceholderText = "Failed to start";
+                    guna2TextBox2.Text = "";
+                    guna2HtmlLabel7.Text = "Error | Ready for next operation.";
+                    this.Alert("Failed to start exe.", Form_Alert.enmType.Error);
+                }
+            }
+            guna2Button17.Enabled = true;
+        }
+        #endregion
+        // --------------------------------------------------------
+        #region Games
+
+        private void Advanced_data_Games_Click(object sender, EventArgs e)
+        {
+            advancedData.Show();
+        }
+        private async void guna2ImageButton5_Click(object sender, EventArgs e) // Roblox
+        {
+
+            if (Directory.Exists($"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox"))
+            {
+                Process.Start($@"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox\\Roblox Player.lnk");
             }
             else
             {
-                guna2ProgressBar2.Style = ProgressBarStyle.Blocks;
-                guna2HtmlLabel4.Text = "[-] Creating Directorys.";
-                this.Alert("Creating Directorys", Form_Alert.enmType.Info);
-                Directory.CreateDirectory(@"c:\ProgramData\Epic");
-                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher");
-                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data");
-                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
-                byte[] pwet = KeyAuthApp.download("041744");
-                File.WriteAllBytes(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", pwet);
-                // ----------------------------------------------------------------------- < Installing FallGuys
-                guna2HtmlLabel4.Text = "[-] Downloading: FallGuys.zip";
-                this.Alert("Downloading Fall Guys", Form_Alert.enmType.Info);
-                guna2HtmlLabel4.Visible = true;
-                DownloadGame(1, "b:\\");
-                while (Done == false)
-                {
-                    Application.DoEvents();
-                }
-                guna2HtmlLabel4.Visible = true;
-                // ----------------------------------------------------------------------- < Installing Epic Games Launcher
-                this.Alert("Preparing Fall guys", Form_Alert.enmType.Info);
-                guna2HtmlLabel4.Text = "[-] Preparing Fall Guys.";
-                File_Downloader("https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2Button10);
-                byte[] shard = KeyAuthApp.download("108975");
-                File.WriteAllBytes(mainpath + "shard.bat", shard);
+                File_Downloader("https://picteon.dev/files/Roblox.zip", mainpath + "\\Roblox.zip", guna2Button2);
                 await Task.Run(() =>
                 {
-                    ZipFile.ExtractToDirectory(mainpath + "\\Epic%20Games.zip", mainpath + "\\");
+                    ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
                 });
-                guna2Button10.Enabled = true;
-                guna2HtmlLabel4.Visible = false;
-                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
-                this.Alert("After login return to CF", Form_Alert.enmType.Info); 
-                MessageBox.Show("After login Close this messagebox");
-                new Process()
+                Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
+                guna2Button2.Enabled = true;
+                MessageBox.Show("Relaunch roblox after install ;) Roblox installer will have error, we will kill it.");
+                await Task.Delay(10000);
+                foreach (var process in Process.GetProcessesByName("RobloxPlayerLauncher"))
                 {
-                    StartInfo = new ProcessStartInfo()
-                    {
-                        WorkingDirectory = $"{mainpath}\\",
-                        WindowStyle = ProcessWindowStyle.Hidden,
-                        FileName = $"{mainpath}\\shard.bat"
-                    }
-                }.Start();
-                Thread.Sleep(10000);
-                this.Alert("CF has a prompt for you", Form_Alert.enmType.Info);
-                DialogResult dialogResult = MessageBox.Show("Did you get in?", "Quesiton", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.No)
-                {
-                    new Process()
-                    {
-                        StartInfo = new ProcessStartInfo()
-                        {
-                            WorkingDirectory = $"{mainpath}\\",
-                            WindowStyle = ProcessWindowStyle.Hidden,
-                            FileName = $"{mainpath}\\shard.bat"
-                        }
-                    }.Start();
+                    process.Kill();
                 }
-                // -----------------------------------------------------------------------
-                this.Alert("Wait for epic games to refresh", Form_Alert.enmType.Info);
-                Thread.Sleep(3000);
-                this.Alert("Refreshed epic games.", Form_Alert.enmType.Success);
-                guna2HtmlLabel4.Text = "[-] Started: EpicGames.";
-                this.Alert("Launch Fall guys now!", Form_Alert.enmType.Info);
             }
         }
-        private Login login = new Login();
-        public void guna2Button19_Click_1(object sender, EventArgs e) //login
-        {
-            if (Login.SubExist("premium")) return;
-            else
-            {
-                this.Hide();
-                login.ShowDialog();
-                if (Login.SubExist("premium"))
-                {
-                    guna2Button19.Text = "Logged in";
-                    guna2HtmlLabel10.Text = "Number of Early Access users : " + KeyAuthApp.app_data.numOnlineUsers;
-                    guna2Button19.Image = global::Cloudforce_Revamped_V2.Properties.Resources.checked_user_male_208px;
-                }
-                this.Show();
-            }
-        }
-
         private void guna2ImageButton3_Click(object sender, EventArgs e) // Lunar Client
         {
             if (Directory.Exists(mainpath + $"C:\\Users\\{Environment.UserName}\\AppData\\Local\\Programs\\lunarclient\\"))
@@ -945,47 +882,205 @@ namespace Cloudforce_Revamped_V2
                 guna2Button2.Enabled = true;
             }
         }
-
-        private async void guna2ImageButton5_Click(object sender, EventArgs e)
+        private async void guna2ImageButton1_Click(object sender, EventArgs e) // Overwatch
         {
-
-            if (Directory.Exists($"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox"))
+            if (Startgame(0) == false)
             {
-                Process.Start($@"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox\\Roblox Player.lnk");
+                DownloadGame(0, mainpath, guna2ProgressBar2, guna2HtmlLabel4, Advanced_data_Games); 
+                while (Done == false)
+                {
+                    Application.DoEvents();
+                }
+                this.Invoke(new Action(() => guna2HtmlLabel4.Visible = true));
+                this.Invoke(new Action(() => guna2ProgressBar3.Visible = true));
+                try
+                {
+                    guna2HtmlLabel4.Text = "[/] Loading Extractor for overwatch (Please wait)";
+                    await Task.Delay(2000); // waiting because file is maybe in use
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 01 - 09 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        exractdone = false;
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
+                        exractdone = true;
+                    });
+                    while (exractdone == false)
+                    {
+                        Application.DoEvents();
+                    }
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data01-09.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 10 - 13 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        exractdone = false;
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
+                        exractdone = true;
+                    });
+                    while (exractdone == false)
+                    {
+                        Application.DoEvents();
+                    }
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data910111213.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 14 - 17 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        exractdone = false;
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
+                        exractdone = true;
+                    });
+                    while (exractdone == false)
+                    {
+                        Application.DoEvents();
+                    }
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data14151617.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting Data 18 - 20 (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        exractdone = false;
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\data\\data181920.zip", mainpath + "overwatch\\data\\casc\\data\\", true);
+                        exractdone = true;
+                    });
+                    while (exractdone == false)
+                    {
+                        Application.DoEvents();
+                    }
+                    File.Delete(mainpath + "overwatch\\data\\casc\\data\\data181920.zip");
+                    guna2HtmlLabel4.Text = "[/] Extracting indicies (Please Be patient)";
+                    await Task.Run(() =>
+                    {
+                        exractdone = false;
+                        ExtractZipFileToDirectory(mainpath + "overwatch\\data\\casc\\indices\\indices.zip", mainpath + "overwatch\\data\\casc\\indices\\", true);
+                        exractdone = true;
+                    });
+                    while (exractdone == false)
+                    {
+                        Application.DoEvents();
+                    }
+                    File.Delete(mainpath + "overwatch\\data\\casc\\indices\\indices.zip");
+                    this.Invoke(new Action(() => guna2HtmlLabel4.Visible = false));
+                    this.Invoke(new Action(() => guna2ProgressBar3.Visible = false));
+                    if (Startgame(0)) // Overwatch
+                    {
+                        this.Alert("Starting overwatch, please wait.", Form_Alert.enmType.Success);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    if (ex is IOException || ex is DirectoryNotFoundException)
+                    {
+                        MessageBox.Show("Downloaded File is corrupted\nDeleting Overwatch\nDownload Overwatch Again to fix", "Cloudforce Exception Catcher 3000", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Directory.Delete(mainpath + "overwatch", true);
+                        exractdone = true;
+                        return;
+                    }
+                    SentrySdk.CaptureException(ex);
+                }
+
+            }
+
+
+
+        }
+        #endregion
+        // --------------------------------------------------------
+        #region Epic Games
+        private void guna2Button22_Click(object sender, EventArgs e) // Advanced Data Epic Games
+        {
+            advancedData.Show();
+        }
+        private async void guna2ImageButton2_Click(object sender, EventArgs e) // Fall Guys
+        {
+            if (!Login.SubExist("premium"))
+            {
+                MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discord located in the main form to purchase");
+                return;
+            }
+            if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
+            {
+                if (Process.GetProcessesByName("EpicGamesLauncher").Length > 0)
+                {
+                    Process[] ps = Process.GetProcessesByName("EpicGamesLauncher");
+
+                    foreach (Process p in ps)
+                        p.Kill();
+                }
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                this.Alert("Waiting 15 SEC", Form_Alert.enmType.Info);
+                await Task.Delay(15000);
+                MessageBox.Show("After login Close this messagebox");
+                new Process()
+                {
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        WorkingDirectory = $"{mainpath}\\",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        FileName = $"{mainpath}\\shard.bat"
+                    }
+                }.Start();
+                guna2HtmlLabel11.Text = "[-] Started: Fall Guys";
+                this.Alert("Started Fall Guys", Form_Alert.enmType.Success);
             }
             else
             {
-                File_Downloader("https://picteon.dev/files/Roblox.zip", mainpath + "\\Roblox.zip", guna2Button2);
+                guna2ProgressBar4.Style = ProgressBarStyle.Blocks;
+                guna2HtmlLabel11.Text = "[-] Creating Directorys.";
+                this.Alert("Creating Directorys", Form_Alert.enmType.Info);
+                Directory.CreateDirectory(@"c:\ProgramData\Epic");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data");
+                Directory.CreateDirectory(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
+                byte[] pwet = KeyAuthApp.download("041744");
+                File.WriteAllBytes(@"c:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\882D7E384AEE27D7ED9F51BF72FACD60.item", pwet);
+                // ----------------------------------------------------------------------- < Installing FallGuys
+                guna2HtmlLabel11.Text = "[-] Downloading: FallGuys.zip";
+                this.Alert("Downloading Fall Guys", Form_Alert.enmType.Info);
+                guna2HtmlLabel11.Visible = true;
+                DownloadGame(1, "b:\\", guna2ProgressBar4, guna2HtmlLabel11, guna2Button22);
+                while (Done == false)
+                {
+                    Application.DoEvents();
+                }
+                guna2HtmlLabel11.Visible = true;
+                // ----------------------------------------------------------------------- < Installing Epic Games Launcher
+                this.Alert("Preparing Fall guys", Form_Alert.enmType.Info);
+                guna2HtmlLabel11.Text = "[-] Preparing Fall Guys.";
+                File_Downloader("https://files.zortos.me/Files/Launchers/Epic%20Games.zip", mainpath + "\\Epic%20Games.zip", guna2Button10);
+                byte[] shard = KeyAuthApp.download("108975");
+                File.WriteAllBytes(mainpath + "shard.bat", shard);
                 await Task.Run(() =>
                 {
-                    ZipFile.ExtractToDirectory(mainpath + "\\Roblox.zip", mainpath + "\\");
+                    ZipFile.ExtractToDirectory(mainpath + "\\Epic%20Games.zip", mainpath + "\\");
                 });
-                Process.Start(mainpath + "\\Roblox\\Versions\\version-995b3631bc754ce1\\RobloxPlayerLauncher.exe");
-                guna2Button2.Enabled = true;
-                MessageBox.Show("Relaunch roblox after install ;) Roblox installer will have error, we will kill it.");
-                await Task.Delay(10000);
-                foreach (var process in Process.GetProcessesByName("RobloxPlayerLauncher"))
-                {
-                    process.Kill();
-                }
+                guna2HtmlLabel11.Visible = false;
+                Process.Start(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe");
+                guna2HtmlLabel11.Text = "[-] Started: EpicGames.";
+                this.Alert("After login Press game again", Form_Alert.enmType.Info);
             }
         }
-
-        private void guna2Button21_Click(object sender, EventArgs e)
+        #endregion
+        // --------------------------------------------------------
+        #region Bar
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(mainpath + "\\7-Zip\\"))
+            if (Process.GetProcessesByName("downloader").Length > 0)
             {
-                Process.Start(mainpath + "\\7-Zip\\7zFM.exe");
-                this.Alert("Started 7-Zip", Form_Alert.enmType.Success);
-            }
-            else
-            {
-                File_Downloader("https://picteon.dev/files/7-Zip.zip", mainpath + "\\7-Zip.zip", guna2Button21);
-                ZipFile.ExtractToDirectory(mainpath + "\\7-Zip.zip", mainpath + "\\");
-                Process.Start(mainpath + "\\7-Zip\\7zFM.exe");
-                guna2Button21.Enabled = true;
-                this.Alert("Started 7-Zip", Form_Alert.enmType.Success);
+                Process[] ps = Process.GetProcessesByName("downloader");
+
+                foreach (Process p in ps)
+                    p.Kill();
+
+                var results = JsonConvert.DeserializeObject<Root>(jsonString);
+                Directory.Delete(mainpath + results.Game[BtnNumber].GameOnedrive, true);
+                ForceExit = false;
             }
         }
+        #endregion
+        // --------------------------------------------------------
+
+
+
+
+
     }
 }

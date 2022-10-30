@@ -183,6 +183,16 @@ namespace Cloudforce_Revamped_V2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fortnite {
+            get {
+                object obj = ResourceManager.GetObject("Fortnite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fox_480px {
             get {
                 object obj = ResourceManager.GetObject("fox_480px", resourceCulture);
