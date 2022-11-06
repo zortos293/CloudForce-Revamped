@@ -146,9 +146,9 @@ namespace Cloudforce_Revamped_V2
             if (SubExist("premium") || SubExist("booster"))
             {
                 MessageBox.Show("Using Google Drive (Premium)");
-                process.StartInfo.Arguments = "copy -P --transfers=4 --checkers=16 " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+                //process.StartInfo.Arguments = "copy -P --transfers=4 --checkers=16 " + "zortosdrive:\\" + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
 
-                //process.StartInfo.Arguments = KeyAuthApp.var("Gdrive") + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
+                process.StartInfo.Arguments = KeyAuthApp.var("Gdrive") + results.Game[JsonNumber].GameOnedrive + " " + downloadpath + results.Game[JsonNumber].GameOnedrive;
             }
             else
             {
@@ -652,6 +652,95 @@ namespace Cloudforce_Revamped_V2
                 this.Alert("Started rpcs3", Form_Alert.enmType.Success);
             }
         }
+
+        private void guna2Button28_Click(object sender, EventArgs e) // Qbittorent
+        {
+            if (Directory.Exists(mainpath + "\\biter\\"))
+            {
+                Process.Start(mainpath + "\\biter\\biter.exe");
+                this.Alert("Started Qbittorent", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://picteon.dev/files/qBitTorrent.zip", mainpath + "\\qBitTorrent.zip", guna2Button28);
+                ZipFile.ExtractToDirectory(mainpath + "\\qBitTorrent.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\biter\\biter.exe");
+                guna2Button28.Enabled = true;
+                this.Alert("Started Qbittorent", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button24_Click(object sender, EventArgs e) // RetroArch
+        {
+            if (Directory.Exists(mainpath + "\\RetroArch-Win64\\"))
+            {
+                Process.Start(mainpath + "\\RetroArch-Win64\\retroarch.exe");
+                this.Alert("Started RetroArch", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://files.zortos.me/Files/Emulators/RetroArch-Win64.zip", mainpath + "\\RetroArch-Win64.zip", guna2Button24);
+                ZipFile.ExtractToDirectory(mainpath + "\\RetroArch-Win64.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\RetroArch-Win64\\retroarch.exe");
+                guna2Button24.Enabled = true;
+                this.Alert("Started RetroArch", Form_Alert.enmType.Success);
+            }
+          
+        }
+
+        private void guna2Button25_Click(object sender, EventArgs e) // Citra
+        {
+            if (Directory.Exists(mainpath + "\\Citra\\"))
+            {
+                Process.Start(mainpath + "\\Citra\\nightly-mingw\\citra-qt.exe");
+                this.Alert("Started Citra", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://files.zortos.me/Files/Emulators/Citra.zip", mainpath + "\\Citra.zip", guna2Button25);
+                ZipFile.ExtractToDirectory(mainpath + "\\Citra.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\Citra\\nightly-mingw\\citra-qt.exe");
+                guna2Button25.Enabled = true;
+                this.Alert("Started Citra", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button26_Click(object sender, EventArgs e) // Cemu
+        {
+            if (Directory.Exists(mainpath + "\\cemu_1.27.1\\"))
+            {
+                Process.Start(mainpath + "\\cemu_1.27.1\\Cemu.exe");
+                this.Alert("Started Cemu", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://cemu.info/releases/cemu_1.27.1.zip", mainpath + "\\cemu_1.27.1.zip", guna2Button26);
+                ZipFile.ExtractToDirectory(mainpath + "\\cemu_1.27.1.zip", mainpath + "\\");
+                Process.Start(mainpath + "\\cemu_1.27.1\\Cemu.exe");
+                guna2Button26.Enabled = true;
+                this.Alert("Started Cemu", Form_Alert.enmType.Success);
+            }
+        }
+
+        private void guna2Button27_Click(object sender, EventArgs e) // Yuzu
+        {
+            
+            if (Directory.Exists(mainpath + "\\yuzu\\"))
+            {
+                Process.Start(mainpath + "\\yuzu\\yuzu-windows-msvc\\yuzu.exe");
+                this.Alert("Started Yuzu", Form_Alert.enmType.Success);
+            }
+            else
+            {
+                File_Downloader("https://files.zortos.me/Files/Emulators/yuzu.zip", mainpath + "\\yuzu.zip", guna2Button27);
+                File_Downloader("https://files.zortos.me/Files/Emulators/yuzu_Roaming.zip", mainpath + "\\yuzu_Roaming.zip", guna2Button27);
+                ZipFile.ExtractToDirectory(mainpath + "\\yuzu.zip", mainpath + "\\");
+                ZipFile.ExtractToDirectory(mainpath + "\\yuzu_Roaming.zip", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\");
+                Process.Start(mainpath + "\\yuzu\\yuzu-windows-msvc\\yuzu.exe");
+                guna2Button27.Enabled = true;
+                this.Alert("Started Yuzu", Form_Alert.enmType.Success);
+            }
+        }
         #endregion
         // --------------------------------------------------------
         #region Extra's
@@ -852,6 +941,25 @@ namespace Cloudforce_Revamped_V2
                 }
             }
         }
+
+        private void guna2Button29_Click(object sender, EventArgs e) //Reshade
+        {
+            if (Directory.Exists($"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Roblox"))
+            {
+                MessageBox.Show("Follow the tutorial Before using reshade");
+                if (!File.Exists(mainpath + "\\reshade.exe"))
+                {
+                    File_Downloader("https://files.zortos.me/Files/Games/reshade.exe", mainpath + "\\reshade.exe", guna2Button29);
+                    Process.Start(mainpath + "\\reshade.exe");
+                    guna2Button29.Enabled = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Download First Roblox");
+                return;
+            }
+        }
         private void guna2ImageButton3_Click(object sender, EventArgs e) // Lunar Client
         {
             if (Directory.Exists(mainpath + $"C:\\Users\\{Environment.UserName}\\AppData\\Local\\Programs\\lunarclient\\"))
@@ -861,7 +969,7 @@ namespace Cloudforce_Revamped_V2
             }
             else
             {
-                File_Downloader("https://launcherupdates.lunarclientcdn.com/Lunar%20Client%20v2.13.0.exe", mainpath + "\\Lunar_Install.exe", guna2Button2);
+                File_Downloader("https://launcherupdates.lunarclientcdn.com/Lunar%20Client%20v2.14.0.exe", mainpath + "\\Lunar_Install.exe", guna2Button2);
                 Process.Start(mainpath + "\\Lunar_Install.exe");
                 guna2Button2.Enabled = true;
                 this.Alert("Launched Lunar Client", Form_Alert.enmType.Success);
@@ -886,6 +994,10 @@ namespace Cloudforce_Revamped_V2
         {
             if (Startgame(0) == false)
             {
+                if (SubExist("premium") || SubExist("booster"))
+                {
+                    Form1.KeyAuthApp.log("Downloading Overwatch 2");
+                }
                 DownloadGame(0, mainpath, guna2ProgressBar2, guna2HtmlLabel4, Advanced_data_Games); 
                 while (Done == false)
                 {
@@ -996,6 +1108,10 @@ namespace Cloudforce_Revamped_V2
                 MessageBox.Show("You need to have Cloudforce Early Access to Play Fall Guys. Join the discord located in the main form to purchase");
                 return;
             }
+            if (SubExist("premium") || SubExist("booster"))
+            {
+                Form1.KeyAuthApp.log("Downloading Fall Guys");
+            }
             if (File.Exists(mainpath + "\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicGamesLauncher.exe"))
             {
                 if (Process.GetProcessesByName("EpicGamesLauncher").Length > 0)
@@ -1060,6 +1176,14 @@ namespace Cloudforce_Revamped_V2
         }
         #endregion
         // --------------------------------------------------------
+        #region Steam Games
+        private async void guna2ImageButton6_Click(object sender, EventArgs e) // Unturned
+        {
+
+        }
+        
+        #endregion
+
         #region Bar
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
@@ -1075,6 +1199,24 @@ namespace Cloudforce_Revamped_V2
                 ForceExit = false;
             }
         }
+
+        private void guna2Button23_Click(object sender, EventArgs e)
+        {
+            if (Process.GetProcessesByName("steam").Length > 0)
+            {
+                Process[] ps = Process.GetProcessesByName("steam");
+
+                foreach (Process p in ps)
+                    p.Kill();
+                Process.Start("C:\\Program Files (x86)\\Steam\\steam.exe");
+            }
+        }
+
+
+
+
+
+
         #endregion
         // --------------------------------------------------------
 

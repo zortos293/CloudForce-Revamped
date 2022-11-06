@@ -447,6 +447,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CloudForce.ico" />
+    <None Include="Resources\Retroarch-logo.jpg" />
+    <None Include="Resources\qBittorrent-1.png" />
+    <None Include="Resources\retroarch.png" />
+    <None Include="Resources\Citra_Logo.png" />
+    <None Include="Resources\cemu.png" />
+    <None Include="Resources\yuzu tranparant.png" />
+    <None Include="Resources\Yuzu.png" />
+    <None Include="Resources\7zip.png" />
+    <None Include="Resources\Unturned.jpg" />
     <None Include="Resources\Fortnite.jpg" />
   </ItemGroup>
   <ItemGroup>

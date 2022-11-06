@@ -41,6 +41,7 @@ namespace LoginScreen
             Form1.KeyAuthApp.login(txtUserName.Text, txtpassword.Text);
             if (!Form1.KeyAuthApp.response.success)
             {
+                
                 this.Alert("Incorrect user or password", Form_Alert.enmType.Error);
                 txtUserName.Clear();
                 txtpassword.Clear();
@@ -48,6 +49,8 @@ namespace LoginScreen
             }
             else
             {
+                Form1.KeyAuthApp.log("User Logged in : " + Form1.KeyAuthApp.user_data.subscriptions[0].subscription);
+
                 this.Alert("Logged In!", Form_Alert.enmType.Success);
                 this.Close();
             }
