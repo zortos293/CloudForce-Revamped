@@ -4,3 +4,4 @@
 - You may not distrobute the app
 - You may not sell the app in any form of way
 - By looking though source, you agree to these terms.
+- If you are to show the program online in any way, you must credit us or else we may take it down.
